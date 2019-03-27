@@ -55,7 +55,6 @@ table {
 	line-height: 0;
 	height: 0;
 }
-
 .clearfix { display: inline-block; }
 html[xmlns] .clearfix { display: block; }
 * html .clearfix { height: 1%; }
@@ -64,8 +63,6 @@ html[xmlns] .clearfix { display: block; }
 
 body {
 	font-family: 'roboto mono', monospace;
-	/*
-	font-family: 'Chivo', sans-serif; */
 	background-color: #eeeeeb;
 }
 
@@ -103,22 +100,8 @@ nav {
 	background-color: #eeeeeb;
 	padding-top: 2%;
 	padding-bottom: 2%;
-	/*
-	margin-left: 2%;
-	height: 40px;
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 99;
-	padding: 1.250em 5% 1em 5%;
-	*/
 }
-/*
-.nav-width {
-	position: relative;
-}
-*/
+
 .first-name {
 	display: none;
 }
@@ -136,13 +119,6 @@ nav {
 	right: 0;
 	left: 0;
 	z-index: 99;
-	/*
-	padding: 1.250em 5% 1em 5%;
-	background-color: #eeeeeb;
-	float: left;
-	width: 48%;
-	margin-left: 2%;
-	*/
 }
 
 #navi ul {
@@ -186,13 +162,20 @@ nav {
 	color: #1c1c1c;
 }
 
-#about p + p {
-	margin-left: 1%;
-	width: 49%;
-}
-
 .intro-full {
 	display: none;
+}
+
+.intro-frag {
+	display: inline-block;
+}
+
+.intro-frag a {
+	text-decoration: underline;
+}
+
+.intro-frag a:hover {
+	text-decoration: line-through;
 }
 
 /* work */
@@ -224,11 +207,7 @@ h3 {
 .work-col-two {
 	margin-right: 0;
 }
-/*
-.work-list-item:last-child {
-	margin-bottom: 6%;
-}
-*/
+
 .work-list-item img {
 	width: 100%;
 	display: block;
@@ -314,45 +293,20 @@ footer {
 	background-color: #1c1c1c;
 }
 
-/*
-#connect {
-	float: left;
-	width: 100%;
-	padding: 5% 0 5% 0;
-	text-align: center;
-	font-size: 2em;
-	line-height: 1.6em;
-	color: #3d3d3d;
-	background-color: #eeeeeb;
-}
-*/
 #contact {
 	float: left;
 	width: 100%;
 	padding: 16% 0 8% 0;
-	/*
-	height: 16%; */
 	color: #666666;
 }
-/*
-#contact h1 {
-	float: left;
-	width: 50%;
-	font-size: 2em;
-	color: #eeeeeb;
-}
-*/
+
 #contact ul {
 	float: left;
 	width: 48%;
 	margin-left: 2%;
 	font-size: 1.56em;
 }
-/*
-#contact ul + p {
-	margin: 10% 0 0 51%;
-}
-*/
+
 #contact a:hover {
 	color: #eeeeeb;
 }
@@ -442,8 +396,6 @@ footer {
 
 	#work h2 {
 		display: none;
-		/*
-		padding-top: 14%; */
 	}
 
 	#work img {
@@ -466,11 +418,7 @@ footer {
 	#contact {
 		padding: 0 0 4% 0;
 	}
-/*
-	#contact .site-width {
-		width: 50%;
-	}
-*/
+
 	#contact h2 {
 		display: none;
 	}
@@ -553,14 +501,6 @@ footer {
 		width: 100%;
 	}
 
-	.intro-full {
-		display: inline-block;
-	}
-
-	.intro-frag {
-		display: none;
-	}
-
 	.work-list-item {
 		display: block;
 		width: 100%;
@@ -603,6 +543,10 @@ footer {
 	#about p {
 		padding-top: 16%;
 		font-size: 1.2em;
+	}
+
+	.intro-full {
+		display: inline-block;
 	}
 
 	#work {
