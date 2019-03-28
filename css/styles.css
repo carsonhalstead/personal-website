@@ -228,6 +228,11 @@ h3 {
 	padding-bottom: 4%;
 }
 
+.work-list-button {
+	width: 100%;
+	text-align: center;
+}
+
 /* project */
 
 #top {
@@ -438,7 +443,7 @@ footer {
 	}
 
 	.social-list-item {
-		margin: 0;
+		margin-top: 2%;
 	}
 
 	.social-list-item:hover {
