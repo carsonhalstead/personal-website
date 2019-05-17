@@ -152,11 +152,11 @@ nav {
 	background-color: #eeeeeb;
 }
 
-#about p {
+.bio {
 	float: left;
 	height: 20%;
 	width: 48%;
-	padding: 15% 0 10% 0;
+	padding: 24% 0 10% 0;
 	font-size: 2em;
 	line-height: 1.5em;
 	color: #1c1c1c;
@@ -245,7 +245,7 @@ h3 {
 	float: left;
 	height: 20%;
 	width: 50%;
-	padding: 15% 0 0 0;
+	padding: 24% 0 0 0;
 	font-size: 2em;
 	line-height: 1.5em;
 	color: #1c1c1c;
@@ -255,7 +255,7 @@ h3 {
 	float: left;
 	height: 20%;
 	width: 50%;
-	padding: 15% 0 10% 0;
+	padding: 8% 0 10% 0;
 	font-size: 2em;
 	line-height: 1.5em;
 	color: #1c1c1c;
@@ -349,6 +349,20 @@ footer {
 		display: none;
 	}
 
+	.big-contact {
+		position: fixed;
+		right: 2.5%;
+		font-size: 1.56em;
+		text-decoration: underline;
+		color: #666666;
+		padding: 1.2% 0 0 2.5%;
+	}
+
+	.big-contact:hover {
+		text-decoration: line-through;
+		color: #1c1c1c;
+	}
+
 	#about .site-width {
 		padding: 0 0 0 10%;
 	}
@@ -360,7 +374,6 @@ footer {
 
 	#about p {
 		width: 100%;
-		padding-top: 24%;
 	}
 
 	#work {
@@ -372,8 +385,8 @@ footer {
 		position: fixed;
 		top: 0;
 		right: 0;
-		width: 50%;
-		margin: 0;
+		width: 40%;
+		margin: 2.5% 0 0 10%;
 	}
 
 	#projects h2 {
@@ -391,6 +404,10 @@ footer {
 	.work-list-item {
 		display: block;
 		width: 100%;
+	}
+
+	.work-list-item h3 {
+		font-size: 1.56em;
 	}
 
 	footer {
@@ -429,6 +446,10 @@ footer {
 }
 
 @media screen and (max-width: 80em) {
+
+	.big-contact {
+		display: none;
+}
 
 	#about p {
 		width: 80%;
