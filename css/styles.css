@@ -279,7 +279,7 @@ h3 {
 }
 
 .project-shots p {
-	margin: 10% 0 16% 0;
+	margin: 2% 0 16% 0;
 	font-size: 2em;
 	line-height: 1.5em;
 	color: #1c1c1c;
@@ -355,6 +355,7 @@ footer {
 
 	#about {
 		width: 50%;
+		margin: 0 1% 0 0;
 	}
 
 	#about p {
@@ -362,7 +363,15 @@ footer {
 		padding-top: 24%;
 	}
 
+	#work {
+		width: 50%;
+		margin: 0 0 32% 2.5%;
+	}
+
 	#projects {
+		position: fixed;
+		top: 0;
+		right: 0;
 		width: 50%;
 		margin: 0;
 	}
@@ -520,6 +529,10 @@ footer {
 
 	.intro-full {
 		display: inline-block;
+	}
+
+	.project-shots p {
+		font-size: 1.2em;
 	}
 
 	#projects {
