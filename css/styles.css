@@ -87,8 +87,8 @@ h1 {
 
 h2 {
 	float: left;
-	width: 100%;
-	margin-right: 2%;
+	width: 90%;
+	margin: 0 5% 0 5%;
 	font-size: 1.56em;
 	color: #666666;
 }
@@ -137,7 +137,8 @@ nav li {
 .logo {
 	float: left;
 	width: 50%;
-	padding-left: 5%;
+	/*
+	padding-left: 5%;*/
 	/*
 	display: none;
 	font-size: 2em;
@@ -165,8 +166,11 @@ nav li {
 /* about */
 
 #about p {
-	width: 100%;
-	padding-top: 16%;
+	width: 90%;
+	margin: 32% 5% 16% 5%;
+
+	line-height: 1.6em;
+	color: #1c1c1c;
 	font-size: 1.2em;
 }
 
@@ -177,18 +181,9 @@ nav li {
 	background-color: #eeeeeb;
 }
 
-.bio {
-	float: left;
-	height: 20%;
-	width: 48%;
-	padding: 24% 0 10% 0;
-	font-size: 2em;
-	line-height: 1.5em;
-	color: #1c1c1c;
-}
-
 .intro-full {
 	display: inline-block;
+	margin-bottom: 8%;
 }
 
 .intro-frag {
@@ -217,7 +212,7 @@ nav li {
 }
 
 .work-list-item h3 {
-	padding-bottom: 4%;
+	padding: 5% 0 5% 5%;
 }
 
 .work-list-item img {
@@ -333,8 +328,8 @@ footer {
 #contact ul {
 	float: left;
 	display: block;
-	width: 100%;
-	margin: 8% 0 0 0;
+	width: 90%;
+	margin: 8% 5% 0 5%;
 }
 
 .social-list-item {
@@ -366,8 +361,7 @@ footer {
 @media screen and (min-width: 32em) {
 
 	#about p {
-		padding-top: 40%;
-		padding-bottom: 32%;
+		margin-bottom: 16%;
 		font-size: 2em;
 	}
 
@@ -379,6 +373,10 @@ footer {
 @media screen and (min-width: 36em) {
 
 	h1 {
+		font-size: 2em;
+	}
+
+	h3 {
 		font-size: 2em;
 	}
 
@@ -412,12 +410,25 @@ footer {
 		font-size: 2em;
 	}
 
+	.nav-list-item {
+		padding-right: 8%;
+	}
+
 	.nav-list-item:first-child {
 		padding-right: 0;
 	}
 
 	.social-list-item {
 		font-size: 1.56em;
+	}
+
+	.work-list-item {
+		width: 90%;
+		margin: 0 5% 8% 5%;
+	}
+
+	.work-list-item h3 {
+		padding-left: 0;
 	}
 }
 
@@ -426,6 +437,11 @@ footer {
 	h1 {
 		height: 4%;
 		top:0;
+	}
+
+	h3 {
+		font-size: 1.5em;
+		line-height: 1.2em;
 	}
 
 	nav li {
@@ -442,7 +458,6 @@ footer {
 
 	#about p {
 		width: 80%;
-		padding: 24% 0 24% 0;
 	}
 
 	#contact {
@@ -465,33 +480,36 @@ footer {
 		width: 47%;
 	}
 
+	.nav-list-item {
+		padding-right: 8%;
+	}
+
 	.nav-list-item:first-child {
-		padding-right: 5%;
+		padding-right: 8%;
 	}
 
 	.work-list-item {
 		float: left;
-		width: 48%;
-		margin: 0 4% 4% 0;
+		width: 42.5%;
 	}
 
 	.work-col-two {
 		margin-right: 0;
+		margin-left: 0;
 	}
 }
 
 @media screen and (min-width: 52em) {
 
-	h2 {
-		float: left;
-		width: 48%;
-		margin-right: 2%;
-	}
+	#contact h2 {
+		width: 42.5%;
+	} /* this floats the header in the left column */
 
 	#contact ul {
 		float: left;
-		width: 48%;
-		margin: 0 0 0 2%;
+		width: 42.5%;
+		margin-top: 0;
+		margin-left: 0;
 	}
 
 	#projects {
@@ -519,17 +537,14 @@ footer {
 		color: #1c1c1c;
 	}
 
-	#about .site-width {
-		padding: 0 0 0 10%;
-	}
-
 	#about {
-		width: 50%;
-		margin: 0 1% 0 0;
+		width: 60%;
 	}
 
 	#about p {
-		width: 100%;
+		/*
+		width: 100%;*/
+		margin: 16% 0 0 10%;
 	}
 
 	#work {
@@ -542,7 +557,7 @@ footer {
 		top: 0;
 		right: 0;
 		width: 40%;
-		margin: 2.5% 0 0 10%;
+		margin: 2.5% 0 0 0;
 	}
 
 	#projects h2 {
@@ -560,10 +575,17 @@ footer {
 	.work-list-item {
 		display: block;
 		width: 100%;
+		margin-left: 0;
 	}
 
 	.work-list-item h3 {
-		font-size: 1.56em;
+		margin-left: 5%;
+		font-size: 1.6em;
+	}
+
+	.work-list-button {
+		padding-left: 5%;
+		text-align: left;
 	}
 
 	footer {
@@ -579,8 +601,8 @@ footer {
 	}
 
 	#contact ul {
-		width: 100%;
-		margin: 0;
+		width: 95%;
+		margin: 0 0 0 5%;
 	}
 
 	#contact a:hover {
