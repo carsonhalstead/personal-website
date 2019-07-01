@@ -101,16 +101,8 @@ h3 {
 /* nav */
 
 nav {
-	/*
-	position: fixed;
-	bottom: 0;*/
 	float: left;
 	width: 100%;
-	/*
-	padding-top: 2%;
-	padding-bottom: 8%;
-	background-color: #eeeeeb;
-	z-index: 99;*/
 }
 
 nav ul {
@@ -126,23 +118,13 @@ nav li {
 	float: right;
 }
 
-.full-name {
-	display: none;
-}
-
-.first-name {
+.last-name {
 	display: none;
 }
 
 .logo {
 	float: left;
 	width: 50%;
-	/*
-	padding-left: 5%;*/
-	/*
-	display: none;
-	font-size: 2em;
-	cursor: help;*/
 }
 
 .nav-list-item {
@@ -155,29 +137,21 @@ nav li {
 .nav-list-item:hover {
 	text-decoration: line-through;
 }
-/*
-.nav-list-item:last-child {
-	padding-right: 0;
-}
-.nav-list-item:first-child {
-	padding-right: 5%;
-}*/
 
 /* about */
 
 #about p {
-	width: 90%;
-	margin: 32% 5% 16% 5%;
-
+	margin: 32% 0 24% 0;
+	font-size: 1.2em;
 	line-height: 1.6em;
 	color: #1c1c1c;
-	font-size: 1.2em;
 }
 
 #about {
 	float: left;
+	width: 90%;
 	height: 30%;
-	width: 100%;
+	padding: 0 5% 0 5%;
 	background-color: #eeeeeb;
 }
 
@@ -361,7 +335,6 @@ footer {
 @media screen and (min-width: 32em) {
 
 	#about p {
-		margin-bottom: 16%;
 		font-size: 2em;
 	}
 
@@ -392,11 +365,6 @@ footer {
 
 	#projects {
 		margin-bottom: 112%;
-	}
-
-	.first-name {
-		display: inline-block;
-		float: 50%;
 	}
 
 	.intro-full {
@@ -457,7 +425,7 @@ footer {
 	}
 
 	#about p {
-		width: 80%;
+		width: 100%;
 	}
 
 	#contact {
@@ -468,11 +436,7 @@ footer {
 		margin-bottom: 80%;
 	}
 
-	.first-name {
-		display: none;
-	}
-
-	.full-name {
+	.last-name {
 		display: inline-block;
 	}
 
@@ -500,6 +464,11 @@ footer {
 }
 
 @media screen and (min-width: 52em) {
+
+	#about p {
+		width: 80%;
+		margin: 24% 0 16% 0;
+	}
 
 	#contact h2 {
 		width: 42.5%;
@@ -537,14 +506,18 @@ footer {
 		color: #1c1c1c;
 	}
 
+	.logo {
+		padding-bottom: 0;
+	}
+
 	#about {
-		width: 60%;
+		width: 100%;
+		padding: 0;
 	}
 
 	#about p {
-		/*
-		width: 100%;*/
-		margin: 16% 0 0 10%;
+		width: 48%;
+		margin: 10% 0 4% 5%;
 	}
 
 	#work {
@@ -620,149 +593,5 @@ footer {
 
 	.social-list-item:hover {
 		color: #1c1c1c;
-	}
-}
-/*
-@media screen and (max-width: 80em) {
-
-	.big-contact {
-		display: none;
-}
-
-	#about p {
-		width: 80%;
-	}
-}
-
-@media screen and (max-width: 64em) {
-
-	#about p {
-		width: 100%;
-	}
-
-	h3 {
-		font-size: 1.5em;
-	}
-
-	#projects {
-		margin-bottom: 24em;
-	}
-}
-
-@media screen and (max-width: 44em) {
-/* the makings of a bottom sticky nav */
-/*
-	nav {
-		position: fixed;
-		bottom: 0;
-		width: 100%;
-		height: 6%;
-		margin: 0;
-		padding-top: 4%;
-		background-color: #eeeeeb;
-	}
-
-	.logo {
-		width: 40%;
-	}
-
-	.first-name {
-		display: inline-block;
-	}
-
-	.full-name {
-		display: none;
-	}
-
-	#navi ul {
-		width: 60%;
-		margin: 0;
-	}
-
-	#about p {
-		width: 100%;
-	}
-
-	.work-list-item {
-		display: block;
-		width: 100%;
-		margin-bottom: 8%;
-	}
-
-	h2 {
-		width: 100%;
-	}
-
-	#projects {
-		margin-bottom: 32em;
-	}
-
-	h3 {
-		font-size: 2em;
-	}
-
-	#contact {
-		padding: 32% 0 24% 0;
-	}
-
-	#contact ul {
-		display: block;
-		width: auto;
-		margin: 8% 0 0 0;
-	}
-}
-
-@media screen and (max-width: 32em) {
-
-	.logo {
-		display: none;
-	}
-
-	#navi ul {
-		width: 100%;
-	}
-
-	#about p {
-		padding-top: 16%;
-		font-size: 1.2em;
-	}
-
-	.intro-full {
-		display: inline-block;
-	}
-
-	.project-shots p {
-		font-size: 1.2em;
-	}
-
-	#projects {
-		margin-bottom: 24em;
-	}
-
-	.work-list-item {
-		margin-bottom: 12%;
-	}
-
-	h3 {
-		font-size: 1.5em;
-	}
-
-	#contact {
-		font-size: .8em;
-	}
-}
-
-@media screen and (max-width: 22em) {
-
-	nav {
-		font-size: .8em;
-	}
-
-	.work-list-item {
-		margin-bottom: 16%;
-	}
-
-	#contact {
-		padding: 32% 0 40% 0;
 	}
 }
