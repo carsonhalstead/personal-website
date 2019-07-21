@@ -260,7 +260,7 @@ nav li {
 	padding: 4% 0 4% 0;
  	text-align: center;
 	transition: all 0.2s;
- 	width: 100%; }
+ 	width: 48%; }
 	.back:hover {
 		background-color: #d0d0be; }
 
@@ -418,7 +418,7 @@ footer {
 		font-size: 2em;
 	}
 
-	.work-list-button h3 {
+  .work-list-button h3 {
 		display: inline-block;
 		position: relative;
 		transition: 0.2s; }
@@ -461,7 +461,7 @@ footer {
 		margin-bottom: 112%;
 	}
 
-	.intro-full {
+  .intro-full {
 		display: none;
 	}
 
@@ -542,7 +542,7 @@ footer {
 		display: inline-block;
 	}
 
-	.logo {
+  .logo {
 		width: 47%;
 	}
 
