@@ -224,7 +224,7 @@ nav li {
 	width: 100%; }
 	.work-list-button:hover {
 		background-color: #d0d0be; }
-
+/*
 	.work-list-button h3 {
 		display: inline-block;
 		position: relative;
@@ -241,7 +241,7 @@ nav li {
 		padding-right: 40px; }
 		.work-list-button:hover h3:after {
 			opacity: 1;
-			right: 0; }
+			right: 0; }*/
 
 /* work */
 
@@ -318,14 +318,14 @@ nav li {
 
 /* project assets */
 
-.project-shots img {
+#work img {
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
 	padding-bottom: 2%
 }
 
-.project-shots p {
+#work p {
 	margin: 2% 0 16% 5%;
 	/*
 	font-size: 2em;*/
@@ -412,9 +412,29 @@ footer {
 	}
 
 	.proj-title {
-		width: 100%;
-		font-size: 1.6em;
+		margin-top: 24%;
+		/*
+		width: 100%;*/
+		font-size: 2em;
 	}
+
+  .work-list-button h3 {
+		display: inline-block;
+		position: relative;
+		transition: 0.2s; }
+		.work-list-button h3:after {
+			content: '\00bb';
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			right: -56px;
+			transition: 0.2s;	}
+
+	.work-list-button:hover h3 {
+		padding-right: 40px; }
+		.work-list-button:hover h3:after {
+			opacity: 1;
+			right: 0; }
 }
 
 @media screen and (min-width: 36em) {
@@ -441,7 +461,7 @@ footer {
 		margin-bottom: 112%;
 	}
 
-	.intro-full {
+  .intro-full {
 		display: none;
 	}
 
@@ -497,13 +517,13 @@ footer {
 		top: 0;
 		padding-right: 3%;
 	}
-
-	.back {
-		display: none;
-	}
-
+/*
 	#about p {
 		width: 100%;
+	}*/
+	#work p {
+		width: 80%;
+		font-size: 1.5em;
 	}
 
 	#contact {
@@ -514,11 +534,15 @@ footer {
 		margin-bottom: 80%;
 	}
 
+	.back {
+		display: none;
+	}
+
 	.last-name {
 		display: inline-block;
 	}
 
-	.logo {
+  .logo {
 		width: 47%;
 	}
 
@@ -528,6 +552,11 @@ footer {
 
 	.nav-list-item:first-child {
 		padding-right: 8%;
+	}
+
+	.proj-desc {
+		margin-bottom: 16%;
+		font-size: 1.6em;
 	}
 
 	.work-list-item {
@@ -545,7 +574,8 @@ footer {
 
 	#about p {
 		width: 80%;
-		margin: 24% 0 16% 0;
+		/*
+		margin: 24% 0 16% 0;*/
 	}
 
 	#contact h2 {
@@ -562,6 +592,14 @@ footer {
 	#projects {
 		margin-bottom: 48%;
 	}
+
+	.bio {
+		margin: 24% 0 16% 0;
+	}
+/*
+	.proj-title {
+		margin-bottom: 16%;
+	}*/
 }
 
 @media screen and (min-width: 80em) {
@@ -571,13 +609,14 @@ footer {
 	}
 
 	.big-contact {
+		width: 38%;
 		display: inline;
 		position: fixed;
-		right: 2.5%;
+		right: 0;
 		font-size: 1.56em;
 		text-decoration: underline;
 		color: #666666;
-		padding: 1.2% 0 0 2.5%;
+		padding-top: 4%;
 	}
 
 	.big-contact:hover {
@@ -586,7 +625,8 @@ footer {
 	}
 
 	.logo {
-		padding-bottom: 0;
+		width: 50%;
+		padding-bottom: 2%;
 	}
 
 	#about {
@@ -596,7 +636,9 @@ footer {
 
 	#about p {
 		width: 48%;
-		margin: 10% 0 4% 5%;
+		margin-left: 5%;
+		/*
+		margin: 10% 0 4% 5%;*/
 	}
 
 	#work {
@@ -606,10 +648,10 @@ footer {
 
 	#projects {
 		position: fixed;
-		top: 0;
+		bottom: 0;
 		right: 0;
 		width: 40%;
-		margin: 2.5% 0 0 0;
+		margin: 8% 0 0 0;
 	}
 
 	#projects h2 {
@@ -624,6 +666,20 @@ footer {
 		padding-top: 19%;
 	}
 
+	.bio {
+		margin-top: 12%;
+		margin-bottom: 4%;
+	}
+
+	.proj-title {
+		margin-top: 16%;
+		margin-bottom: 4%;
+	}
+
+	.proj-desc {
+		margin-bottom: 8%;
+	}
+
 	.work-list-item {
 		display: block;
 		width: 100%;
@@ -636,6 +692,7 @@ footer {
 	}
 
 	.work-list-button {
+		margin-top: 8%;
 		padding-left: 5%;
 		text-align: left;
 	}
@@ -645,7 +702,7 @@ footer {
 	}
 
 	#contact {
-		padding: 0 0 4% 0;
+		padding: 0 0 3.6% 0;
 	}
 
 	#contact h2 {
