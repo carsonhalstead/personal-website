@@ -683,6 +683,7 @@ footer {
 	.work-list-item {
 		display: block;
 		width: 100%;
+		margin-bottom: 2%;
 		margin-left: 0;
 	}
 
@@ -692,7 +693,6 @@ footer {
 	}
 
 	.work-list-button {
-		margin-top: 8%;
 		padding-left: 5%;
 		text-align: left;
 	}
