@@ -692,6 +692,10 @@ footer {
 		margin-bottom: 4%;
 	}
 
+	#work .half-img {
+		width: 100%;
+	}/* just saying this is dumb bc #work don't need to be there */
+
 	.proj-title {
 		margin-top: 16%;
 		margin-bottom: 4%;
