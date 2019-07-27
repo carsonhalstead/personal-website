@@ -666,6 +666,8 @@ footer {
 		width: 50%;
 		margin: 0 0 32% 2.5%;
 	}
+	#work .half-img {
+		width: 100%;}
 
 	#projects {
 		position: fixed;
