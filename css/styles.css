@@ -679,6 +679,12 @@ footer {
 		display: none;
 	}
 
+	#projects h3 {
+		color: #666666;
+	}
+	#projects h3:hover {
+		color: #1c1c1c;}
+
 	#projects img {
 		display: none;
 	}
@@ -691,10 +697,6 @@ footer {
 		margin-top: 12%;
 		margin-bottom: 4%;
 	}
-
-	#work .half-img {
-		width: 100%;
-	}/* just saying this is dumb bc #work don't need to be there */
 
 	.proj-title {
 		margin-top: 16%;
