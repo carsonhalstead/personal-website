@@ -90,11 +90,11 @@ h2 {
 	width: 90%;
 	margin: 0 5% 0 5%;
 	font-size: 1.56em;
-	color: #666666;
+	color: #808080;
 }
 
 h3 {
-	font-size: 1.5em;
+	font-size: 1.6em;
 }
 
 /* nav */
@@ -132,7 +132,7 @@ nav li {
 
 .nav-list-item {
 	display: inline-block;
-	padding: 2% 5% 0 0;
+	padding: 1.2% 5% 0 0;
 	font-size: 1.56em;
 	text-decoration: underline;
 }
@@ -421,7 +421,7 @@ footer {
 	}
 
 	.bio {
-		font-size: 3em;
+		font-size: 2em;
 	}
 
 	.intro-full {
@@ -464,8 +464,13 @@ footer {
 		font-size: 2em;
 	}
 
-	h3 {
+	h2 {
 		font-size: 2em;
+	}
+
+	h3 {
+		font-size: 3.2em;
+		line-height: 1.6em;
 	}
 
 	nav ul {
@@ -482,6 +487,10 @@ footer {
 		margin-bottom: 112%;
 	}
 
+	.bio {
+		font-size: 3em;
+	}
+
   .intro-full {
 		display: none;
 	}
@@ -490,11 +499,12 @@ footer {
 		display: inline-block;
 		width: 30%;
 		padding: 4% 0 4% 5%;
-		font-size: 2em;
+		font-size: 3.2em;
 	}
 
 	.nav-list-item {
 		padding-right: 8%;
+		font-size: 2.76em;
 	}
 
 	.nav-list-item:first-child {
@@ -569,6 +579,7 @@ footer {
 
 	.nav-list-item {
 		padding-right: 8%;
+		font-size: 2.24em;
 	}
 
 	.nav-list-item:first-child {
@@ -698,6 +709,7 @@ footer {
 	.bio {
 		margin-top: 12%;
 		margin-bottom: 4%;
+		font-size: 2em;
 	}
 
 	.proj-title {
