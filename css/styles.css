@@ -132,7 +132,7 @@ nav li {
 
 .nav-list-item {
 	display: inline-block;
-	padding: 1.2% 5% 0 0;
+	padding: 2% 5% 0 0;
 	font-size: 1.56em;
 	text-decoration: underline;
 }
@@ -404,7 +404,7 @@ footer {
 }
 
 .social-list-item:last-child {
-	margin-top: 8%;
+	margin-top: 16%;
 }
 
 /* media queries */
@@ -465,7 +465,8 @@ footer {
 	}
 
 	h2 {
-		font-size: 2em;
+		/*font-size: 2.4em;*/
+		font-size: 3em;
 	}
 
 	h3 {
@@ -480,7 +481,7 @@ footer {
 	}
 
 	#contact {
-		padding-bottom: 32%;
+		padding-bottom: 24%;
 	}
 
 	#projects {
@@ -503,6 +504,7 @@ footer {
 	}
 
 	.nav-list-item {
+		padding-top: 1.1%;
 		padding-right: 8%;
 		font-size: 2.76em;
 	}
@@ -512,7 +514,7 @@ footer {
 	}
 
 	.social-list-item {
-		font-size: 1.56em;
+		font-size: 2.76em;
 	}
 
 	.work-list-item {
@@ -530,6 +532,10 @@ footer {
 	h1 {
 		height: 4%;
 		top:0;
+	}
+
+	h2 {
+		font-size: 2.4em;
 	}
 
 	h3 {
@@ -627,6 +633,10 @@ footer {
 
 	.bio {
 		margin: 24% 0 16% 0;
+	}
+
+	.social-list-item {
+		font-size: 1.56em;
 	}
 /*
 	.proj-title {
@@ -766,6 +776,8 @@ footer {
 
 	.social-list-item {
 		margin-top: 2%;
+		/*
+		font-size: 1.56em;*/
 	}
 
 	.social-list-item:hover {
