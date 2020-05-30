@@ -180,7 +180,8 @@ nav li {
 #projects {
 	float: left;
 	width: 100%;
-	margin-bottom: 136%;
+	/*
+	margin-bottom: 136%; */
 	background-color: #eeeeeb;
 }
 
@@ -353,6 +354,12 @@ nav li {
 
 /* footer */
 
+#jump {
+	float: left;
+	width: 100%;
+	margin-bottom: 136%;
+}
+
 footer {
 	position: fixed;
 	width: 100%;
@@ -485,7 +492,8 @@ footer {
 	}
 
 	#projects {
-		margin-bottom: 112%;
+		/*
+		margin-bottom: 112%; */
 	}
 
 	.bio {
