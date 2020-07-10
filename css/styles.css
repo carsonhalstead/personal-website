@@ -71,6 +71,10 @@ a {
 	color: inherit;
 }
 
+a:focus {
+	outline: 4px dotted black;
+}
+
 .site-width {
 	width: 90%;
 	padding-right: 5%;
@@ -740,6 +744,10 @@ footer {
 		padding-top: 19%;
 	}
 
+	#jump {
+		display: none;
+	}
+
 	.bio {
 		margin-top: 12%;
 		margin-bottom: 4%;
@@ -802,6 +810,10 @@ footer {
 		margin-top: 2%;
 		/*
 		font-size: 1.56em;*/
+	}
+
+	.social-list-item:last-child {
+		margin-top: 8%;
 	}
 
 	.social-list-item:hover {
