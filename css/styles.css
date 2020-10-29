@@ -72,7 +72,7 @@ a {
 }
 
 a:focus {
-	outline: 4px dotted black;
+	outline: 4px dotted #ee4f2f;
 }
 
 .site-width {
@@ -134,6 +134,14 @@ nav li {
 	width: 50%;
 }
 
+.logo a {
+	color: #666;
+}
+
+.logo a:hover {
+	color: #1c1c1c;
+}
+
 .nav-list-item {
 	display: inline-block;
 	padding: 2% 5% 0 0;
@@ -144,6 +152,34 @@ nav li {
 .nav-list-item:hover {
 	text-decoration: line-through;
 }
+/* badge animation wip
+.badge-background {
+	position: fixed;
+	right: 2em;
+	bottom: 2em;
+	width: 14em;
+}
+
+.badge-type {
+	position: fixed;
+	right: 3em;
+	bottom: 3em;
+	width: 12em;
+	animation-name: spin;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+	transform-origin: center;
+	display: inline-block;
+	z-index: 1;
+}
+@keyframes spin {
+	100% {
+		transform: rotate(0deg);
+	}
+	0% {
+		transform: rotate(360deg);
+	}
+} */
 
 /* about */
 
@@ -246,7 +282,7 @@ nav li {
 		padding-right: 40px; }
 		.work-list-button:hover h3:after {
 			opacity: 1;
-			right: 0; }*/
+			right: 0; } */
 
 /* work */
 
@@ -300,7 +336,7 @@ nav li {
 	float: left;
 	/*
 	height: 20%;
-	width: 50%;*/
+	width: 50%; */
 	width: 100%;
 	margin: 14% 0 8% 0;
 	font-size: 1.2em;
@@ -311,11 +347,11 @@ nav li {
 	float: left;
 	/*
 	height: 20%;
-	width: 50%;*/
+	width: 50%; */
 	margin-bottom: 24%;
 	/*
 	font-size: 2em;
-	line-height: 1.5em;*/
+	line-height: 1.5em; */
 	font-size: 1.2em;
 	line-height: 1.6em;
 	color: #1c1c1c;
@@ -333,7 +369,7 @@ nav li {
 #work p {
 	margin: 2% 0 16% 5%;
 	/*
-	font-size: 2em;*/
+	font-size: 2em; */
 	font-size: 1.2em;
 	line-height: 1.6em;
 	color: #1c1c1c;
@@ -446,7 +482,7 @@ footer {
 	.proj-title {
 		margin-top: 24%;
 		/*
-		width: 100%;*/
+		width: 100%; */
 		font-size: 2em;
 	}
 
@@ -476,7 +512,7 @@ footer {
 	}
 
 	h2 {
-		/*font-size: 2.4em;*/
+		/*font-size: 2.4em; */
 		font-size: 3em;
 	}
 
@@ -585,7 +621,7 @@ footer {
 /*
 	#about p {
 		width: 100%;
-	}*/
+	} */
 	#work p {
 		width: 80%;
 		font-size: 1.5em;
@@ -641,7 +677,7 @@ footer {
 	#about p {
 		width: 80%;
 		/*
-		margin: 24% 0 16% 0;*/
+		margin: 24% 0 16% 0; */
 	}
 
 	#contact h2 {
@@ -669,7 +705,7 @@ footer {
 /*
 	.proj-title {
 		margin-bottom: 16%;
-	}*/
+	} */
 }
 
 @media screen and (min-width: /*80em*/ 1440px) {
@@ -708,7 +744,7 @@ footer {
 		width: 48%;
 		margin-left: 5%;
 		/*
-		margin: 10% 0 4% 5%;*/
+		margin: 10% 0 4% 5%; */
 	}
 
 	#work {
@@ -809,7 +845,7 @@ footer {
 	.social-list-item {
 		margin-top: 2%;
 		/*
-		font-size: 1.56em;*/
+		font-size: 1.56em; */
 	}
 
 	.social-list-item:last-child {
