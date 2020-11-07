@@ -359,6 +359,10 @@ nav li {
 
 /* project assets */
 
+video {
+	padding-bottom: 4%;
+}
+
 #work img {
 	width: 100%;
 	height: 100%;
