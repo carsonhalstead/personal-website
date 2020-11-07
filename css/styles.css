@@ -152,25 +152,28 @@ nav li {
 .nav-list-item:hover {
 	text-decoration: line-through;
 }
-/* badge animation wip
+
+/* badge animation wip */
+
 .badge-background {
 	position: fixed;
-	right: 2em;
-	bottom: 2em;
+	right: -7em;
+	bottom: 24em;
 	width: 14em;
+	z-index: -2;
 }
 
 .badge-type {
 	position: fixed;
-	right: 3em;
-	bottom: 3em;
+	right: -6em;
+	bottom: 25em;
 	width: 12em;
 	animation-name: spin;
-	animation-duration: 8s;
+	animation-duration: 6s;
 	animation-iteration-count: infinite;
 	transform-origin: center;
 	display: inline-block;
-	z-index: 1;
+	z-index: -1;
 }
 @keyframes spin {
 	100% {
@@ -179,7 +182,7 @@ nav li {
 	0% {
 		transform: rotate(360deg);
 	}
-} */
+}
 
 /* about */
 
@@ -408,7 +411,7 @@ footer {
 	position: fixed;
 	width: 100%;
 	bottom: 0;
-	z-index: -1;
+	z-index: -3;
 	background-color: #1c1c1c;
 }
 
@@ -465,6 +468,16 @@ footer {
 	#work .half-img {
 		width: 49%;
 	} */
+	.badge-background {
+		right: -4em;
+		bottom: 26em;
+	}
+
+	.badge-type {
+		position: fixed;
+		right: -3em;
+		bottom: 27em;
+	}
 
 	.back {
 		width: 40%;
@@ -507,12 +520,25 @@ footer {
 		.work-list-button:hover h3:after {
 			opacity: 1;
 			right: 0; }
-}
+	}
 
 @media screen and (min-width: 719px) {
 /* made this breakpoint bc the gap was too large for stacking half imgs */
 	#work .half-img {
 		width: 49%;
+	}
+
+	.badge-background {
+		right: -4em;
+		bottom: 26em;
+		width: 20em;
+	}
+
+	.badge-type {
+		position: fixed;
+		right: -3em;
+		bottom: 27em;
+		width: 18em;
 	}
 }
 
@@ -601,6 +627,19 @@ footer {
 	.work-list-item h3 {
 		padding-left: 0;
 	}
+
+	.badge-background {
+		right: -3em;
+		bottom: 56em;
+		width: 24em;
+	}
+
+	.badge-type {
+		position: fixed;
+		right: -2em;
+		bottom: 57em;
+		width: 22em;
+	}
 }
 
 @media screen and (min-width: /*46em*/ 1080px) {
@@ -682,6 +721,21 @@ footer {
 		margin-right: 0;
 		margin-left: 0;
 	}
+
+	.badge-background {
+		right: -3em;
+		bottom: 2em;
+		width: 14em;
+		z-index: 1;
+	}
+
+	.badge-type {
+		position: fixed;
+		right: -2em;
+		bottom: 3em;
+		width: 12em;
+		z-index: 2;
+	}
 }
 
 @media screen and (min-width: /*52em*/ 1280px) {
@@ -718,6 +772,19 @@ footer {
 	.proj-title {
 		margin-bottom: 16%;
 	} */
+	.badge-background {
+		right: -1em;
+		bottom: 2em;
+		width: 16em;
+		z-index: 1;
+	}
+
+	.badge-type {
+		right: 0;
+		bottom: 3em;
+		width: 14em;
+		z-index: 2;
+	}
 }
 
 @media screen and (min-width: /*80em*/ 1440px) {
@@ -866,5 +933,19 @@ footer {
 
 	.social-list-item:hover {
 		color: #1c1c1c;
+	}
+
+	.badge-background {
+		left: 32em;
+		bottom: 4em;
+		width: 16em;
+		z-index: 1;
+	}
+
+	.badge-type {
+		left: 33em;
+		bottom: 5em;
+		width: 14em;
+		z-index: 2;
 	}
 }
