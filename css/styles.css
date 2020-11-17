@@ -252,10 +252,10 @@ nav li {
 	margin-bottom: 16%;
 	border-bottom: 2px dotted;
 	padding-bottom: 0;
-	transition: padding-bottom .1s ease-out; }
+	transition: padding-bottom .2s ease-out; }
 	.work-list-item:active, .work-list-item:hover {
 		padding-bottom: 2px;
-		border-bottom: 2px solid; }
+		border-bottom: 4px solid #ee4f2f; }
 	.work-list-item:visited {
 		border-bottom: 2px solid;	}
 
