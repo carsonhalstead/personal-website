@@ -463,7 +463,7 @@ footer {
 
 /* media queries */
 
-@media screen and (min-width: /*32em*/ 480px) {
+@media screen and (min-width: 480px) {
 /* bumped this up to a new breakpt
 	#work .half-img {
 		width: 49%;
@@ -498,8 +498,6 @@ footer {
 
 	.proj-title {
 		margin-top: 24%;
-		/*
-		width: 100%; */
 		font-size: 2em;
 	}
 
@@ -542,15 +540,13 @@ footer {
 	}
 }
 
-@media screen and (min-width: /*36em*/ 959px) {
+@media screen and (min-width: 959px) {
 
 	h1 {
 		font-size: 2em;
 	}
 
 	h2 {
-		/*
-		font-size: 2.4em; */
 		font-size: 3em;
 	}
 
@@ -571,11 +567,6 @@ footer {
 
 	#contact {
 		padding-bottom: 24%;
-	}
-
-	#projects {
-		/*
-		margin-bottom: 112%; */
 	}
 
 	.back {
@@ -642,7 +633,7 @@ footer {
 	}
 }
 
-@media screen and (min-width: /*46em*/ 1080px) {
+@media screen and (min-width: 1080px) {
 
 	h1 {
 		height: 4%;
@@ -669,10 +660,7 @@ footer {
 		top: 0;
 		padding-right: 3%;
 	}
-/*
-	#about p {
-		width: 100%;
-	} */
+
 	#work p {
 		width: 80%;
 		font-size: 1.5em;
@@ -738,17 +726,15 @@ footer {
 	}
 }
 
-@media screen and (min-width: /*52em*/ 1280px) {
-
+@media screen and (min-width: 1280px) {
+/* all of this used to be the 1280px breakpoint before absorbing 1440px rules
 	#about p {
 		width: 80%;
-		/*
-		margin: 24% 0 16% 0; */
 	}
 
 	#contact h2 {
 		width: 42.5%;
-	} /* this floats the header in the left column */
+	}
 
 	#contact ul {
 		float: left;
@@ -768,10 +754,7 @@ footer {
 	.social-list-item {
 		font-size: 1.56em;
 	}
-/*
-	.proj-title {
-		margin-bottom: 16%;
-	} */
+
 	.badge-background {
 		right: -1em;
 		bottom: 2em;
@@ -785,9 +768,183 @@ footer {
 		width: 14em;
 		z-index: 2;
 	}
+} */
+	nav ul {
+		display: none;
+	}
+
+	.big-contact {
+		width: 38%;
+		display: inline;
+		position: fixed;
+		right: 0;
+		font-size: 1.56em;
+		text-decoration: underline;
+		color: #666666;
+		padding-top: 4%;
+	}
+
+	.big-contact:hover {
+		text-decoration: line-through;
+		color: #1c1c1c;
+	}
+
+	.logo {
+		width: 50%;
+		padding-bottom: 2%;
+	}
+
+	#about {
+		width: 100%;
+		padding: 0;
+	}
+
+	#about p {
+		width: 48%;
+		margin-left: 5%;
+	}
+
+	#work {
+		width: 50%;
+		margin: 0 0 32% 2.5%;
+	}
+
+	#work .half-img {
+		width: 100%;
+	}
+
+	#projects {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		width: 40%;
+		margin: 8% 0 4% 0;
+	}
+
+	#projects h2 {
+		display: none;
+	}
+
+	#projects h3 {
+		color: #666666;
+	}
+
+	#projects h3:hover {
+		color: #1c1c1c;
+	}
+
+	#projects img {
+		display: none;
+	}
+
+	#projects .site-width {
+		padding-top: 19%;
+	}
+
+	#jump {
+		display: none;
+	}
+
+	.bio {
+		margin-top: 12%;
+		margin-bottom: 4%;
+		font-size: 2em;
+	}
+
+	.proj-title {
+		margin-top: 16%;
+		margin-bottom: 4%;
+	}
+
+	.proj-desc {
+		margin-bottom: 8%;
+	}
+
+	.work-list-item {
+		display: block;
+		width: 100%;
+		margin-bottom: 2%;
+		margin-left: 0;
+	}
+
+	.work-list-item h3 {
+		margin-left: 5%;
+		font-size: 1.6em;
+	}
+
+	.work-list-button {
+		padding-left: 5%;
+		text-align: left;
+	}
+
+	footer {
+		background-color: #eeeeeb;
+	}
+
+	#contact {
+		padding: 0 0 3.6% 0;
+	}
+
+	#contact h2 {
+		display: none;
+	}
+
+	#contact ul {
+		width: 95%;
+		margin: 0 0 0 5%;
+	}
+
+	#contact a:hover {
+		color: #1c1c1c;
+	}
+
+	.social-list {
+		position: relative;
+		padding-top: 8%;
+	}
+
+	.social-list-item {
+		margin-top: 2%;
+		font-size: 1.56em;
+	}
+
+	.social-list-item:last-child {
+		margin-top: 8%;
+	}
+
+	.social-list-item:hover {
+		color: #1c1c1c;
+	}
+
+	.badge-background {
+		left: 32em;
+		bottom: 4em;
+		width: 16em;
+		z-index: 1;
+	}
+
+	.badge-type {
+		left: 33em;
+		bottom: 5em;
+		width: 14em;
+		z-index: 2;
+	}
 }
 
-@media screen and (min-width: /*80em*/ 1440px) {
+@media screen and (min-width: 1360px) {
+
+	.social-list-item:first-child {
+		margin-bottom: 2%;
+	}
+
+	.social-list-item:last-child {
+		margin-top: 4%;
+	}
+
+}
+
+/* absorbed into 1280px breakpoint
+@media screen and (min-width: 1440px) {
 
 	nav ul {
 		display: none;
@@ -822,8 +979,6 @@ footer {
 	#about p {
 		width: 48%;
 		margin-left: 5%;
-		/*
-		margin: 10% 0 4% 5%; */
 	}
 
 	#work {
@@ -923,8 +1078,6 @@ footer {
 
 	.social-list-item {
 		margin-top: 2%;
-		/*
-		font-size: 1.56em; */
 	}
 
 	.social-list-item:last-child {
@@ -948,4 +1101,4 @@ footer {
 		width: 14em;
 		z-index: 2;
 	}
-}
+} */
