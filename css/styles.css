@@ -223,8 +223,6 @@ nav li {
 #projects {
 	float: left;
 	width: 100%;
-	/*
-	margin-bottom: 136%; */
 	background-color: #eeeeeb;
 }
 
@@ -337,9 +335,6 @@ nav li {
 
 .proj-title {
 	float: left;
-	/*
-	height: 20%;
-	width: 50%; */
 	width: 100%;
 	margin: 14% 0 8% 0;
 	font-size: 1.2em;
@@ -348,16 +343,26 @@ nav li {
 
 .proj-desc {
 	float: left;
-	/*
-	height: 20%;
-	width: 50%; */
 	margin-bottom: 24%;
-	/*
-	font-size: 2em;
-	line-height: 1.5em; */
 	font-size: 1.2em;
 	line-height: 1.6em;
 	color: #1c1c1c;
+}
+
+details {
+	font-size: 1.2em;
+	padding: 4% 5% 4% 5%;
+	line-height: 1.6em;
+	background-color: #ddd;
+}
+
+summary {
+	font-size: 1.2em;
+	border-bottom: solid 4px black;
+}
+
+summary:hover {
+	cursor: pointer;
 }
 
 /* project assets */
@@ -375,8 +380,6 @@ video {
 
 #work p {
 	margin: 2% 0 16% 5%;
-	/*
-	font-size: 2em; */
 	font-size: 1.2em;
 	line-height: 1.6em;
 	color: #1c1c1c;
@@ -541,6 +544,10 @@ footer {
 }
 
 @media screen and (min-width: 959px) {
+
+	details {
+		font-size: 1.5em;
+	}
 
 	h1 {
 		font-size: 2em;
