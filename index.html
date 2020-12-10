@@ -53,11 +53,12 @@
 <header id='about' >
 
 <p class='bio' >
-  <span class='intro-full' >
-    Hey look, it's Carson. </span>
-  <span class='intro-frag' >
-    UX & Art Direction. Previously @INPHANTRY.
-    Designing for universal interaction. Guided by curiosity and an open mind.</span></p>
+
+<span class='intro-full' >
+  Hey look, it's Carson. </span>
+<span class='intro-frag' >
+  UX & Art Direction. Previously @INPHANTRY.
+  Designing for universal interaction. Guided by curiosity and an open mind.</span></p>
 </header> <!-- /end about -->
 
 <section id='projects' >
@@ -142,7 +143,13 @@
 <ul class='social-list' >
 
 <li class='social-list-item' >
-  carsonhalstead@gmail.com
+
+<div class='tooltip jscopybtn' onmouseout='outFunc()' >
+
+<span class='tooltiptext' id='myTooltip' >
+  Get in Touch</span>
+<span class='btnlabel' >
+  carsonhalstead@gmail.com</span></div>
 </li>
 
 <li class='social-list-item' >
@@ -174,22 +181,66 @@
 </ul>
 </footer> <!-- /end contact -->
 
-<!-- scripts
-deleted some things from the w3schools example. I think I need document.execCommand('copy')
 <script >
 
-function myFunction() {
-  var copyText = document.getElementById("myInput");
-  copyText.select();
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copy That!";
+// copy to clipboard
+// shout out https://deanmarktaylor.github.io/clipboard-test/
+function copyTextToClipboard(text) {
+  var textArea = document.createElement('textarea');
+  //
+  // precautionary styling to ensure:
+  // 1. the element is able to have focus and selection
+  // 2. if the element was to flash render it has minimal visual impact
+  // 3. less flakyness with selection and copying which might occur
+  // if textarea element is not visible
+  //
+  // place in the top-left corner of screen regardless of scroll position
+  textArea.style.position = 'fixed';
+  textArea.style.top = 0;
+  textArea.style.left = 0;
+  // ensure it has a small width and height
+  // doesn't work as this gives a negative w/h on some browsers
+  textArea.style.width = '2em';
+  textArea.style.height = '2em';
+  // we don't need padding, reducing the size if it does flash render
+  textArea.style.padding = 0;
+  // clean up any borders
+  textArea.style.border = 'none';
+  textArea.style.outline = 'none';
+  textArea.style.boxShadow = 'none';
+  // avoid flash of white box if rendered
+  textArea.style.background = 'transparent';
+
+  textArea.value = text;
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var tooltip = document.getElementById('myTooltip');
+    tooltip.innerHTML = 'Copied!';
+
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+
+  document.body.removeChild(textArea);
 }
 
 function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Email Me!";
+  var tooltip = document.getElementById('myTooltip');
+  tooltip.innerHTML = 'Copy to clipboard?';
 }
 
-</script> -->
+var copyBtn = document.querySelector('.jscopybtn');
+
+copyBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('carsonhalstead@gmail.com');
+});
+</script>
 </body>
 </html>
