@@ -63,7 +63,7 @@ html[xmlns] .clearfix { display: block; }
 
 body {
 	font-family: 'roboto mono', monospace;
-	background-color: #eeeeeb;
+	background-color: #dedede;
 }
 
 a {
@@ -84,7 +84,7 @@ a:focus {
 h1 {
 	position: fixed;
 	bottom: 0;
-	background-color: #eeeeeb;
+	background-color: #dedede;
 	font-size: 2em;
 	z-index: 99;
 }
@@ -113,7 +113,7 @@ nav ul {
 	bottom: 0;
 	width: 100%;
 	padding: 4% 5% 4% 0;
-	background-color: #eeeeeb;
+	background-color: #dedede;
 	z-index: 99;
 }
 
@@ -191,7 +191,7 @@ nav li {
 	width: 90%;
 	height: 30%;
 	padding: 0 5% 0 5%;
-	background-color: #eeeeeb;
+	background-color: #dedede;
 }
 
 .bio {
@@ -223,7 +223,7 @@ nav li {
 #projects {
 	float: left;
 	width: 100%;
-	background-color: #eeeeeb;
+	background-color: #dedede;
 }
 
 #projects h2 {
@@ -290,7 +290,7 @@ nav li {
 #work {
 	float: left;
 	width: 100%;
-	background-color: #eeeeeb;
+	background-color: #dedede;
 }
 
 .back {
@@ -426,7 +426,7 @@ footer {
 }
 
 #contact a:hover {
-	color: #eeeeeb;
+	color: #dedede;
 }
 
 #contact h2 {
@@ -456,7 +456,7 @@ footer {
 }
 
 .social-list-item:hover {
-	color: #eeeeeb;
+	color: #dedede;
 	cursor: pointer;
 }
 
@@ -886,11 +886,11 @@ footer {
 	}
 
 	footer {
-		background-color: #eeeeeb;
+		background-color: #dedede;
 	}
 
 	#contact {
-		padding: 0 0 3.6% 0;
+		padding: 0 0 2.4% 0;
 	}
 
 	#contact h2 {
@@ -901,6 +901,10 @@ footer {
 		width: 95%;
 		margin: 0 0 0 5%;
 	}
+/* working on displaying footer links inline on index…
+	#contact ul li.social-list-item {
+		display: inline;
+	} */
 
 	#contact a:hover {
 		color: #1c1c1c;
