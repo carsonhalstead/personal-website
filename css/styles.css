@@ -343,10 +343,11 @@ nav li {
 
 .proj-desc {
 	float: left;
-	margin-bottom: 24%;
+	padding-bottom: 16%;
 	font-size: 1.2em;
 	line-height: 1.6em;
 	color: #1c1c1c;
+	background-color: #dedede;
 }
 
 details {
@@ -831,7 +832,6 @@ footer {
 	}
 
 	.proj-desc {
-		margin-bottom: 16%;
 		font-size: 1.6em;
 	}
 
@@ -908,7 +908,9 @@ footer {
 	#about {
 		width: 100%;
 		padding: 0;
-		/* interim solution to tooltip getting cut off */
+		/* interim solution to tooltip getting cut off
+		   UPDATE: figured out that's why i have .proj-desc…
+			 but this stil kinda serves as a clue to getting the cover img to display centered */
 		background-color: transparent;
 	}
 
@@ -978,7 +980,7 @@ footer {
 	}
 
 	.proj-desc {
-		margin-bottom: 8%;
+		padding-bottom: 8%;
 	}
 
 	.work-list-item {
