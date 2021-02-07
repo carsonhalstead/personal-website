@@ -365,6 +365,83 @@ summary:hover {
 	cursor: pointer;
 }
 
+/* slideshow */
+
+figure {
+  margin: 0;
+}
+/* shout out https://github.com/leemark/better-simple-slideshow */
+.bss-slides {
+  position: relative;
+  display: block;
+  line-height: 0; /* removes the gap if you put a border on the slideshow div */
+}
+figcaption {
+  line-height: 1.5; /* restores line-height to the child element*/
+}
+.bss-slides:focus {
+ outline: 0;
+}
+.bss-slides figure {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.bss-slides figure:first-child {
+  position: relative;
+}
+.bss-slides figure img {
+  opacity: 0;
+  -webkit-transition: opacity 1.2s;
+  transition: opacity 1.2s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.bss-slides .bss-show {
+  z-index: 2;
+}
+.bss-slides .bss-show img {
+  opacity: 1;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+}
+.bss-slides figcaption {
+  position: absolute;
+  bottom: 8%;
+  left: 4%;
+  font-size: 1.6em;
+  color: #fff;
+}
+.bss-slides .bss-show figcaption {
+  z-index: 3;
+  opacity: 1;
+}
+.bss-slides figcaption a {
+  color: #fff;
+}
+.bss-next, .bss-prev {
+  position: absolute;
+  bottom: 11%;
+  font-size: 2em;
+  color: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+}
+.bss-next:hover, .bss-prev:hover {
+  color: #ee4f2f;
+  cursor: pointer;
+}
+.bss-next {
+  left: 12%;
+}
+.bss-prev {
+  left: 2%;
+}
+
 /* project assets */
 
 #work img {
@@ -804,7 +881,8 @@ footer {
 	#about {
 		width: 100%;
 		padding: 0;
-		background-color: transparent;
+		/* tbh i don't remember why i did this
+		background-color: transparent; */
 	}
 
 	#about p {
@@ -843,6 +921,14 @@ footer {
 
 	#projects img {
 		display: none;
+	}
+/* reveal cover on hover */
+	#projects div.work-list-item:hover img {
+		display: block;
+		position: fixed;
+		width: 16vw;
+		top: 0;
+		right: 0;
 	}
 
 	#projects .site-width {
@@ -890,7 +976,7 @@ footer {
 	}
 
 	#contact {
-		padding: 0 0 2.4% 0;
+		padding: 0 0 3.6% 0;
 	}
 
 	#contact h2 {
