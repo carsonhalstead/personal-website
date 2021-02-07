@@ -407,11 +407,9 @@ figcaption {
   position: relative;
 }
 .bss-slides figcaption {
+	display: none;
   position: absolute;
-  bottom: 8%;
-  left: 4%;
-  font-size: 1.6em;
-  color: #fff;
+	/* see first breakpoint captions appear (959px) for styles */
 }
 .bss-slides .bss-show figcaption {
   z-index: 3;
@@ -422,9 +420,10 @@ figcaption {
 }
 .bss-next, .bss-prev {
   position: absolute;
-  bottom: 11%;
-  font-size: 2em;
+  bottom: 52%;
+  font-size: 3em;
   color: #fff;
+	filter: drop-shadow(0 0 .5rem black);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -436,10 +435,10 @@ figcaption {
   cursor: pointer;
 }
 .bss-next {
-  left: 12%;
+  right: 8%;
 }
 .bss-prev {
-  left: 2%;
+  left: 8%;
 }
 
 /* project assets */
@@ -698,6 +697,17 @@ footer {
 		font-size: 3em;
 	}
 
+	.bss-slides figcaption {
+		display: block;
+		bottom: 10%;
+		left: 46%;
+		font-size: 1.6em;
+		color: #fff;
+	}
+	.bss-next, .bss-prev {
+		font-size: 4em;
+	}
+
   .intro-full {
 		display: none;
 	}
@@ -871,6 +881,23 @@ footer {
 	.big-contact:hover {
 		text-decoration: line-through;
 		color: #1c1c1c;
+	}
+
+	.bss-slides figcaption {
+		display: block;
+		bottom: 8%;
+		left: 10%;
+	}
+	.bss-next, .bss-prev {
+	  position: absolute;
+	  bottom: 13%;
+	  font-size: 2em;
+	}
+	.bss-next {
+	  left: 24%;
+	}
+	.bss-prev {
+	  left: 4%;
 	}
 
 	.logo {
