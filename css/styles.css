@@ -881,8 +881,8 @@ footer {
 	#about {
 		width: 100%;
 		padding: 0;
-		/* tbh i don't remember why i did this
-		background-color: transparent; */
+		/* interim solution to tooltip getting cut off */
+		background-color: transparent;
 	}
 
 	#about p {
