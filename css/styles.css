@@ -62,7 +62,7 @@ html[xmlns] .clearfix { display: block; }
 /* END OF RESET */
 
 body {
-	font-family: 'roboto mono', monospace;
+	font-family: 'DM Mono', monospace;
 	background-color: #dedede;
 }
 
@@ -80,7 +80,7 @@ a:focus {
 	padding-right: 5%;
 	padding-left: 5%;
 }
-
+/* logo */
 h1 {
 	position: fixed;
 	bottom: 0;
@@ -88,7 +88,7 @@ h1 {
 	font-size: 2em;
 	z-index: 99;
 }
-
+/* subhead */
 h2 {
 	float: left;
 	width: 90%;
@@ -96,7 +96,7 @@ h2 {
 	font-size: 1.56em;
 	color: #808080;
 }
-
+/* project titles */
 h3 {
 	font-size: 1.6em;
 }
@@ -288,6 +288,9 @@ nav li {
 /* work */
 
 #work {
+	/* messing with body copy
+	font-family: 'Inter', sans-serif;
+	font-weight: 400; */
 	float: left;
 	width: 100%;
 	background-color: #dedede;
@@ -358,6 +361,7 @@ details {
 }
 
 summary {
+	padding-bottom: 0.8em;
 	font-size: 1.2em;
 	border-bottom: solid 4px black;
 }
