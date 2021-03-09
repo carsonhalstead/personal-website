@@ -1064,15 +1064,15 @@ footer {
 	}
 
 	.badge-background {
-		left: 32em;
-		bottom: 4em;
+		left: 30em;
+		bottom: 6em;
 		width: 16em;
 		z-index: 1;
 	}
 
 	.badge-type {
-		left: 33em;
-		bottom: 5em;
+		left: 31em;
+		bottom: 7em;
 		width: 14em;
 		z-index: 2;
 	}
