@@ -82,11 +82,7 @@ a:focus {
 }
 /* logo */
 h1 {
-	position: fixed;
-	bottom: 0;
-	background-color: #dedede;
 	font-size: 2em;
-	z-index: 99;
 }
 /* subhead */
 h2 {
@@ -104,16 +100,11 @@ h3 {
 /* nav */
 
 nav {
-	float: left;
-	width: 100%;
-}
-
-nav ul {
 	position: fixed;
 	bottom: 0;
-	width: 100%;
-	padding: 4% 5% 4% 0;
-	background-color: #dedede;
+	width: 90%;
+	padding: 6% 5% 4% 5%;
+	background: linear-gradient(transparent, transparent 8%, #dedede 56%);
 	z-index: 99;
 }
 
@@ -130,8 +121,7 @@ nav li {
 }
 
 .logo {
-	float: left;
-	width: 50%;
+	display: none;
 }
 
 .logo a {
@@ -144,7 +134,7 @@ nav li {
 
 .nav-list-item {
 	display: inline-block;
-	padding: 2% 5% 0 0;
+	padding-right: 6%;
 	font-size: 1.56em;
 	text-decoration: underline;
 }
@@ -683,9 +673,8 @@ footer {
 	}
 
 	nav ul {
-		width: 64%;
-		right: 0;
-		padding: 3.3% 5% 4% 0;
+		float: left;
+		width: 76%;
 	}
 
 	#work p {
@@ -720,15 +709,14 @@ footer {
 	}
 
 	.logo {
-		display: inline-block;
-		width: 30%;
-		padding: 4% 0 4% 5%;
+		display: block;
+		float: left;
+		width: 24%;
 		font-size: 3.2em;
 	}
 
 	.nav-list-item {
-		padding-top: 1.1%;
-		padding-right: 8%;
+		padding-right: 6%;
 		font-size: 3.2em;
 	}
 
@@ -777,11 +765,6 @@ footer {
 		font-size: 1.5em;
 	}
 
-	h1 {
-		height: 4%;
-		top:0;
-	}
-
 	h2 {
 		font-size: 2.4em;
 	}
@@ -791,16 +774,16 @@ footer {
 		line-height: 1.2em;
 	}
 
-	nav li {
-		float: left;
+	nav {
+		top: 0;
+		bottom: auto;
+		padding-top: 4%;
+		padding-bottom: 4%;
+		background: linear-gradient(#dedede 56%, transparent );
 	}
 
 	nav ul {
-		float: left;
-		width: 45%;
-		height: 4%;
-		top: 0;
-		padding: 4% 3% 4% 0;
+		width: 50%;
 	}
 
 	#work p {
@@ -833,17 +816,13 @@ footer {
 	}
 
   .logo {
-		width: 47%;
+		width: 50%;
 	}
 
 	.nav-list-item {
 		padding-top: 2.8%;
 		padding-right: 8%;
 		font-size: 2.24em;
-	}
-
-	.nav-list-item:first-child {
-		padding-right: 8%;
 	}
 
 	.proj-desc {
@@ -883,6 +862,10 @@ footer {
 
 @media screen and (min-width: 1280px) {
 
+	nav {
+		width: 50%;
+	}
+
 	nav ul {
 		display: none;
 	}
@@ -895,7 +878,7 @@ footer {
 		font-size: 1.56em;
 		text-decoration: underline;
 		color: #666666;
-		padding-top: 4%;
+		padding-top: 1.6%;
 	}
 
 	.big-contact:hover {
@@ -921,8 +904,7 @@ footer {
 	}
 
 	.logo {
-		width: 50%;
-		padding-bottom: 2%;
+		width: 100%;
 	}
 
 	#about {
