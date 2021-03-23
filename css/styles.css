@@ -923,6 +923,7 @@ footer {
 
 	#work {
 		width: 50%;
+		padding-right: 10%;
 		margin: 0 0 32% 2.5%;
 	}
 
@@ -1007,7 +1008,7 @@ footer {
 	}
 
 	#contact {
-		padding: 0 0 3.6% 0;
+		padding-bottom: 1.6%;
 	}
 
 	#contact h2 {
