@@ -550,6 +550,8 @@ footer {
   padding: 4% 0 4% 0;
   margin-left: -50%;
   text-align: center;
+	font-weight: bold;
+	color: #1c1c1c;
   background-color: #ee4f2f;
   opacity: 0;
   visibility: hidden;
