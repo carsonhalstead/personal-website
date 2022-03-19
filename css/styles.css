@@ -63,7 +63,7 @@ html[xmlns] .clearfix { display: block; }
 
 body {
 	font-family: 'DM Mono', monospace;
-	background-color: #dedede;
+	color: #dedede;
 }
 
 a {
@@ -90,7 +90,7 @@ h2 {
 	width: 90%;
 	margin: 0 5% 0 5%;
 	font-size: 1.56em;
-	color: #808080;
+	color: #858585;
 }
 /* project titles */
 h3 {
@@ -104,7 +104,7 @@ nav {
 	bottom: 0;
 	width: 90%;
 	padding: 6% 5% 4% 5%;
-	background: linear-gradient(transparent, transparent 8%, #dedede 56%);
+	background: linear-gradient(transparent, transparent 8%, #1c1c1c 56%);
 	z-index: 99;
 }
 
@@ -125,11 +125,11 @@ nav li {
 }
 
 .logo a {
-	color: #666;
+	color: #858585;
 }
 
 .logo a:hover {
-	color: #1c1c1c;
+	color: #dedede;
 }
 
 .nav-list-item {
@@ -181,14 +181,13 @@ nav li {
 	width: 90%;
 	height: 30%;
 	padding: 0 5% 0 5%;
-	background-color: #dedede;
+	background-color: #1c1c1c;
 }
 
 .bio {
 	margin: 32% 0 24% 0;
 	font-size: 1.2em;
 	line-height: 1.6em;
-	color: #1c1c1c;
 }
 
 .intro-full {
@@ -213,7 +212,8 @@ nav li {
 #projects {
 	float: left;
 	width: 100%;
-	background-color: #dedede;
+	background-color: #1c1c1c;
+	box-shadow: 0 6em 6em #00000050;
 }
 
 #projects h2 {
@@ -240,12 +240,13 @@ nav li {
 	margin-bottom: 16%;
 	border-bottom: 2px dotted;
 	padding-bottom: 0;
-	transition: padding-bottom .2s ease-out; }
+/*transition: padding-bottom .2s ease-out;*/ }
 	.work-list-item:active, .work-list-item:hover {
 		padding-bottom: 2px;
-		border-bottom: 4px solid #ee4f2f; }
+		border-bottom: 4px solid #ee4f2f;
+	 	margin-bottom: 1.2%; }
 	.work-list-item:visited {
-		border-bottom: 2px solid;	}
+		border-bottom: 2px dotted;	}
 
 .work-list-button {
 	background-color: #dadacd;
@@ -283,7 +284,8 @@ nav li {
 	font-weight: 400; */
 	float: left;
 	width: 100%;
-	background-color: #dedede;
+	color: #dedede;
+	background-color: #1c1c1c;
 }
 
 .back {
@@ -292,14 +294,14 @@ nav li {
 	margin-top: 8%;
 	padding: 4% 0 4% 0;
  	text-align: center;
-	color: #666;
-	background-color: #dadacd;
+	color: #111;
+	background-color: #858585;
 	border-radius: 6px;
 	cursor: pointer;
 	transition: all 0.2s; }
 	.back:hover {
-		color: #000;
-		background-color: #d0d0be; }
+		color: #dedede;
+		background-color: #ffffff20; }
 
 	.back span {
 		display: inline-block;
@@ -341,21 +343,19 @@ nav li {
 	padding-bottom: 16%;
 	font-size: 1.2em;
 	line-height: 1.6em;
-	color: #1c1c1c;
-	background-color: #dedede;
+	color: #dedede;
 }
 
 details {
 	font-size: 1.2em;
 	padding: 4% 5% 4% 5%;
 	line-height: 1.6em;
-	background-color: #ddd;
 }
 
 summary {
 	padding-bottom: 0.8em;
 	font-size: 1.2em;
-	border-bottom: solid 4px black;
+	border-bottom: dotted 4px #111;
 }
 
 summary:hover {
@@ -451,7 +451,6 @@ figcaption {
 	margin: 2% 5% 16% 5%;
 	font-size: 1.2em;
 	line-height: 1.6em;
-	color: #1c1c1c;
 }
 
 .embed-container {
@@ -488,14 +487,14 @@ footer {
 	width: 100%;
 	bottom: 0;
 	z-index: -3;
-	background-color: #1c1c1c;
+	background-color: #111;
 }
 
 #contact {
 	float: left;
 	width: 100%;
 	padding: 32% 0 40% 0;
-	color: #666666;
+	color: #858585;
 }
 
 #contact a:hover {
@@ -779,7 +778,7 @@ footer {
 		bottom: auto;
 		padding-top: 4%;
 		padding-bottom: 4%;
-		background: linear-gradient(#dedede 56%, transparent );
+		background: linear-gradient(#1c1c1c 56%, transparent );
 	}
 
 	nav ul {
@@ -877,7 +876,7 @@ footer {
 		right: 0;
 		font-size: 1.56em;
 		text-decoration: underline;
-		color: #666666;
+		color: #858585;
 		padding-top: 1.6%;
 	}
 
@@ -912,8 +911,10 @@ footer {
 		padding: 0;
 		/* interim solution to tooltip getting cut off
 		   UPDATE: figured out that's why i have .proj-desc…
-			 but this stil kinda serves as a clue to getting the cover img to display centered */
-		background-color: transparent;
+			 but this stil kinda serves as a clue to getting the cover img to display centered
+			 UPDATE: i have no idea what i was talking about here */
+		/*
+		background-color: transparent;*/
 	}
 
 	#about p {
@@ -937,18 +938,11 @@ footer {
 		right: 0;
 		width: 40%;
 		margin: 8% 0 4% 0;
+		box-shadow: none;
 	}
 
 	#projects h2 {
 		display: none;
-	}
-
-	#projects h3 {
-		color: #666666;
-	}
-
-	#projects h3:hover {
-		color: #1c1c1c;
 	}
 
 	#projects img {
@@ -1004,7 +998,7 @@ footer {
 	}
 
 	footer {
-		background-color: #dedede;
+		background-color: #1c1c1c;
 	}
 
 	#contact {
@@ -1025,7 +1019,7 @@ footer {
 	} */
 
 	#contact a:hover {
-		color: #1c1c1c;
+		color: #dedede;
 	}
 
 	.social-list {
@@ -1043,7 +1037,7 @@ footer {
 	}
 
 	.social-list-item:hover {
-		color: #1c1c1c;
+		color: #dedede;
 	}
 
 	.badge-background {
