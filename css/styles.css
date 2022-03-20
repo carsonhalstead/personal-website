@@ -71,6 +71,10 @@ a {
 	color: inherit;
 }
 
+a:hover {
+	color: #dedede;
+}
+
 a:focus {
 	outline: 4px dotted #ee4f2f;
 }
@@ -83,6 +87,7 @@ a:focus {
 /* logo */
 h1 {
 	font-size: 2em;
+	color: #858585;
 }
 /* subhead */
 h2 {
@@ -122,14 +127,6 @@ nav li {
 
 .logo {
 	display: none;
-}
-
-.logo a {
-	color: #858585;
-}
-
-.logo a:hover {
-	color: #dedede;
 }
 
 .nav-list-item {
@@ -284,7 +281,6 @@ nav li {
 	font-weight: 400; */
 	float: left;
 	width: 100%;
-	color: #dedede;
 	background-color: #1c1c1c;
 }
 
@@ -335,7 +331,6 @@ nav li {
 	width: 100%;
 	margin: 14% 0 8% 0;
 	font-size: 1.2em;
-	color: #1c1c1c;
 }
 
 .proj-desc {
@@ -343,7 +338,6 @@ nav li {
 	padding-bottom: 16%;
 	font-size: 1.2em;
 	line-height: 1.6em;
-	color: #dedede;
 }
 
 details {
@@ -493,12 +487,8 @@ footer {
 #contact {
 	float: left;
 	width: 100%;
-	padding: 32% 0 40% 0;
+	padding: 40% 0 40% 0;
 	color: #858585;
-}
-
-#contact a:hover {
-	color: #dedede;
 }
 
 #contact h2 {
@@ -528,7 +518,6 @@ footer {
 }
 
 .social-list-item:hover {
-	color: #dedede;
 	cursor: pointer;
 }
 
@@ -884,7 +873,9 @@ footer {
 
 	.big-contact:hover {
 		text-decoration: line-through;
-		color: #1c1c1c;
+		/* need to revisit this element in relation to .social-list-item, maybe add new .email class within <a>?
+			 what's the least styling specific elements i can get away with here?
+		color: #dedede; */
 	}
 
 	.bss-slides figcaption {
@@ -926,7 +917,7 @@ footer {
 
 	#work {
 		width: 50%;
-		padding-right: 10%;
+		padding-right: 47.5%;
 		margin: 0 0 32% 2.5%;
 	}
 
@@ -1020,10 +1011,6 @@ footer {
 		display: inline;
 	} */
 
-	#contact a:hover {
-		color: #dedede;
-	}
-
 	.social-list {
 		position: relative;
 		padding-top: 8%;
@@ -1037,10 +1024,10 @@ footer {
 	.social-list-item:last-child {
 		margin-top: 8%;
 	}
-
+/* related to how i'm trying to consolidate styling links
 	.social-list-item:hover {
 		color: #dedede;
-	}
+	} */
 
 	.badge-background {
 		left: 30em;
