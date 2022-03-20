@@ -466,7 +466,11 @@ figcaption {
 
 .multiply {
 	mix-blend-mode: multiply;
-} /* for imgs with white bg to appear transparent */
+} /* for imgs with a black foreground and white background to appear transparent */
+
+.invert {
+	mix-blend-mode: screen;
+} /* for imgs with a white foreground and black background to appear transparent */
 
 /* footer */
 
