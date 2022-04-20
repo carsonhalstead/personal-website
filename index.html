@@ -7,21 +7,21 @@
 <title >Carson is a Designer</title>
 <link rel='stylesheet' type='text/css' href='css/styles.css' media='all' >
 <link rel='icon' href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☑️</text></svg>' >
-<link rel='preconnect' href='https://fonts.gstatic.com'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=DM+Mono&display=swap' >
-<script src='http://code.jquery.com/jquery-1.11.0.js'></script>
-<script src='scripts/site.js'></script>
+<link rel='preconnect' href='https://fonts.googleapis.com' >
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin >
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap' >
+<script src='http://code.jquery.com/jquery-1.11.0.js' ></script>
+<script src='scripts/site.js' ></script>
 </head>
 
 <body >
 
 <nav >
 
-<h1 class='logo' >
-<a href='http://www.carsonhalstead.com' >
-  Carson <span class='last-name' >
-  Halstead</span></a>
-</h1>
+<a class='logo' href='http://www.carsonhalstead.com' >
+  <span class='initials' >CH</span>
+  <span class='full-name' >Carson <span class='last-name' >
+  Halstead</span></span></a>
 
 <ul >
 
@@ -42,7 +42,7 @@
 </ul>
 </nav> <!-- /end nav -->
 
-<a href='#about' >
+<a href='#jump' >
 <img class="badge-type"
   src="images/badge-type.svg"
   alt="Now accepting projects" >
@@ -53,105 +53,56 @@
 
 <header id='about' >
 
-<p class='bio' >
+<h2 >
 
 <span class='intro-full' >
   Hey look, it's Carson. </span>
 <span class='intro-frag' >
-  Product Design @<a href='https://twitter.com/seniorlinkinc'>Seniorlink</a>. Previously UX & Art Direction @<a href='https://www.inphantry.com/'>INPHANTRY</a>.
-  Designing for universal interaction. Guided by curiosity and an open mind.</span></p>
+  Product Design @<a href='https://www.seniorlink.com/' target='_blank' >Seniorlink</a>. Previously UX & Art Direction @<a href='https://www.inphantry.com/' target='_blank' >INPHANTRY</a>.
+  Designing for universal interaction. Guided by curiosity and an open mind.</span></h2>
 </header> <!-- /end about -->
 
 <section id='projects' >
 
-<h2 >
-  Selected Projects</h2>
+  <h3 class='header' >Selected Projects</h3>
+  <ul class='work-list' >
 
-<div class='work-list-item' >
+    <li class='work-list-item' >
+      <a href='marvin.html' >
+        <img src='images/thumb-mvr@2x.jpg'
+        alt='Marvin logo is overlaid atop a rendering of a home interior.' />
+        <h4 >Marvin VR</h4></a></li>
 
-<a href='marvin.html' >
+    <li class='work-list-item work-col-two' >
+      <a href='lqdcell.html' >
+        <img src='images/thumb-puma@2x.jpg'
+        alt='Phone displays an augmented reality filter applied to a shoe in the background.' />
+        <h4 >PUMA LQDCELL AR</h4></a></li>
 
-<img src='images/project-cover-mvr.jpg'
-  alt='Marvin logo is overlaid atop a rendering of a home interior.' />
-<h3 >
-  Marvin VR Experience</h3></a>
-</div>
+    <li class='work-list-item' >
+      <a href='tapster.html' >
+        <img src='images/thumb-tap@2x.jpg'
+        alt='Tapster logo depicts a bespectacled bartender with a raised eyebrow.' />
+        <h4 >Tapster</h4></a></li>
 
-<div class='work-list-item work-col-two' >
+    <li class='work-list-item work-col-two' >
+      <a href='raceday.html' >
+        <img src='images/thumb-nsaf@2x.jpg'
+        alt='Raceday app icon sits atop an image of two racers passing a baton.' />
+        <h4 >NSAF Race Day</h4></a></li>
 
-<a href='lqdcell.html' >
+    <li class='work-list-item' >
+      <a href='foco.html' >
+        <img src='images/thumb-foco@2x.jpg'
+        alt='Forever Collectibles wordmark sits atop an electric watermelon background.' />
+        <h4 >FOCO Website</h4></a></li>
 
-<img src='images/project-cover-lqdcell.jpg'
-  alt='Phone displays an augmented reality filter applied to a shoe in the background.' />
-<h3 >
-  PUMA LQDCELL AR App</h3></a>
-</div>
-
-<div class='work-list-item' >
-
-<a href='tapster.html' >
-
-<img src='images/tap-brand.jpg'
-  alt='Tapster logo depicts a bespectacled bartender with a raised eyebrow.' />
-<h3 >
-  Tapster App</h3></a>
-</div>
-
-<div class='work-list-item work-col-two' >
-
-<a href='raceday.html' >
-
-<img src='images/project-thumb-raceDay.png'
-  alt='Raceday app icon sits atop an image of two racers passing a baton.' />
-<h3 >
-  NSAF Race Day App</h3></a>
-</div>
-
-<div class='work-list-item' >
-
-<a href='foco.html' >
-
-<img src='images/project-thumb-foco.png'
-  alt='Forever Collectibles wordmark sits atop an electric watermelon background.' />
-<h3 >
-  FOCO Website</h3></a>
-</div>
-<!-- commenting out old personal projects to retain alt text
-  watch out for .work-col-two when aligning thumbs to grid
-<div class='work-list-item work-col-two' >
-
-<a href='wiks.html' >
-
-<img src='images/project-cover-wiks.jpg'
-  alt='detail shot of a book spread with patterns and text on its verso and handwriting on the translucent recto page'/>
-<h3 >
-  Where I Know Skateboarding</h3></a>
-</div>
-
-<div class='work-list-item' >
-
-<a href='divided.html' >
-
-<img src='images/project-cover-divided.jpg'
-  alt='detail shot of a book spread listing race and ethnic categories from the 2010 census'/>
-<h3 >
-  Divided by Five</h3></a>
-</div> -->
-
-<div class='work-list-item work-col-two' >
-
-<a href='logos.html' >
-
-<img src='images/project-thumb-marks.png'
-  alt='Vector drawing of two intersecting circles revealing path control points and handles.' />
-<h3 >
-  Concept Logomarks</h3></a>
-</div>
-<!-- idk button feels cute might delete
-<a class='work-list-button' href='https://www.behance.net/carsonhalstead' target='_blank' >
-<h3 >
-  See Older Projects</h3>
-</a> -->
+    <li class='work-list-item work-col-two' >
+      <a href='logos.html' >
+        <img src='images/thumb-logomarks@2x.jpg'
+        alt='Vector drawing of two intersecting circles revealing path control points and handles.' />
+        <h4 >Logomarks</h4></a></li>
+  </ul>
 </section> <!-- /end projects -->
 
 <section id='jump' >
@@ -159,8 +110,8 @@
 
 <footer id='contact' >
 
-<h2 >
-  Get in touch</h2>
+<h3 class='header' >
+  Get in touch</h3>
 
 <ul class='social-list' >
 

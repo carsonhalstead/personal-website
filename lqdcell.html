@@ -7,21 +7,22 @@
 <title >Carson is a Designer</title>
 <link rel='stylesheet' type='text/css' href='css/styles.css' media='all' >
 <link rel='icon' href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☑️</text></svg>' >
-<link rel='preconnect' href='https://fonts.gstatic.com'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=DM+Mono&display=swap' >
-<script src='http://code.jquery.com/jquery-1.11.0.js'></script>
-<script src='scripts/site.js'></script>
+<link rel='preconnect' href='https://fonts.googleapis.com' >
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin >
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap' >
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap' >
+<script src='http://code.jquery.com/jquery-1.11.0.js' ></script>
+<script src='scripts/site.js' ></script>
 </head>
 
 <body >
 
 <nav >
 
-<h1 class='logo' >
-<a href='http://www.carsonhalstead.com' >
-  Carson <span class='last-name' >
-  Halstead</span></a>
-</h1>
+<a class='logo' href='http://www.carsonhalstead.com' >
+  <span class='initials' >CH</span>
+  <span class='full-name' >Carson <span class='last-name' >
+  Halstead</span></span></a>
 
 <ul >
 
@@ -41,19 +42,15 @@
 </li>
 </ul>
 
-<a class='big-contact' href='#'
-  style='cursor: not-allowed;' >
-  hello@carsonhalstead.com</a>
+<a class='big-contact' href='#' >hello@carsonhalstead.com</a>
 </nav> <!-- /end nav -->
 
 <header id='about' >
 
 <a href='http://www.carsonhalstead.com' class='back' >
-  <span>Go Home</span></a>
-<p class='proj-title' >
-  PUMA LQDCELL AR App</p>
-<p class='proj-desc' >
-  Introducing physical sneakers through a digital lens.</p>
+  <span >Go Home</span></a>
+<h1 class='proj-title' >PUMA LQDCELL AR App</h1>
+<h2 class='proj-desc' >Introducing physical sneakers through a digital lens.</h2>
 </header> <!-- /end about -->
 
 <section id='work' >
@@ -65,29 +62,29 @@
   PUMA digs into its footwear history for an updated interpretation of a classic, LQDCELL technology.</p>
 <img src='images/lqdcell-3d-model.png'
   alt='3D render of a wireframed PUMA liquid cell shoe.' />
-<img class='half-img'
-  src='images/lqdcell-research-1.png'
+<img class='half-img invert'
+  src='images/lqdcell-research-1.jpg'
   alt='Interpretive sketch of the camera ui from instagram with a bulleted list of features.' />
-<img class='half-img'
-  src='images/lqdcell-research-2.png'
+<img class='half-img invert'
+  src='images/lqdcell-research-2.jpg'
   alt='Sketch of snapchat homescreen ui.' />
 <p >
   We began with a survey of camera-centric apps to understand how users would benefit from keeping the shoe in frame.</p>
-<img class='half-img'
-  src='images/lqdcell-internalTesting-6.png'
+<img class='half-img invert'
+  src='images/lqdcell-internalTesting-6.jpg'
   alt='Bulleted list of questions about registering shoe orientation and a thumbnail sketch of the shoe rotation guide.' />
-<img class='half-img'
-  src='images/lqdcell-internalTesting-5.png'
+<img class='half-img invert'
+  src='images/lqdcell-internalTesting-5.jpg'
   alt='Sketch of an iteration of the main screen of the app.' />
 <p >
   Working on an app that relies on machine learning was a leap for me.
    The prototyping process we employed produced a stream of new builds.
    This meant we were putting our heads together with development to track progress and troubleshoot every step of the way.</p>
-<img class='half-img'
-  src='images/lqdcell-internalTesting-4.png'
+<img class='half-img invert'
+  src='images/lqdcell-internalTesting-4.jpg'
   alt='Developed sketch of shoe registration in app.' />
-<img class='half-img'
-  src='images/lqdcell-internalTesting-3.png'
+<img class='half-img invert'
+  src='images/lqdcell-internalTesting-3.jpg'
   alt='List of potential troubleshooting steps to serve when registering a shoe through the AR lens.' />
 <p >
   An iterative process drove frequent visits to the drawing board to identify opportunities to explain what was happening on screen.
@@ -104,104 +101,57 @@
   Download the app for
   <span class='body-link' >
   <a href='https://apps.apple.com/us/app/lqdcell/id1456623906' target='_blank' >iOS</a></span> and <span style='text-decoration: line-through;'>Android</span>.</p>
-<p >
-  Team<br>
-  Development: Kevin Ngo, Kilo Thomas, Derek Tran<br>
-  Creative Direction: Regi Jacob, Kevin Lee<br>
-  Design: Jon Vergara<br>
-  UX: Carson Halstead</p>
+
+<h3 class='header' >Team</h3>
+  <ol >
+    <li >Development: Kevin Ngo, Kilo Thomas, Derek Tran</li>
+    <li >Creative Direction: Regi Jacob, Kevin Lee</li>
+    <li >Design: Jon Vergara</li>
+    <li >UX: Carson Halstead</li>
+  </ol>
 </section> <!-- /end work -->
 
 <section id='projects' >
 
-<h2 >
-  Selected Projects</h2>
+  <h3 class='header' >Selected Projects</h3>
+  <ul class='work-list' >
 
-<div class='work-list-item' >
+    <li class='work-list-item' >
+      <a href='marvin.html' >
+        <img src='images/thumb-mvr@2x.jpg'
+        alt='Marvin logo is overlaid atop a rendering of a home interior.' />
+        <h4 >Marvin VR</h4></a></li>
 
-<a href='marvin.html' >
+    <li class='work-list-item work-col-two' >
+      <a href='lqdcell.html' >
+        <img src='images/thumb-puma@2x.jpg'
+        alt='Phone displays an augmented reality filter applied to a shoe in the background.' />
+        <h4 >PUMA LQDCELL AR</h4></a></li>
 
-<img src='images/project-cover-mvr.jpg'
-  alt='Marvin logo is overlaid atop a rendering of a home interior.' />
-<h3 >
-  Marvin VR Experience</h3></a>
-</div>
+    <li class='work-list-item' >
+      <a href='tapster.html' >
+        <img src='images/thumb-tap@2x.jpg'
+        alt='Tapster logo depicts a bespectacled bartender with a raised eyebrow.' />
+        <h4 >Tapster</h4></a></li>
 
-<div class='work-list-item work-col-two' >
+    <li class='work-list-item work-col-two' >
+      <a href='raceday.html' >
+        <img src='images/thumb-nsaf@2x.jpg'
+        alt='Raceday app icon sits atop an image of two racers passing a baton.' />
+        <h4 >NSAF RaceDay</h4></a></li>
 
-<a href='lqdcell.html' >
+    <li class='work-list-item' >
+      <a href='foco.html' >
+        <img src='images/thumb-foco@2x.jpg'
+        alt='Forever Collectibles wordmark sits atop an electric watermelon background.' />
+        <h4 >FOCO Website</h4></a></li>
 
-<img src='images/project-cover-lqdcell.jpg'
-  alt='Phone displays an augmented reality filter applied to a shoe in the background.' />
-<h3 >
-  PUMA LQDCELL AR App</h3></a>
-</div>
-
-<div class='work-list-item' >
-
-<a href='tapster.html' >
-
-<img src='images/tap-brand.jpg'
-  alt='Tapster logo depicts a bespectacled bartender with a raised eyebrow.' />
-<h3 >
-  Tapster App</h3></a>
-</div>
-
-<div class='work-list-item work-col-two' >
-
-<a href='raceday.html' >
-
-<img src='images/project-thumb-raceDay.png'
-  alt='Raceday app icon sits atop an image of two racers passing a baton.' />
-<h3 >
-  NSAF Race Day App</h3></a>
-</div>
-
-<div class='work-list-item' >
-
-<a href='foco.html' >
-
-<img src='images/project-thumb-foco.png'
-  alt='Forever Collectibles wordmark sits atop an electric watermelon background.' />
-<h3 >
-  Forever Collectibles Website</h3></a>
-</div>
-<!-- commenting out old personal projects to retain alt text
-  watch out for .work-col-two when aligning thumbs to grid
-<div class='work-list-item work-col-two' >
-
-<a href='wiks.html' >
-
-<img src='images/project-cover-wiks.jpg'
-  alt='detail shot of a book spread with patterns and text on its verso and handwriting on the translucent recto page'/>
-<h3 >
-  Where I Know Skateboarding</h3></a>
-</div>
-
-<div class='work-list-item' >
-
-<a href='divided.html' >
-
-<img src='images/project-cover-divided.jpg'
-  alt='detail shot of a book spread listing race and ethnic categories from the 2010 census'/>
-<h3 >
-  Divided by Five</h3></a>
-</div> -->
-
-<div class='work-list-item work-col-two' >
-
-<a href='logos.html' >
-
-<img src='images/project-thumb-marks.png'
-  alt='Vector drawing of two intersecting circles revealing path control points and handles.' />
-<h3 >
-  Concept Logomarks</h3></a>
-</div>
-<!-- idk button feels cute might delete
-<a class='work-list-button' href='https://www.behance.net/carsonhalstead' target='_blank' >
-<h3 >
-  See Older Projects</h3>
-</a> -->
+    <li class='work-list-item work-col-two' >
+      <a href='logos.html' >
+        <img src='images/thumb-logomarks@2x.jpg'
+        alt='Vector drawing of two intersecting circles revealing path control points and handles.' />
+        <h4 >Logomarks</h4></a></li>
+  </ul>
 </section> <!-- /end projects -->
 
 <section id='jump' >
@@ -209,43 +159,27 @@
 
 <footer id='contact' >
 
-<h2 >
-  Get in touch</h2>
+  <h3 class='header' >Get in touch</h3>
+  <ul class='social-list' >
 
-<ul class='social-list' >
+    <li class='social-list-item' >
+    hello@carsonhalstead.com</li>
 
-<li class='social-list-item'
-  style='cursor: not-allowed;' >
-  hello@carsonhalstead.com
-</li>
+    <li class='social-list-item' >
+      <a href='https://open.spotify.com/playlist/6NQRHPJLYbCk9LiiZokhq0?si=K3bWsSZ1QlCXL2F_IngPWQ' target='_blank' >
+      Spotify</a></li>
 
-<li class='social-list-item' >
-<a href='https://open.spotify.com/playlist/6NQRHPJLYbCk9LiiZokhq0?si=K3bWsSZ1QlCXL2F_IngPWQ' target='_blank' >
-  Spotify</a>
-</li>
+    <li class='social-list-item' >
+      <a href='https://www.linkedin.com/in/carsonhalstead' target='_blank' >
+      Linkedin</a></li>
 
-<li class='social-list-item' >
-<a href='https://www.linkedin.com/in/carsonhalstead' target='_blank' >
-  Linkedin</a>
-</li>
-
-<li class='social-list-item' >
-<a href='http://be.net/carsonhalstead' target='_blank' >
-  Behance</a>
-</li>
-
-<li class='social-list-item' >
-
-<p class='copyright' >
-
-<a href='https://github.com/carsonhalstead/carsonhalstead.com' target='_blank' >
-  Design & development &#169;
-  2014–<script >document.write(new Date().getFullYear())</script>
-  Carson Halstead &#9787;
-</a>
-</p> <!-- design & development (c) copyright 2014–20XX Carson Halstead :) -->
-</li>
-</ul> <!-- /end social-list -->
+    <li class='social-list-item' >
+      <p class='copyright' >
+        <a href='https://github.com/carsonhalstead/carsonhalstead.com' target='_blank' >
+        Design & development &#169;
+        2014–<script >document.write(new Date().getFullYear())</script>
+        Carson Halstead &#9787;</a></p> <!-- /end copyright --></li>
+  </ul> <!-- /end social-list -->
 </footer> <!-- /end contact -->
 
 <script >
