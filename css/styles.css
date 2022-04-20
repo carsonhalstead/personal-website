@@ -1,7 +1,7 @@
-/* Meyer Reset */
+/* meyer reset */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
-   License: none (public domain)
+   license: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -23,7 +23,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+/* html5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -46,7 +46,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* Clearfix */
+/* clearfix */
 .clearfix:after {
 	content: ".";
 	display: block;
@@ -57,13 +57,13 @@ table {
 }
 .clearfix { display: inline-block; }
 html[xmlns] .clearfix { display: block; }
-* html .clearfix { height: 1%; }
+* html .clearfix { height: 1%; }/* /end reset */
 
-/* END OF RESET */
-
+/* foundation */
 body {
-	font-family: 'DM Mono', monospace;
+	font-family: 'IBM Plex Mono', monospace;
 	color: #dedede;
+	background: #1c1c1c;
 }
 
 a {
@@ -84,26 +84,49 @@ a:focus {
 	padding-right: 5%;
 	padding-left: 5%;
 }
-/* logo */
+/* /end foundation */
+
+/* title */
 h1 {
-	font-size: 2em;
-	color: #858585;
+	font-size: 2.4rem;
+	font-weight: 700;
+	line-height: 1.1;
 }
-/* subhead */
-h2 {
+
+.proj-title {
 	float: left;
-	width: 90%;
-	margin: 0 5% 0 5%;
-	font-size: 1.56em;
-	color: #858585;
+	width: 100%;
+	padding: 14% 0 8% 0;
 }
-/* project titles */
+
+/* description */
+h2 {
+	font-size: 1.2rem;
+	font-weight: normal;
+	line-height: 1.6;
+}
+
+.proj-desc {
+	float: left;
+	padding-bottom: 16%;
+}
+
+/* header */
 h3 {
-	font-size: 1.6em;
+	font-size: 1.6rem;
+	font-weight: 700;
+}
+
+.header {
+	margin: 0 0 8% 5%;
+}
+
+/* work list item */
+h4 {
+	font-size: 1.56rem;
 }
 
 /* nav */
-
 nav {
 	position: fixed;
 	bottom: 0;
@@ -121,40 +144,44 @@ nav li {
 	display: none;
 }
 
+.logo {
+	display: none;
+}
+
 .last-name {
 	display: none;
 }
 
-.logo {
+.full-name {
 	display: none;
 }
 
 .nav-list-item {
 	display: inline-block;
 	padding-right: 6%;
-	font-size: 1.56em;
+	font-size: 1.4rem;
 	text-decoration: underline;
 }
 
 .nav-list-item:hover {
 	text-decoration: line-through;
 }
+/* /end nav */
 
 /* badge animation wip */
-
 .badge-background {
 	position: fixed;
-	right: -7em;
-	bottom: 24em;
-	width: 14em;
+	right: -7rem;
+	bottom: 24rem;
+	width: 14rem;
 	z-index: -2;
 }
 
 .badge-type {
 	position: fixed;
-	right: -6em;
-	bottom: 25em;
-	width: 12em;
+	right: -6rem;
+	bottom: 25rem;
+	width: 12rem;
 	animation-name: spin;
 	animation-duration: 6s;
 	animation-iteration-count: infinite;
@@ -170,9 +197,9 @@ nav li {
 		transform: rotate(360deg);
 	}
 }
+/* /end badge animation wip */
 
 /* about */
-
 #about {
 	float: left;
 	width: 90%;
@@ -181,19 +208,14 @@ nav li {
 	background-color: #1c1c1c;
 }
 
-.bio {
-	margin: 32% 0 24% 0;
-	font-size: 1.2em;
-	line-height: 1.6em;
-}
-
 .intro-full {
 	display: inline-block;
-	margin-bottom: 8%;
+	margin: 32% 0 8% 0;
 }
 
 .intro-frag {
 	display: inline-block;
+	margin-bottom: 24%;
 }
 
 .intro-frag a {
@@ -203,28 +225,28 @@ nav li {
 .intro-frag a:hover {
 	text-decoration: line-through;
 }
+/* /end about */
 
 /* projects */
+h4 {
+	padding: 5% 0 5% 5%;
+}
 
 #projects {
 	float: left;
 	width: 100%;
 	background-color: #1c1c1c;
-	box-shadow: 0 6em 6em #00000050;
+	box-shadow: 0 6rem 6rem #00000050;
 }
 
-#projects h2 {
-	margin-bottom: 8%;
-}
-
-.work-list-item h3 {
-	padding: 5% 0 5% 5%;
-}
-
-.work-list-item img {
+#projects img {
 	width: 100%;
 	display: block;
 	position: relative;
+}
+
+#projects h3 {
+	color: #858585;
 }
 
 .work-col-two {
@@ -235,16 +257,21 @@ nav li {
 	display: block;
 	width: 100%;
 	margin-bottom: 16%;
-	border-bottom: 2px dotted;
-	padding-bottom: 0;
-/*transition: padding-bottom .2s ease-out;*/ }
-	.work-list-item:active, .work-list-item:hover {
-		padding-bottom: 2px;
-		border-bottom: 4px solid #ee4f2f;
-	 	margin-bottom: 1.2%; }
-	.work-list-item:visited {
-		border-bottom: 2px dotted;	}
+}
 
+.work-list-item h4 {
+	border-bottom: 2px dotted #858585;
+/* moving away from the animated bottom border
+	padding-bottom: 0;
+	transition: padding-bottom .2s ease-out;*/ }
+/*	.work-list-item h4:active,*/ .work-list-item h4:hover {
+		background: linear-gradient(transparent, transparent 8%, #ffffff08 56%);
+		border-bottom: 2px solid #ee4f2f;
+/*	margin-bottom: -2px;*/ }
+
+/*.work-list-item h4:visited {
+		border-bottom: 2px dotted; }*/
+/* chance to consolidate styling on go home button?
 .work-list-button {
 	background-color: #dadacd;
 	float: left;
@@ -254,7 +281,7 @@ nav li {
 	width: 100%; }
 	.work-list-button:hover {
 		background-color: #d0d0be; }
-/*
+
 	.work-list-button h3 {
 		display: inline-block;
 		position: relative;
@@ -271,16 +298,15 @@ nav li {
 		padding-right: 40px; }
 		.work-list-button:hover h3:after {
 			opacity: 1;
-			right: 0; } */
+			right: 0; }*/
+/* end projects */
 
 /* work */
-
 #work {
-	/* messing with body copy
-	font-family: 'Inter', sans-serif;
-	font-weight: 400; */
 	float: left;
 	width: 100%;
+	font-size: 1.2rem;
+	line-height: 1.7;
 	background-color: #1c1c1c;
 }
 
@@ -296,8 +322,12 @@ nav li {
 	cursor: pointer;
 	transition: all 0.2s; }
 	.back:hover {
-		color: #dedede;
-		background-color: #ffffff20; }
+		color: #111;
+		background-color: #ffffff96; }
+		.back:active {
+			color: #dedede;
+			background-color: #ffffff20;
+		}
 
 	.back span {
 		display: inline-block;
@@ -311,12 +341,11 @@ nav li {
 			top: 0;
 			right: -32px;
 			transition: 0.2s; }
-
-	.back:hover span {
-		padding-right: 32px; }
-		.back:hover span:after {
-			opacity: 1;
-			right: 0; }
+		.back:hover span {
+			padding-right: 32px; }
+			.back:hover span:after {
+				opacity: 1;
+				right: 0; }
 
 .body-link {
 	text-decoration: underline;
@@ -326,38 +355,30 @@ nav li {
 	text-decoration: line-through;
 }
 
-.proj-title {
-	float: left;
-	width: 100%;
-	margin: 14% 0 8% 0;
-	font-size: 1.2em;
-}
-
-.proj-desc {
-	float: left;
-	padding-bottom: 16%;
-	font-size: 1.2em;
-	line-height: 1.6em;
-}
-
 details {
-	font-size: 1.2em;
-	padding: 4% 5% 4% 5%;
-	line-height: 1.6em;
-}
+	margin: 4% 5% 4% 5%;
+} details:focus {
+	outline: 4px dotted #ee4f2f;
+	}
 
 summary {
-	padding-bottom: 0.8em;
-	font-size: 1.2em;
-	border-bottom: dotted 4px #111;
-}
-
-summary:hover {
+	padding: 4% 0 0.8rem 0;
+	border-bottom: dotted 2px #858585;
+	font-size: 1.6rem;
+	font-weight: 700;
+} summary:hover {
 	cursor: pointer;
+	background: linear-gradient(transparent, transparent 8%, #ffffff08 56%);
+	border-bottom: 2px solid #ee4f2f;
+	}
+
+ol {
+	margin: 0 0 16% 5%;
+	line-height: 1.6;
 }
+/* /end work */
 
 /* slideshow */
-
 figure {
   margin: 0;
 }
@@ -368,7 +389,7 @@ figure {
   line-height: 0; /* removes the gap if you put a border on the slideshow div */
 }
 figcaption {
-  line-height: 1.5; /* restores line-height to the child element*/
+  line-height: 1.5; /* restores line-height to the child element */
 }
 .bss-slides:focus {
  outline: 0;
@@ -400,7 +421,7 @@ figcaption {
 .bss-slides figcaption {
 	display: none;
   position: absolute;
-	/* see first breakpoint captions appear (959px) for styles */
+	/* caption styles appear @breakpoint 959px */
 }
 .bss-slides .bss-show figcaption {
   z-index: 3;
@@ -412,7 +433,7 @@ figcaption {
 .bss-next, .bss-prev {
   position: absolute;
   bottom: 52%;
-  font-size: 3em;
+  font-size: 3rem;
   color: #fff;
 	filter: drop-shadow(0 0 .5rem black);
   -webkit-user-select: none;
@@ -431,20 +452,19 @@ figcaption {
 .bss-prev {
   left: 8%;
 }
+/* /end slideshow */
 
 /* project assets */
-
 #work img {
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
-	padding-bottom: 4%
+	margin-bottom: 4%
 }
 
 #work p {
 	margin: 2% 5% 16% 5%;
-	font-size: 1.2em;
-	line-height: 1.6em;
+	font-family: 'IBM Plex Sans', georgia, serif;
 }
 
 .embed-container {
@@ -471,9 +491,9 @@ figcaption {
 .invert {
 	mix-blend-mode: screen;
 } /* for imgs with a white foreground and black background to appear transparent */
+/* /end project assets */
 
 /* footer */
-
 #jump {
 	float: left;
 	width: 100%;
@@ -491,7 +511,7 @@ footer {
 #contact {
 	float: left;
 	width: 100%;
-	padding: 40% 0 40% 0;
+	padding: 40% 0 32% 0;
 	color: #858585;
 }
 
@@ -508,104 +528,102 @@ footer {
 
 .social-list-item {
 	margin-top: 8%;
-	font-size: 1.2em;
-}
-
-.social-list-item:first-child {
-	text-decoration: underline;
+	font-size: 1.2rem;
+} .social-list-item:first-child {
 	margin-top: 0;
-	margin-bottom: 4%;
-}
-
-.social-list-item:first-child:hover {
-	text-decoration: line-through;
-}
+	margin-bottom: 4%; } .social-list-item:first-child:hover {
+		text-decoration: line-through; }
+	.social-list-item:last-child {
+		margin-top: 16%;
+		line-height: 2rem; }
 
 .social-list-item:hover {
 	cursor: pointer;
 }
-
-.social-list-item:last-child {
-	margin-top: 16%;
-}
+/* /end footer */
 
 /* copy to clipboard */
-
 .tooltip {
+	display: inline-block;
   position: relative;
-  display: inline-block;
-}
-.tooltip .tooltiptext {
-  position: absolute;
-  width: 100%;
-  bottom: 100%;
-  left: 50%;
-  padding: 4% 0 4% 0;
-  margin-left: -50%;
-  text-align: center;
-	font-weight: bold;
-	color: #1c1c1c;
-  background-color: #ee4f2f;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s;
-}
+} .tooltip .tooltiptext {
+  	position: absolute;
+  	width: 100%;
+  	bottom: 150%;
+  	left: 50%;
+  	padding: 4% 0 4% 0;
+  	margin-left: -50%;
+  	text-align: center;
+		color: #1c1c1c;
+  	background-color: #ee4f2f;
+		border-radius: 16px;
+  	opacity: 0;
+  	visibility: hidden;
+  	transition: opacity 0.3s; }
 /* create the carrot */
-.tooltip .tooltiptext::after {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 8px;
-  border-style: solid;
-  border-color: #ee4f2f transparent transparent transparent;
-  content: '';
-}
-.tooltip:hover .tooltiptext {
-  opacity: 1;
-  visibility: visible;
-}
+		.tooltip .tooltiptext::after {
+  		position: absolute;
+  		top: 100%;
+  		left: 50%;
+  		margin-left: -5px;
+  		border-style: solid;
+			border-width: 8px;
+  		border-color: #ee4f2f transparent transparent transparent;
+  		content: ''; }
+				.tooltip:hover .tooltiptext {
+  				opacity: 1;
+  				visibility: visible; }
+/* 220402 decision: these styles are for inline links only
 .btnlabel {
-  text-decoration: underline;
-} .btnlabel:hover {
-	text-decoration: line-through;
-}
+  text-decoration: underline; }*/
+	.btnlabel:hover {
+	/*
+	text-decoration: line-through;*/
+ 	color: #dedede; }
+/* /end copy to clipboard */
 
 /* media queries */
-
 @media screen and (min-width: 480px) {
 
+	h4 {
+		font-size: 4vw;
+	}
+
 	.badge-background {
-		right: -4em;
-		bottom: 26em;
+		right: -4rem;
+		bottom: 26rem;
 	}
 
 	.badge-type {
 		position: fixed;
-		right: -3em;
-		bottom: 27em;
+		right: -3rem;
+		bottom: 27rem;
 	}
 
 	.back {
 		width: 40%;
-		font-size: 1.2em;
-	}
-
-	.bio {
-		font-size: 2em;
+		font-size: 1.2rem;
 	}
 
 	.intro-full {
 		display: inline-block;
+		font-size: 1.6rem;
+		font-weight: 700;
+	}
+
+	.logo {
+		display: block;
+		float: left;
+		font-size: 2rem;
+		color: #858585;
+	}
+
+	.nav-list-item {
+		font-size: 2rem;
 	}
 
 	.proj-desc {
 		width: 100%;
-	}
-
-	.proj-title {
-		margin-top: 24%;
-		font-size: 2em;
 	}
 
   .work-list-button h3 {
@@ -626,44 +644,84 @@ footer {
 			opacity: 1;
 			right: 0; }
 	}
+/* /end breakpoint 480px */
+
+@media screen and (min-width: 640px) {
+	.intro-full {
+		display: none;
+	}
+
+	.intro-frag {
+		margin-top: 32%;
+	}
+
+	.logo {
+		float: left;
+		width: 24%;
+		font-size: 2rem;
+		color: #858585;
+	}
+}
+/* /end breakpoint 640px */
 
 @media screen and (min-width: 719px) {
 /* made this breakpoint bc the gap was too large for stacking half imgs */
+	.initials {
+		display: none;
+	}
+
+	.full-name {
+		display: block;
+	}
+
 	#work .half-img {
 		width: 49%;
 	}
 
 	.badge-background {
-		right: -4em;
-		bottom: 26em;
-		width: 20em;
+		right: -4rem;
+		bottom: 26rem;
+		width: 20rem;
 	}
 
 	.badge-type {
 		position: fixed;
-		right: -3em;
-		bottom: 27em;
-		width: 18em;
+		right: -3rem;
+		bottom: 27rem;
+		width: 18rem;
 	}
 }
+/* /end breakpoint 719px */
 
 @media screen and (min-width: 959px) {
 
 	details {
-		font-size: 2.4em;
+		font-size: 2.4rem;
 	}
 
+	summary {
+		font-size: 3.2rem;
+	}
+/* title */
 	h1 {
-		font-size: 2em;
+		font-size: 4rem;
+	}
+
+	.proj-title {
+		padding-top: 24%;
 	}
 
 	h2 {
-		font-size: 3em;
+		font-size: 3rem;
+	}
+
+	.proj-desc {
+		font-size: 2.4rem;
 	}
 
 	h3 {
-		font-size: 3.2em;
-		line-height: 1.6em;
+		font-size: 3.2rem;
+		line-height: 1.6rem;
 	}
 
 	nav ul {
@@ -671,31 +729,23 @@ footer {
 		width: 76%;
 	}
 
-	#work p {
-		font-size: 2.4em;
-	}
-
 	#contact {
 		padding-bottom: 24%;
 	}
 
 	.back {
-		font-size: 3.2em;
-	}
-
-	.bio {
-		font-size: 3em;
+		font-size: 3.2rem;
 	}
 
 	.bss-slides figcaption {
 		display: block;
 		bottom: 10%;
 		left: 46%;
-		font-size: 1.6em;
+		font-size: 1.6rem;
 		color: #fff;
 	}
 	.bss-next, .bss-prev {
-		font-size: 4em;
+		font-size: 4rem;
 	}
 
   .intro-full {
@@ -703,31 +753,25 @@ footer {
 	}
 
 	.logo {
-		display: block;
-		float: left;
-		width: 24%;
-		font-size: 3.2em;
+		/*
+		width: 24%;*/
+		font-size: 3.2rem;
+		color: #858585;
 	}
 
 	.nav-list-item {
 		padding-right: 6%;
-		font-size: 3.2em;
+		font-size: 3.2rem;
 	}
 
 	.nav-list-item:first-child {
 		padding-right: 0;
 	}
 
-	.proj-desc {
-		font-size: 2.4em;
-	}
-
-	.proj-title {
-		font-size: 4em;
-	}
-
 	.social-list-item {
-		font-size: 2.76em;
+		font-size: 2.76rem;
+	} .social-list-item:last-child {
+		line-height: 3.6rem;
 	}
 
 	.work-list-item {
@@ -735,37 +779,29 @@ footer {
 		margin: 0 5% 8% 5%;
 	}
 
-	.work-list-item h3 {
-		padding-left: 0;
-	}
-
 	.badge-background {
-		right: -3em;
-		bottom: 56em;
-		width: 24em;
+		right: -3rem;
+		bottom: 56rem;
+		width: 24rem;
 	}
 
 	.badge-type {
 		position: fixed;
-		right: -2em;
-		bottom: 57em;
-		width: 22em;
+		right: -2rem;
+		bottom: 57rem;
+		width: 22rem;
 	}
 }
+/* /end breakpoint 959px */
 
 @media screen and (min-width: 1080px) {
 
 	details {
-		font-size: 1.5em;
+		font-size: 1.5rem;
 	}
 
 	h2 {
-		font-size: 2.4em;
-	}
-
-	h3 {
-		font-size: 1.5em;
-		line-height: 1.2em;
+		font-size: 2.4rem;
 	}
 
 	nav {
@@ -782,7 +818,6 @@ footer {
 
 	#work p {
 		width: 80%;
-		font-size: 1.56em;
 	}
 
 	#contact h2 {
@@ -816,15 +851,15 @@ footer {
 	.nav-list-item {
 		padding-top: 2.8%;
 		padding-right: 8%;
-		font-size: 2.24em;
+		font-size: 2.24rem;
 	}
 
 	.proj-desc {
-		font-size: 1.6em;
+		font-size: 2rem;
 	}
 
 	.social-list-item {
-		font-size: 1.56em;
+		font-size: 1.56rem;
 		margin-top: 4%;
 	}
 
@@ -839,22 +874,35 @@ footer {
 	}
 
 	.badge-background {
-		right: -3em;
-		bottom: 2em;
-		width: 14em;
+		right: -3rem;
+		bottom: 2rem;
+		width: 14rem;
 		z-index: 1;
 	}
 
 	.badge-type {
 		position: fixed;
-		right: -2em;
-		bottom: 3em;
-		width: 12em;
+		right: -2rem;
+		bottom: 3rem;
+		width: 12rem;
 		z-index: 2;
 	}
 }
+/* /end breakpoint 1080px */
 
 @media screen and (min-width: 1280px) {
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	#projects h3, #contact h3 {
+		display: none;
+	}
+
+	h4 {
+		font-size: 1.6rem;
+	}
 
 	nav {
 		width: 50%;
@@ -869,7 +917,7 @@ footer {
 		display: inline;
 		position: fixed;
 		right: 0;
-		font-size: 1.56em;
+		font-size: 1.56rem;
 		text-decoration: underline;
 		color: #858585;
 		padding-top: 1.6%;
@@ -890,7 +938,7 @@ footer {
 	.bss-next, .bss-prev {
 	  position: absolute;
 	  bottom: 13%;
-	  font-size: 2em;
+	  font-size: 2rem;
 	}
 	.bss-next {
 	  left: 24%;
@@ -904,19 +952,13 @@ footer {
 	}
 
 	#about {
-		width: 100%;
-		padding: 0;
-		/* interim solution to tooltip getting cut off
-		   UPDATE: figured out that's why i have .proj-desc…
-			 but this stil kinda serves as a clue to getting the cover img to display centered
-			 UPDATE: i have no idea what i was talking about here */
-		/*
-		background-color: transparent;*/
+		width: 50%;
+		padding-top: 12%;
 	}
 
-	#about p {
-		width: 48%;
-		margin-left: 5%;
+	.intro-frag {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 
 	#work {
@@ -931,22 +973,18 @@ footer {
 
 	#projects {
 		position: fixed;
-		bottom: 0;
+		top: 0;
 		right: 0;
 		width: 40%;
-		margin: 8% 0 4% 0;
+		margin-top: 12%;
 		box-shadow: none;
-	}
-
-	#projects h2 {
-		display: none;
 	}
 
 	#projects img {
 		display: none;
 	}
 /* reveal cover on hover */
-	#projects div.work-list-item:hover img {
+	#projects li.work-list-item:hover img {
 		display: block;
 		position: fixed;
 		width: 16vw;
@@ -962,15 +1000,10 @@ footer {
 		display: none;
 	}
 
-	.bio {
-		margin-top: 12%;
-		margin-bottom: 4%;
-		font-size: 2em;
-	}
-
 	.proj-title {
-		margin-top: 16%;
-		margin-bottom: 4%;
+		width: 80%;
+		padding-top: 8%;
+		padding-right: 5%;
 	}
 
 	.proj-desc {
@@ -982,11 +1015,6 @@ footer {
 		width: 100%;
 		margin-bottom: 2%;
 		margin-left: 0;
-	}
-
-	.work-list-item h3 {
-		margin-left: 5%;
-		font-size: 1.6em;
 	}
 
 	.work-list-button {
@@ -1002,8 +1030,8 @@ footer {
 		padding-bottom: 1.6%;
 	}
 
-	#contact h2 {
-		display: none;
+	#contact h3 {
+		margin-bottom: 0;
 	}
 
 	#contact ul {
@@ -1017,36 +1045,32 @@ footer {
 
 	.social-list {
 		position: relative;
-		padding-top: 8%;
+		padding-top: 4%;
 	}
 
 	.social-list-item {
 		margin-top: 2%;
-		font-size: 1.56em;
-	}
-
-	.social-list-item:last-child {
-		margin-top: 8%;
-	}
-/* related to how i'm trying to consolidate styling links
-	.social-list-item:hover {
-		color: #dedede;
-	} */
+		font-size: 1.6rem;
+	} .social-list-item:first-child {
+		margin-bottom: 2%; }
+		.social-list-item:last-child {
+		margin-top: 8%; }
 
 	.badge-background {
-		left: 30em;
-		bottom: 6em;
-		width: 16em;
+		left: 30rem;
+		bottom: 6rem;
+		width: 16rem;
 		z-index: 1;
 	}
 
 	.badge-type {
-		left: 31em;
-		bottom: 7em;
-		width: 14em;
+		left: 31rem;
+		bottom: 7rem;
+		width: 14rem;
 		z-index: 2;
 	}
 }
+/* /end breakpoint 1280px */
 
 @media screen and (min-width: 1360px) {
 
@@ -1059,3 +1083,4 @@ footer {
 	}
 
 }
+/* /end breakpoint 1360px */
