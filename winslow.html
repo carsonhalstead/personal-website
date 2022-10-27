@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<head >
+<meta charset="utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title >Winslow is a Paladin</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>" >
+<style >
+a {
+  padding-left: 2%;
+  border-left: thick double;
+  text-decoration: none;
+  color: #ffffff40;
+} a:hover {
+  color: white;
+}/* need to add padding to .section-spells articles other than .article-spells-first
+.section-spells article {
+  padding: 3% 6% 3% 6%;
+}*/
+body {
+  margin: 0;
+  font-size: 16px;
+  background: #10161A;
+  color: #fff;
+}
+details {
+  margin: 0 0 6% 0;
+}
+h1, h2, h3, h4, h5 {
+  font-family: sans-serif;
+  margin: 0;
+}
+h1 {
+  padding-bottom: 2%;
+  font-size: calc(0.9rem + 2.5vmin);
+}
+h2 {
+  padding-bottom: 3%;
+  opacity: 40%;
+}
+h3 {
+  margin: 3% 0 3% 0;
+} .article-pros-etc h3 {
+  margin: 0 0 3% 3%;
+} .article-spells-first h3 {
+  margin: 0;
+  padding: 6% 6% 3% 6%;
+}
+h4 {
+  opacity: 40%;
+} .article-spells-first h4 {
+  margin-bottom: 12%;
+} .section-actions h4 {
+  margin-bottom: 3%;
+}
+h5 {
+  margin-bottom: 3%;
+}
+header {
+  position: fixed;
+  left: 0;
+  display: flex;
+  width: 88%;
+  justify-content: space-between;
+  padding: 3% 6%;
+  background: #202A32;
+  box-shadow: 0px 4px 16px #10161A;
+  z-index: 1;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 88%;
+  padding: 3% 6%;
+  font-size: calc(0.2rem + 2.5vmin);
+  background: #00000096;
+  z-index: -1;
+}
+li {
+  width: 30%;
+  padding: 2% 0 2% 0;
+  margin-bottom: 4%;
+} .article-saves li {
+  width: 41%;
+  padding: 3%;
+} .article-pros-etc li {
+  width: auto;
+  padding-top: 3%;
+  background: #10161A;
+  border: 4px double #202A32;
+} .article-saves li, .article-senses li {
+  background: #202A32;
+  border: 4px double #10161A;
+} .article-spells-scores li {
+  background: #202A32;
+  border: 4px double #ffffff16;
+} .list-weapon-attacks li {
+  border: 4px double #ffffff16;
+} .list-bonus-actions li, .list-reactions li, .list-other li {
+  border-left: 4px solid #ffffff16;
+} .section-abilities li {
+  background: #202A32;
+  border: 4px double #10161A;
+} .section-actions li {
+  width: auto;
+  padding-left: 3%; /* something weird going on here… */
+} .section-skills li {
+  width: auto;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-style: none none solid none;
+  border-color: #ffffff16;
+} .summary-scores li {
+  border: 4px double #ffffff16;
+}
+main {
+  margin-bottom: 8%;
+  background: #10161A;
+}
+p {
+  margin: 0;
+} .accordion-copy {
+  margin: 3% 0 6% 3%;
+  padding-left: 3%;
+  border-left: 4px solid #ffffff40;
+} .article-pros-etc p {
+  margin-left: 3%;
+  padding: 0;
+  font-size: calc(0.2rem + 2.5vmin);
+} .article-saves p {
+  margin-left: 0;
+} .list-all-attacks p {
+  margin-bottom: 3%;
+  line-height: 120%;
+} .score-bottom p {
+  margin: 2%;
+} .score-header p {
+  margin: 2%;
+} .list-spell-cards p {
+  margin-bottom: 3%;
+  line-height: 120%;
+  font-size: calc(0.2rem + 2.5vmin);
+} .section-actions p {
+  font-size: calc(0.2rem + 2.5vmin);
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+} .article-pros-etc ul {
+  flex-wrap: nowrap;
+  flex-direction: column;
+} .section-actions ul {
+  flex-direction: column;
+} .section-skills ul {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+summary {
+  padding: 3%;
+} summary:hover {
+  cursor: pointer;
+  background: #ffffff16;
+  /*border-bottom: 4px solid white;
+  margin-bottom: -4px;*/
+}
+.article-saves {
+  margin: 6% 6% 0 6%;
+}
+.article-senses {
+  margin-bottom: 8%;
+}
+.article-spells-first {
+
+}
+.article-spells-scores {
+  padding: 3% 6% 0 6%;
+  background: #202A32;
+}
+.container-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading-ability-opacity {
+  opacity: 40%;
+}
+/*
+display:flex at ul element is messy so i need to go back and be more intentional with that
+may move these styles elsewhere to fit alphabetical organization method but idk they'll get split…
+*/
+ul.list-spell-cards {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS devices */
+  -ms-overflow-style: none; /* hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* hide scrollbar for FF */
+  padding: 0 6% 0 6%;
+} ul.list-spell-cards::-webkit-scrollbar {
+  display: none; /* hide scrollbar for Chrome, Safari, Opera */
+}
+.list-spell-cards li {
+  flex: 0 0 auto;
+  width: 240px;
+  height: 360px;
+  margin-right: 6%;
+  padding: 3%;
+  background: #10161A;
+  border: 8px ridge #ffffff40;
+} .list-spell-cards li:last-child {
+  margin-right: 0;
+}
+.score-bottom, .score-header {
+  font-variant: small-caps;
+  font-size: calc(0.2rem + 2.5vmin);
+  letter-spacing: 0.125rem;
+}
+.score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.score-value {
+  margin: 8%;
+  font-size: calc(1.2rem + 2.5vmin);
+}
+.score-value-bonus {
+  font-size: calc(0.2rem + 2.5vmin);
+}
+.score-bottom-em {
+  font-style: italic;
+  font-variant: normal;
+  text-transform: capitalize;
+  letter-spacing: normal;
+}
+.score-bottom-number {
+  padding: 3% 8% 2% 8%;
+  font-family: sans-serif;
+  font-weight: bolder;
+  letter-spacing: normal;
+  border: 4px solid #ffffff16;
+  border-radius: 1rem;
+}
+.score-value-dice {
+  font-family: sans-serif;
+  font-weight: normal;
+}
+.score-value-number {
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+.section-abilities {
+  margin: 6% 6% 0 6%;
+}
+.section-actions {
+  margin: 6%;
+}
+.section-skills {
+  padding: 6%;
+  background: #202A32;
+}
+.section-spells {
+  padding-top: 4%;
+}
+.section-stats-group {
+  margin: 6%;
+}
+.section-summary {
+  padding: 24% 6% 0 6%;
+  background: #202A32;
+}
+.section-summary input {
+  width: 44px;
+  height: 44px;
+  margin: 8%;
+}
+.skill-bonus {
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.skill-name {
+  margin: 2%;
+  font-size: calc(0.2rem + 2.5vmin);
+}
+.spell-slots {
+  padding: 0 6% 3% 6%;
+}
+@media screen and (min-width: 960px) {
+  .article-saves p {
+    margin: 2%;
+  }
+  ul {
+    flex-wrap: nowrap;
+  } .article-saves ul {
+    flex-direction: column;
+  }
+  .article-saves li {
+    width: auto;
+  }
+  .section-summary li, .section-abilities li {
+    width: 15%
+  }
+  .article-saves {
+    width: 42%;
+    margin: 6% 0 0 6%;
+  }
+  .score-bottom, .score-header {
+    font-size: calc(0.025rem + 2vmin);
+  }
+  .section-stats {
+    display: flex;
+    justify-content: space-between;
+  }
+  .section-summary {
+    padding-top: 16%;
+  }
+  .section-stats-group {
+    width: 42%;
+    margin: 6% 6% 0 0;
+  }
+}
+</style>
+</head>
+
+<body >
+
+  <header >
+
+    <div >
+      <h1 >Winslow von Bank</h1>
+      <h2 >Human Paladin 3</h2></div>
+    <div class="container-score" >
+      <p class="score-header heading-ability-opacity" >hp</p>
+      <p class="score-value score-value-number" >28</p>
+    </div>
+  </header>
+
+  <main >
+  <section class="section-summary" >
+
+    <h2 >Summary</h2>
+
+    <ul class="summary-scores" >
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header heading-ability-opacity" >proficiency</p>
+        <p class="score-value score-value-number" >+2</p>
+        <p class="score-bottom heading-ability-opacity" >bonus</p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header heading-ability-opacity" >walking</p>
+        <p class="score-value score-value-number" >30 ft</p>
+        <p class="score-bottom heading-ability-opacity" >speed</p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header heading-ability-opacity" >initiative</p>
+        <p class="score-value score-value-number" >+0</p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header heading-ability-opacity" >armor</p>
+        <p class="score-value score-value-number" >18</p>
+        <p class="score-bottom heading-ability-opacity" >class</p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header heading-ability-opacity" >hit</p>
+        <p class="score-value score-value-dice" >3d10</p>
+        <p class="score-bottom heading-ability-opacity" >dice</p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header heading-ability-opacity" >inspiration</p>
+        <input type="checkbox" name="checkbox" value="off" >
+      </div></li>
+    </ul>
+  </section>
+
+  <section class="section-abilities" >
+
+    <h2 >Abilities</h2>
+
+    <ul >
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header" >💪 <span class="heading-ability-opacity" >STR</span></p>
+        <p class="score-value score-value-number" >+3</p>
+        <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >16</span></p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header" >⚡️ <span class="heading-ability-opacity" >DEX</span></p>
+        <p class="score-value score-value-number" >+0</p>
+        <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >10</span></p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header" >❤️ <span class="heading-ability-opacity" >CON</span></p>
+        <p class="score-value score-value-number" >+2</p>
+        <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >14</span></p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header" >💡 <span class="heading-ability-opacity" >INT</span></p>
+        <p class="score-value score-value-number" >+0</p>
+        <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >11</span></p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header" >👁 <span class="heading-ability-opacity" >WIS</span></p>
+        <p class="score-value score-value-number" >+1</p>
+        <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >12</span></p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header" >✨ <span class="heading-ability-opacity" >CHA</span></p>
+        <p class="score-value score-value-number" >+2</p>
+        <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >15</span></p>
+      </div></li>
+    </ul>
+  </section>
+
+  <section class="section-stats" >
+
+    <article class="article-saves" >
+
+    <h2 >Saving Throws</h2>
+
+    <ul >
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value score-value-number" >+3</p>
+        <p class="score-header" >💪 <span class="heading-ability-opacity" >STR</span></p>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value score-value-number" >+0</p>
+        <p class="score-header" >⚡️ <span class="heading-ability-opacity" >DEX</span></p>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value score-value-number" >+2</p>
+        <p class="score-header" >❤️ <span class="heading-ability-opacity" >CON</span></p>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value score-value-number" >+0</p>
+        <p class="score-header" >💡 <span class="heading-ability-opacity" >INT</span></p>
+      </div></li>
+
+      <li >
+      <div >
+        <div class="score-row" >
+          <p class="score-value score-value-number" >+3</p>
+          <p class="score-header" >👁 <span class="heading-ability-opacity" >WIS</span></p>
+        </div>
+        <p class="score-bottom score-bottom-em" ><span style="color:mediumspringgreen;" >proficiency</span></p>
+      </div></li>
+
+      <li >
+      <div >
+        <div class="score-row" >
+          <p class="score-value score-value-number" >+4</p>
+          <p class="score-header" >✨ <span class="heading-ability-opacity" >CHA</span></p>
+        </div>
+        <p class="score-bottom score-bottom-em" ><span style="color:mediumspringgreen;" >proficiency</span></p>
+      </div></li>
+    </ul>
+    </article>
+
+    <section class="section-stats-group" >
+
+      <article class="article-senses" >
+
+      <h2 >Senses (Passive)</h2>
+
+      <ul >
+
+        <li >
+        <div class="container-score" >
+          <p class="score-header" >👁 <span class="heading-ability-opacity" >WIS</span></p>
+          <p class="score-value score-value-number" >11</p>
+          <p class="score-bottom score-bottom-em" >perception</p>
+        </div></li>
+
+        <li >
+        <div class="container-score" >
+          <p class="score-header" >💡 <span class="heading-ability-opacity" >INT</span></p>
+          <p class="score-value score-value-number" >10</p>
+          <p class="score-bottom score-bottom-em" >investigation</p>
+        </div></li>
+
+        <li >
+        <div class="container-score" >
+          <p class="score-header" >👁 <span class="heading-ability-opacity" >WIS</span></p>
+          <p class="score-value score-value-number" >13</p>
+          <p class="score-bottom score-bottom-em" >insight</p>
+        </div></li>
+      </ul>
+      </article>
+
+      <article class="article-pros-etc" >
+
+        <h2>Proficiencies Etc.</h2>
+
+        <ul >
+
+          <li >
+            <h3 >Armor</h3>
+            <p >Heavy Armor, Medium Armor, Light Armor, Shields</p></li>
+
+          <li >
+            <h3 >Weapons</h3>
+            <p >Martial Weapons, Simple Weapons</p></li>
+
+          <li >
+            <h3 >Immunities</h3>
+            <p >Disease <span style="opacity: 40%" >(Divine Health)</span></p></li>
+
+          <li >
+            <h3 >Tools</h3>
+            <p >Navigator's Tools</p></li>
+
+          <li >
+            <h3 >Languages</h3>
+            <p >Common, Marquesian, Goblin</p></li>
+        </ul>
+      </article>
+    </section>
+  </section>
+
+  <section class="section-skills" >
+
+    <h2 >Skills</h2>
+
+    <ul >
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+0</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Acrobatics</p>
+          <p class="score-header" >⚡️ <span class="heading-ability-opacity" >DEX</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+1</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Animal Handling</p>
+          <p class="score-header" >👁 <span class="heading-ability-opacity" >WIS</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+0</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Arcana</p>
+          <p class="score-header" >💡 <span class="heading-ability-opacity" >INT</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+3</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Athletics</p>
+          <p class="score-header" >💪 <span class="heading-ability-opacity" >STR</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+2</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Deception</p>
+          <p class="score-header" >✨ <span class="heading-ability-opacity" >CHA</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+0</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >History</p>
+          <p class="score-header" >💡 <span class="heading-ability-opacity" >INT</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+3</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Insight <span style="font-size: calc(0.025rem + 2vmin);font-style: italic;text-transform: capitalize;color: mediumspringgreen;" >proficiency</span></p>
+          <!--<p class="score-bottom score-bottom-em" ><span style="color:mediumspringgreen;" >proficiency</span></p>-->
+          <p class="score-header" >👁 <span class="heading-ability-opacity" >WIS</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+2</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Intimidation</p>
+          <p class="score-header" >✨ <span class="heading-ability-opacity" >CHA</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+0</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Investigation</p>
+          <p class="score-header" >💡 <span class="heading-ability-opacity" >INT</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+3</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Medicine <span style="font-size: calc(0.025rem + 2vmin);font-style: italic;text-transform: capitalize;color: mediumspringgreen;" >proficiency</span></p>
+          <!--<p class="score-bottom score-bottom-em" ><span style="color:mediumspringgreen;" >proficiency</span></p>-->
+          <p class="score-header" >👁 <span class="heading-ability-opacity" >WIS</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+0</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Nature</p>
+          <p class="score-header" >💡 <span class="heading-ability-opacity" >INT</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+1</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Perception</p>
+          <p class="score-header" >👁 <span class="heading-ability-opacity" >WIS</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+2</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Performance</p>
+          <p class="score-header" >✨ <span class="heading-ability-opacity" >CHA</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+4</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Persuasion <span style="font-size: calc(0.025rem + 2vmin);font-style: italic;text-transform: capitalize;color: mediumspringgreen;" >proficiency</span></p>
+          <!--<p class="score-bottom score-bottom-em" ><span style="color:mediumspringgreen;" >proficiency</span></p>-->
+          <p class="score-header" >✨ <span class="heading-ability-opacity" >CHA</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+2</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Religion <span style="font-size: calc(0.025rem + 2vmin);font-style: italic;text-transform: capitalize;color: mediumspringgreen;" >proficiency</span></p>
+          <!--<p class="score-bottom score-bottom-em" ><span style="color:mediumspringgreen;" >proficiency</span></p>-->
+          <p class="score-header" >💡 <span class="heading-ability-opacity" >INT</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+0</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Sleight of Hand</p>
+          <p class="score-header" >⚡️ <span class="heading-ability-opacity" >DEX</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+0</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Stealth <span style="font-size: calc(0.025rem + 2vmin);font-style: italic;text-transform: capitalize;color: lightcoral;" >disadvantage</span></p>
+          <!--<p class="score-bottom score-bottom-em" ><span style="color:lightcoral;">disadvantage</span></p>-->
+          <p class="score-header" >⚡️ <span class="heading-ability-opacity" >DEX</span></p>
+        </div>
+      </div></li>
+
+      <li >
+      <div class="score-row" >
+        <p class="score-value-bonus score-value-number" >+1</p>
+        <div class="skill-bonus" >
+          <p class="skill-name" >Survival</p>
+          <p class="score-header" >👁 <span class="heading-ability-opacity" >WIS</span></p>
+        </div>
+      </div></li>
+    </ul>
+  </section>
+
+  <section class="section-actions" >
+
+    <h2 >Actions</h2>
+
+    <details >
+      <summary style="font-size:1.2rem; font-family:sans-serif; font-weight:bold;">Attack Actions in Combat</summary>
+      <p class="accordion-copy" ><em >Attack, Cast a Spell, Dash, Disengage, Dodge, Grapple, Help, Hide, Interact with an Object, Improvise, Opportunity Attack, Ready, Search, Shove, Two-Weapon Fighting, Use an Object</em></p>
+    </details>
+
+    <h3 >Attack (1 Per Action)</h3>
+
+    <ul class="list-weapon-attacks">
+
+      <li >
+      <h4 >Javelin</h4>
+      <p >Melee Weapon, 30 ft (120), HIT/DC +5, 1d6+3 Piercing, Simple, Thrown</p></li>
+
+      <li >
+      <h4 >Longsword</h4>
+      <p >Melee Weapon, 5 ft, HIT/DC +5, 1d8+3 (1d10+3) Slashing, Martial, Versatile</p></li>
+
+      <li >
+      <h4 >Unarmed Strike</h4>
+      <p >Melee Attack, 5 ft, HIT/DC +5, 4 Bludgeoning</p></li>
+    </ul>
+
+    <ul class="list-all-attacks" >
+
+      <li >
+      <h4 >Channel Divinity</h4>
+      <p ><em >PHB</em> 88</p>
+      <p >Paladin feature. Your oath allows you to channel divine energy to fuel magical effects. When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again. Some Channel Divinity effects require saving throws (DC 12)</p>
+      <p ><em >Abjure Enemy</em></p>
+      <p ><em >Vow of Enmity</em></p>
+      <div >
+        <input class="checkbox" type="checkbox" name="checkbox" value="off" >
+        Per Short Rest
+      </div></li>
+
+      <li >
+      <h4 >Abjure Enemy</h4>
+      <p ><em >PHB</em> 88</p>
+      <p >Paladin feature. You present your holy symbol and speak a prayer of denunciation. One creature within 60 ft that you can see makes a DC 12 WIS save, unless it is immune to being frightened. Fiends and undead have disadvantage on this save.</p></li>
+
+      <li >
+      <h4 >Divine Sense</h4>
+      <p ><em >PHB</em> 84</p>
+      <p >Paladin feature. As an action, you can detect good and evil. Until the end of your next turn, you can sense anything affected by the hallow spell or know the location of any celestial, fiend, undead within 60 ft. that is not behind total cover. You can use this feature 3 times per long rest.</p>
+      <div >
+        <input class="checkbox" type="checkbox" name="checkbox" value="off" >
+        <input class="checkbox" type="checkbox" name="checkbox" value="off" >
+        <input class="checkbox" type="checkbox" name="checkbox" value="off" >
+        Per Long Rest
+      </div></li>
+
+      <li >
+      <h4 >Lay on Hands Pool</h4>
+      <p ><em >PHB</em> 84</p>
+      <p >Paladin feature. You have a pool of healing power that can restore 15 HP per long rest. As an action, you can touch a creature to restore any number of HP remaining in the pool, or 5 HP to either cure a disease or neutralize a poison affecting the creature.</p>
+      <div >
+        <input class="stepper" type="number" name="stepper" value="15" min="0" max="15" >
+      </div></li>
+
+      <li >
+      <h4 >Unarmed Strike</h4>
+      <p >You can punch, kick, head-butt, or use a similar forceful blow and deal bludgeoning damage equal to 1 + STR modifier</p></li>
+
+      <li >
+      <ul class="list-bonus-actions" >
+
+        <h4 >Bonus Actions</h4>
+
+        <li >
+        <h5 >Actions in Combat</h5>
+        <p >Two-Weapon Fighting</p></li>
+
+        <li >
+        <h5 >Spells</h5>
+        <p >Hunter's Mark © <span style="opacity:40%;">(1st)</span></p>
+
+        <li >
+        <h5 >Vow of Enmity</h5>
+        <p ><em >PHB</em> 88</p>
+        <p >Paladin feature. You utter a vow of enmity against a creature you can see within 10 ft of you. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hp or falls unconscious.</p></li>
+      </ul></li>
+
+      <li >
+      <ul class="list-reactions" >
+
+        <h4 >Reactions</h4>
+
+        <li >
+        <h5 >Actions in Combat</h5>
+        <p >Opportunity Attack</p></li>
+
+        <li >
+        <h5 >Protection</h5>
+        <p ><em >PHB</em> 84</p>
+        <p >Paladin feature. While wielding a shield and a creature you can see attacks a target other than you within 5 ft., you can use your reaction to impose disadvantage on the attack roll.</p></li>
+      </ul></li>
+
+      <li >
+      <ul class="list-other" >
+
+        <h4 >Other</h4>
+
+        <li >
+        <h5 >Actions in Combat</h5>
+        <p >Interact with an Object</p></li>
+
+        <li >
+        <h5 >Divine Smite (Special)</h5>
+        <p ><em >PHB</em> 85</p>
+        <p >Paladin feature. When you hit with a melee weapon attack, you can expend one spell slot to deal 2d8 extra radiant damage to the target plus 1d8 for each spell level higher than 1st (max 5d8) and plus 1d8 against undead or fiends.</p></li>
+      </ul></li>
+    </ul >
+  </section>
+
+  <section class="section-spells" >
+
+    <article class="article-spells-scores" >
+
+    <h2 >Spells</h2>
+
+    <ul >
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header heading-ability-opacity" >modifier</p>
+        <p class="score-value score-value-number" >+2</p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header heading-ability-opacity" >spell</p>
+        <p class="score-value score-value-number" >+4</p>
+        <p class="score-bottom heading-ability-opacity" >attack</p>
+      </div></li>
+
+      <li >
+      <div class="container-score" >
+        <p class="score-header heading-ability-opacity" >save</p>
+        <p class="score-value score-value-number" >12</p>
+        <p class="score-bottom heading-ability-opacity" >dc</p>
+      </div></li>
+    </ul></article>
+
+    <article class="article-spells-first" >
+
+      <h3 >1st Level</h3>
+      <div class="spell-slots" >
+        <input class="checkbox" type="checkbox" name="checkbox" value="off" >
+        <input class="checkbox" type="checkbox" name="checkbox" value="off" >
+        <input class="checkbox" type="checkbox" name="checkbox" value="off" >
+        Per Long Rest</div>
+
+    <ul class="list-spell-cards" >
+
+      <li >
+        <h4 >Bless</h4>
+        <p ><em >PHB</em> 219</p>
+        <p >Casting Time: 1A</p>
+        <p >Range: 30 ft</p>
+        <p >Components: V/S/M (a sprinkling of holy water)</p>
+        <p >Duration: Concentration, up to 1 minute</p>
+      </li>
+
+      <li >
+        <h4 >Cure Wounds</h4>
+        <p ><em >PHB</em> 230</p>
+        <p >Casting Time: 1A</p>
+        <p >Range: Touch</p>
+        <p >Components: V, S</p>
+        <p >Duration: Instantaneous</p>
+      </li>
+
+      <li >
+        <h4 >Wrathful Smite</h4>
+        <p ><em >PHB</em> 289</p>
+        <p >Casting Time: 1BA</p>
+        <p >Range: Self</p>
+        <p >Components: V</p>
+        <p >Duration: Concentration, up to 1 minute</p>
+      </li>
+    </ul></article>
+  </section>
+  </main>
+
+  <footer >
+    <a href="https://github.com/carsonhalstead/carsonhalstead.com" target="_blank" >
+    D&D with ♥ by Carson Halstead ©
+    <script >document.write(new Date().getFullYear())</script>
+    ☻</a>
+  </footer>
+</body>
+</html>
