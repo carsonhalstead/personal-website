@@ -7,24 +7,17 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>" >
 <style >
 a {
-  padding-left: 2%;
-  border-left: thick double;
   text-decoration: none;
-  color: #ffffff40;
-} a:hover {
-  color: white;
-}/* need to add padding to .section-spells articles other than .article-spells-first
-.section-spells article {
-  padding: 3% 6% 3% 6%;
-}*/
+  color: #ffffff;
+}
+details {
+  margin: 0 0 6% 0;
+}
 body {
   margin: 0;
   font-size: 16px;
   background: #10161A;
   color: #fff;
-}
-details {
-  margin: 0 0 6% 0;
 }
 h1, h2, h3, h4, h5 {
   font-family: sans-serif;
@@ -36,6 +29,7 @@ h1 {
 }
 h2 {
   padding-bottom: 3%;
+  font-size: calc(0.64rem + 2.5vmin);
   opacity: 40%;
 }
 h3 {
@@ -111,6 +105,8 @@ li {
   border-style: none none solid none;
   border-color: #ffffff16;
 } .summary-scores li {
+  width: 44%;
+  margin-bottom: 8%;
   border: 4px double #ffffff16;
 }
 main {
@@ -178,7 +174,14 @@ summary {
 }
 .article-spells-scores {
   padding: 3% 6% 0 6%;
-  background: #202A32;
+}
+.attribution {
+  padding-left: 2%;
+  border-left: thick double;
+  text-decoration: none;
+  color: #ffffff40;
+} .attribution:hover {
+  color: white;
 }
 .container-score {
   display: flex;
@@ -215,7 +218,7 @@ ul.list-spell-cards {
 }
 .score-bottom, .score-header {
   font-variant: small-caps;
-  font-size: calc(0.2rem + 2.5vmin);
+  font-size: calc(0.44rem + 2.5vmin);
   letter-spacing: 0.125rem;
 }
 .score-row {
@@ -225,7 +228,7 @@ ul.list-spell-cards {
 }
 .score-value {
   margin: 8%;
-  font-size: calc(1.2rem + 2.5vmin);
+  font-size: calc(2rem + 2.5vmin);
 }
 .score-value-bonus {
   font-size: calc(0.2rem + 2.5vmin);
@@ -263,13 +266,14 @@ ul.list-spell-cards {
   background: #202A32;
 }
 .section-spells {
-  padding-top: 4%;
+  padding: 4% 0 8% 0;
+  background: #202A32;
 }
 .section-stats-group {
   margin: 6%;
 }
 .section-summary {
-  padding: 24% 6% 0 6%;
+  padding: 28% 6% 0 6%;
   background: #202A32;
 }
 .section-summary input {
@@ -289,6 +293,12 @@ ul.list-spell-cards {
 }
 .spell-slots {
   padding: 0 6% 3% 6%;
+}
+@media screen and (min-width: 480px) {
+  .summary-scores li {
+    width: 30%;
+    margin-bottom: 4%;
+  }
 }
 @media screen and (min-width: 960px) {
   .article-saves p {
@@ -332,7 +342,7 @@ ul.list-spell-cards {
   <header >
 
     <div >
-      <h1 >Winslow von Bank</h1>
+      <h1 ><a href="#top" >Winslow von Bank</a></h1>
       <h2 >Human Paladin 3</h2></div>
     <div class="container-score" >
       <p class="score-header heading-ability-opacity" >hp</p>
@@ -340,6 +350,7 @@ ul.list-spell-cards {
     </div>
   </header>
 
+  <div id="top"></div>
   <main >
   <section class="section-summary" >
 
@@ -357,7 +368,7 @@ ul.list-spell-cards {
       <li >
       <div class="container-score" >
         <p class="score-header heading-ability-opacity" >walking</p>
-        <p class="score-value score-value-number" >30 ft</p>
+        <p class="score-value score-value-number" >30</p>
         <p class="score-bottom heading-ability-opacity" >speed</p>
       </div></li>
 
@@ -731,12 +742,12 @@ ul.list-spell-cards {
 
     <h2 >Actions</h2>
 
+    <h3 >Attack (1 Per Action)</h3>
+
     <details >
       <summary style="font-size:1.2rem; font-family:sans-serif; font-weight:bold;">Attack Actions in Combat</summary>
       <p class="accordion-copy" ><em >Attack, Cast a Spell, Dash, Disengage, Dodge, Grapple, Help, Hide, Interact with an Object, Improvise, Opportunity Attack, Ready, Search, Shove, Two-Weapon Fighting, Use an Object</em></p>
     </details>
-
-    <h3 >Attack (1 Per Action)</h3>
 
     <ul class="list-weapon-attacks">
 
@@ -1056,7 +1067,7 @@ ul.list-spell-cards {
   </main>
 
   <footer >
-    <a href="https://github.com/carsonhalstead/carsonhalstead.com" target="_blank" >
+    <a class="attribution" href="https://github.com/carsonhalstead/carsonhalstead.com" target="_blank" >
     D&D with ♥ by Carson Halstead ©
     <script >document.write(new Date().getFullYear())</script>
     ☻</a>
