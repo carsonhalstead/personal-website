@@ -12,6 +12,9 @@ a {
 }
 details {
   margin: 0 0 6% 0;
+  background-color: #202A32;
+} details[open] {
+  padding-bottom: 2%;
 }
 body {
   margin: 0;
@@ -39,8 +42,6 @@ h3 {
 }
 h4 {
   opacity: 40%;
-} .article-spells-first h4 {
-  margin-bottom: 12%;
 } #actions h4 {
   margin-bottom: 3%;
 }
@@ -113,13 +114,7 @@ main {
 }
 p {
   margin: 0;
-} /* this isn't used, delete?
-  .accordion-copy {
-  margin: 3% 0 6% 3%;
-  padding-left: 3%;
-  border-left: 4px solid #ffffff40;
-} */
-  .article-pros-etc p {
+} .article-pros-etc p {
   margin-left: 3%;
   padding: 0;
   font-size: calc(0.2rem + 2.5vmin);
@@ -127,17 +122,17 @@ p {
   margin-left: 0;
 } .list-all-attacks p {
   margin-bottom: 3%;
-  line-height: 136%;
 } .score-bottom p {
   margin: 2%;
 } .score-header p {
   margin: 2%;
 } .list-spell-cards p {
   margin-bottom: 3%;
-  line-height: 120%;
   font-size: calc(0.2rem + 2.5vmin);
+  line-height: 120%;
 } #actions p {
   font-size: calc(0.2rem + 2.5vmin);
+  line-height: 136%;
 }
 ul {
   display: flex;
@@ -180,6 +175,9 @@ summary {
 #spells {
   padding: 32% 6% 6% 6%;
   background: #202A32;
+} #spells input {
+  width: 44px;
+  height: 44px;
 }
 #stats {
   padding: 32% 6% 6% 6%;
@@ -191,8 +189,14 @@ summary {
   padding: 32% 6% 6% 6%;
   background: #202A32;
 }
+/* for left rule vert in #actions <details> */
+.accordion-copy {
+  margin: 3% 0 3% 3%;
+  padding-left: 3%;
+  border-left: 4px solid #ffffff40;
+}
 .article-senses {
-  margin-bottom: 8%;
+  margin: 16% 0 8% 0;
 }
 .article-spells-first {
   /*
@@ -242,11 +246,15 @@ header:hover .dropdown-content {
   opacity: 40%;
 }
 /*
-display:flex at ul element is messy so i need to go back and be more intentional with that
-may move these styles elsewhere to fit alphabetical organization method but idk they'll get split…
+display:flex at ul element is messy
+need to go back and be more intentional
+may move these styles elsewhere to fit alphabetical organization method but idk
 */
+ul.list-spell-cards {
+  display: block;
+}
 .list-spell-cards li {
-  width: 100%;
+  width: auto;
   padding: 3%;
   background: #10161A;
   border: 8px ridge #ffffff40;
@@ -302,7 +310,16 @@ may move these styles elsewhere to fit alphabetical organization method but idk 
   margin: 2%;
   font-size: calc(0.2rem + 2.5vmin);
 }
+.spell-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} .spell-card-header h4 {
+  opacity: 100%;
+}
 .spell-slots {
+  display: flex;
+  align-items: center;
   margin-bottom: 6%;
 }
 @media screen and (min-width: 480px) {
@@ -346,6 +363,9 @@ may move these styles elsewhere to fit alphabetical organization method but idk 
     margin: 2%;
   } .article-saves ul {
     flex-direction: column;
+  }
+  .article-senses {
+    margin-top: 0;
   }
   .score-bottom, .score-header {
     font-size: calc(0.025rem + 2vmin);
@@ -931,170 +951,95 @@ may move these styles elsewhere to fit alphabetical organization method but idk 
       <ul class="list-spell-cards" >
 
         <li >
-          <h4 >Bane © (Oath)</h4>
-          <p ><em >PHB</em> 216</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: 30 ft</p>
-          <p >Components: V/S/M (a drop of blood)</p>
-          <p >Duration: Concentration, up to 1 minute</p>
-          <p >Save: CHA</p>
+          <div class="spell-card-header" >
+            <h4 >Bane © (Oath)</h4>
+            <input class="checkbox" type="checkbox" name="checkbox" value="off" ></div>
+          <p class="opacity40" ><em >PHB</em> 216</p>
         </li>
 
         <li >
           <h4 >Bless ©</h4>
           <p ><em >PHB</em> 219</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: 30 ft</p>
-          <p >Components: V/S/M (a sprinkling of holy water)</p>
-          <p >Duration: Concentration, up to 1 minute</p>
         </li>
 
         <li >
           <h4 >Ceremony ®</h4>
           <p ><em >XGE</em> 151</p>
-          <p >Casting Time: 1 Hour</p>
-          <p >Range: Touch</p>
-          <p >Components: V/S/M (25 gp worth of powdered silver, which the spell consumes)</p>
-          <p >Duration: Instantaneous</p>
         </li>
 
         <li >
           <h4 >Command ©</h4>
           <p ><em >PHB</em> 223</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: 60 ft</p>
-          <p >Components: V</p>
-          <p >Duration: 1 Round</p>
-          <p >Save: WIS</p>
         </li>
 
         <li >
           <h4 >Compelled Duel ©</h4>
           <p ><em >PHB</em> 224</p>
-          <p >Casting Time: 1BA</p>
-          <p >Range: 30 ft</p>
-          <p >Components: V</p>
-          <p >Duration: Concentration, up to 1 minute</p>
-          <p >Save: WIS</p>
         </li>
 
         <li >
           <h4 >Cure Wounds</h4>
           <p ><em >PHB</em> 230</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: Touch</p>
-          <p >Components: V, S</p>
-          <p >Duration: Instantaneous</p>
         </li>
 
         <li >
           <h4 >Detect Evil & Good ©</h4>
           <p ><em >PHB</em> 231</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: Self (30 ft sphere)</p>
-          <p >Components: V, S</p>
-          <p >Duration: Concentration, up to 10 minutes</p>
         </li>
 
         <li >
           <h4 >Detect Magic © ®</h4>
           <p ><em >PHB</em> 231</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: Self (30 ft sphere)</p>
-          <p >Components: V, S</p>
-          <p >Duration: Concentration, up to 10 minutes</p>
         </li>
 
         <li >
           <h4 >Detect Poison & Disease © ®</h4>
           <p ><em >PHB</em> 231</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: Self (30 ft sphere)</p>
-          <p >Components: V/S/M (a yew leaf)</p>
-          <p >Duration: Concentration, up to 10 minutes</p>
         </li>
 
         <li >
           <h4 >Divine Favor ©</h4>
           <p ><em >PHB</em> 234</p>
-          <p >Casting Time: 1BA</p>
-          <p >Range: Self</p>
-          <p >Components: V, S</p>
-          <p >Duration: Concentration, up to 1 minute</p>
         </li>
 
         <li >
           <h4 >Heroism ©</h4>
           <p ><em >PHB</em> 250</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: Touch</p>
-          <p >Components: V, S</p>
-          <p >Duration: Concentration, up to 1 minute</p>
         </li>
 
         <li >
           <h4 >Hunter's Mark © (Oath)</h4>
           <p ><em >PHB</em> 251</p>
-          <p >Casting Time: 1BA</p>
-          <p >Range: 90 ft</p>
-          <p >Components: V</p>
-          <p >Duration: Concentration, up to 1 hour</p>
         </li>
 
         <li >
           <h4 >Protection from Evil & Good ©</h4>
           <p ><em >PHB</em> 270</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: Touch</p>
-          <p >Components: V/S/M (holy water or powdered silver & iron, consumed)</p>
-          <p >Duration: Concentration, up to 10 minutes</p>
         </li>
 
         <li >
           <h4 >Purify Food & Drink ®</h4>
           <p ><em >PHB</em> 270</p>
-          <p >Casting Time: 1A</p>
-          <p >Range: 10 ft</p>
-          <p >Components: V, S</p>
-          <p >Duration: Instantaneous</p>
         </li>
 
         <li >
           <h4 >Searing Smite ©</h4>
           <p ><em >PHB</em> 274</p>
-          <p >Casting Time: 1BA</p>
-          <p >Range: Self</p>
-          <p >Components: V</p>
-          <p >Duration: Concentration, up to 1 minute</p>
         </li>
 
         <li >
           <h4 >Shield of Faith ©</h4>
           <p ><em >PHB</em> 275</p>
-          <p >Casting Time: 1BA</p>
-          <p >Range: 60 ft</p>
-          <p >Components: V/S/M (a small parchment with a bit of holy text written on it)</p>
-          <p >Duration: Concentration, up to 10 minutes</p>
         </li>
 
         <li >
           <h4 >Thunderous Smite ©</h4>
           <p ><em >PHB</em> 282</p>
-          <p >Casting Time: 1BA</p>
-          <p >Range: 30 ft</p>
-          <p >Components: V</p>
-          <p >Duration: Concentration, up to 1 minute</p>
-          <p >Save: STR</p>
         </li>
 
         <li >
           <h4 >Wrathful Smite ©</h4>
           <p ><em >PHB</em> 289</p>
-          <p >Casting Time: 1BA</p>
-          <p >Range: Self</p>
-          <p >Components: V</p>
-          <p >Duration: Concentration, up to 1 minute</p>
-          <p >Save: WIS</p>
         </li>
       </ul></article>
     </section>
