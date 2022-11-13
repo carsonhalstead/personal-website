@@ -35,18 +35,12 @@ h2 {
   font-size: calc(0.64rem + 2.5vmin);
   opacity: 40%;
 }
-h3 {
-  margin: 3% 0 3% 0;
-} .article-pros-etc h3 {
+.article-pros-etc h3 {
   margin: 0 0 3% 3%;
 }
-h4 {
+#actions h4 {
+  margin-bottom: 3%;
   opacity: 40%;
-} #actions h4 {
-  margin-bottom: 3%;
-}
-h5 {
-  margin-bottom: 3%;
 }
 header {
   position: fixed;
@@ -85,13 +79,11 @@ li {
 } .list-weapon-attacks li {
   border: 4px double #ffffff16;
 } .list-bonus-actions li, .list-reactions li, .list-other li {
+  padding: 0 3% 3% 3%;
   border-left: 4px solid #ffffff16;
 } #abilities li {
   background: #202A32;
   border: 4px double #10161A;
-} #actions li {
-  width: auto;
-  padding-left: 3%; /* something weird going on here… */
 } #skills li {
   width: auto;
   padding-bottom: 0;
@@ -122,12 +114,12 @@ p {
   margin-left: 0;
 } .list-all-attacks p {
   margin-bottom: 3%;
+  opacity: 80%;
 } .score-bottom p {
   margin: 2%;
 } .score-header p {
   margin: 2%;
 } .list-spell-cards p {
-  margin-bottom: 3%;
   font-size: calc(0.2rem + 2.5vmin);
   line-height: 120%;
 } #actions p {
@@ -167,6 +159,10 @@ summary {
 }
 #actions {
   padding: 32% 6% 6% 6%;
+} #actions h3 {
+  margin-bottom: 6%;
+} #actions li {
+  width: auto;
 }
 #skills {
   padding: 32% 6% 6% 6%;
@@ -192,7 +188,7 @@ summary {
 /* for left rule vert in #actions <details> */
 .accordion-copy {
   margin: 3% 0 3% 3%;
-  padding-left: 3%;
+  padding: 0 3% 0 3%;
   border-left: 4px solid #ffffff40;
 }
 .article-senses {
@@ -242,7 +238,14 @@ header:hover .dropdown-content {
   width: 88%;
   padding: 3% 6%;
 }
-.opacity40 {
+.list-all-attacks li {
+  margin-bottom: 8%;
+  padding: 0 3% 3% 3%;
+}
+.list-weapon-attacks li {
+  padding: 3%;
+}
+.opacity40 { /* get rid of me */
   opacity: 40%;
 }
 /*
@@ -252,6 +255,9 @@ may move these styles elsewhere to fit alphabetical organization method but idk
 */
 ul.list-spell-cards {
   display: block;
+}
+ul.list-weapon-attacks {
+  margin-bottom: 8%;
 }
 .list-spell-cards li {
   width: auto;
@@ -796,8 +802,6 @@ ul.list-spell-cards {
 
       <h2 >Actions</h2>
 
-      <h3 >Attack (1 Per Action)</h3>
-
       <details >
         <summary style="font-size:1.2rem; font-family:sans-serif; font-weight:bold;">Attack Actions in Combat</summary>
         <p class="accordion-copy" ><em >Attack, Cast a Spell, Dash, Disengage, Dodge, Grapple, Help, Hide, Interact with an Object, Improvise, Opportunity Attack, Ready, Search, Shove, Two-Weapon Fighting, Use an Object</em></p>
@@ -806,24 +810,24 @@ ul.list-spell-cards {
       <ul class="list-weapon-attacks">
 
         <li >
-        <h4 >Javelin</h4>
+        <h3 >Javelin</h3>
         <p >Melee Weapon, 30 ft (120), HIT/DC +5, 1d6+3 Piercing, Simple, Thrown</p></li>
 
         <li >
-        <h4 >Longsword</h4>
+        <h3 >Longsword</h3>
         <p >Melee Weapon, 5 ft, HIT/DC +5, 1d8+3 (1d10+3) Slashing, Martial, Versatile</p></li>
 
         <li >
-        <h4 >Unarmed Strike</h4>
+        <h3 >Unarmed Strike</h3>
         <p >Melee Attack, 5 ft, HIT/DC +5, 4 Bludgeoning</p></li>
       </ul>
 
       <ul class="list-all-attacks" >
 
         <li >
-        <h4 >Channel Divinity</h4>
-        <p ><em >PHB</em> 88</p>
-        <p >Paladin feature. Your oath allows you to channel divine energy to fuel magical effects. When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again. Some Channel Divinity effects require saving throws (DC 12)</p>
+        <h3 >Channel Divinity</h3>
+        <p >Paladin feature. Your oath allows you to channel divine energy to fuel magical effects. When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again. Some Channel Divinity effects require saving throws (DC 12)
+        <br><em >PHB</em> 88</p>
         <p ><em >Abjure Enemy</em></p>
         <p ><em >Vow of Enmity</em></p>
         <div >
@@ -832,14 +836,14 @@ ul.list-spell-cards {
         </div></li>
 
         <li >
-        <h4 >Abjure Enemy</h4>
-        <p ><em >PHB</em> 88</p>
-        <p >Paladin feature. You present your holy symbol and speak a prayer of denunciation. One creature within 60 ft that you can see makes a DC 12 WIS save, unless it is immune to being frightened. Fiends and undead have disadvantage on this save.</p></li>
+        <h3 >Abjure Enemy</h3>
+        <p >Paladin feature. You present your holy symbol and speak a prayer of denunciation. One creature within 60 ft that you can see makes a DC 12 WIS save, unless it is immune to being frightened. Fiends and undead have disadvantage on this save.
+        <br><em >PHB</em> 88</p></li>
 
         <li >
-        <h4 >Divine Sense</h4>
-        <p ><em >PHB</em> 84</p>
-        <p >Paladin feature. As an action, you can detect good and evil. Until the end of your next turn, you can sense anything affected by the hallow spell or know the location of any celestial, fiend, undead within 60 ft. that is not behind total cover. You can use this feature 3 times per long rest.</p>
+        <h3 >Divine Sense</h3>
+        <p >Paladin feature. As an action, you can detect good and evil. Until the end of your next turn, you can sense anything affected by the hallow spell or know the location of any celestial, fiend, undead within 60 ft. that is not behind total cover. You can use this feature 3 times per long rest.
+        <br><em >PHB</em> 84</p>
         <div >
           <input class="checkbox" type="checkbox" name="checkbox" value="off" >
           <input class="checkbox" type="checkbox" name="checkbox" value="off" >
@@ -848,73 +852,74 @@ ul.list-spell-cards {
         </div></li>
 
         <li >
-        <h4 >Lay on Hands Pool</h4>
-        <p ><em >PHB</em> 84</p>
-        <p >Paladin feature. You have a pool of healing power that can restore 15 HP per long rest. As an action, you can touch a creature to restore any number of HP remaining in the pool, or 5 HP to either cure a disease or neutralize a poison affecting the creature.</p>
+        <h3 >Lay on Hands Pool</h3>
+        <p >Paladin feature. You have a pool of healing power that can restore 15 HP per long rest. As an action, you can touch a creature to restore any number of HP remaining in the pool, or 5 HP to either cure a disease or neutralize a poison affecting the creature.
+        <br><em >PHB</em> 84</p>
         <div >
           <input class="stepper" type="number" name="stepper" value="15" min="0" max="15" >
         </div></li>
 
         <li >
-        <h4 >Unarmed Strike</h4>
+        <h3 >Unarmed Strike</h3>
         <p >You can punch, kick, head-butt, or use a similar forceful blow and deal bludgeoning damage equal to 1 + STR modifier</p></li>
 
         <li >
+
         <ul class="list-bonus-actions" >
 
-          <h4 >Bonus Actions</h4>
+          <h3 >Bonus Actions</h3>
 
           <li >
-          <h5 >Actions in Combat</h5>
+          <h4 >Actions in Combat</h4>
           <p >Two-Weapon Fighting</p></li>
 
           <li >
-          <h5 >Spells</h5>
+          <h4 >Spells</h4>
           <p >Hunter's Mark © <span style="opacity:40%;">(1st)</span></p>
 
           <li >
-          <h5 >Vow of Enmity</h5>
-          <p ><em >PHB</em> 88</p>
-          <p >Paladin feature. You utter a vow of enmity against a creature you can see within 10 ft of you. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hp or falls unconscious.</p></li>
+          <h4 >Vow of Enmity</h4>
+          <p >Paladin feature. You utter a vow of enmity against a creature you can see within 10 ft of you. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hp or falls unconscious.
+          <br><em >PHB</em> 88</p></li>
         </ul></li>
 
         <li >
         <ul class="list-reactions" >
 
-          <h4 >Reactions</h4>
+          <h3 >Reactions</h3>
 
           <li >
-          <h5 >Actions in Combat</h5>
+          <h4 >Actions in Combat</h4>
           <p >Opportunity Attack</p></li>
 
           <li >
-          <h5 >Protection</h5>
-          <p ><em >PHB</em> 84</p>
-          <p >Paladin feature. While wielding a shield and a creature you can see attacks a target other than you within 5 ft., you can use your reaction to impose disadvantage on the attack roll.</p></li>
+          <h4 >Protection</h4>
+          <p >Paladin feature. While wielding a shield and a creature you can see attacks a target other than you within 5 ft., you can use your reaction to impose disadvantage on the attack roll.
+          <br><em >PHB</em> 84</p></li>
         </ul></li>
 
         <li >
         <ul class="list-other" >
 
-          <h4 >Other</h4>
+          <h3 >Other</h3>
 
           <li >
-          <h5 >Actions in Combat</h5>
+          <h4 >Actions in Combat</h4>
           <p >Interact with an Object</p></li>
 
           <li >
-          <h5 >Divine Smite (Special)</h5>
-          <p ><em >PHB</em> 85</p>
-          <p >Paladin feature. When you hit with a melee weapon attack, you can expend one spell slot to deal 2d8 extra radiant damage to the target plus 1d8 for each spell level higher than 1st (max 5d8) and plus 1d8 against undead or fiends.</p></li>
+          <h4 >Divine Smite (Special)</h4>
+          <p >Paladin feature. When you hit with a melee weapon attack, you can expend one spell slot to deal 2d8 extra radiant damage to the target plus 1d8 for each spell level higher than 1st (max 5d8) and plus 1d8 against undead or fiends.
+          <br><em >PHB</em> 85</p></li>
         </ul></li>
       </ul >
     </section>
 
     <section id="spells" >
 
-      <article class="article-spells-scores" >
-
       <h2 >Spells</h2>
+
+      <article class="article-spells-scores" >
 
       <ul >
 
@@ -952,93 +957,94 @@ ul.list-spell-cards {
 
         <li >
           <div class="spell-card-header" >
-            <h4 >Bane © (Oath)</h4>
-            <input class="checkbox" type="checkbox" name="checkbox" value="off" ></div>
-          <p class="opacity40" ><em >PHB</em> 216</p>
+            <div >
+              <h3 >Bane © (Oath)</h3>
+              <p class="opacity40" ><em >PHB</em> 216</p></div>
+            <input class="checkbox" type="checkbox" name="checkbox" checked ></div>
         </li>
 
         <li >
-          <h4 >Bless ©</h4>
+          <h3 >Bless ©</h3>
           <p ><em >PHB</em> 219</p>
         </li>
 
         <li >
-          <h4 >Ceremony ®</h4>
+          <h3 >Ceremony ®</h3>
           <p ><em >XGE</em> 151</p>
         </li>
 
         <li >
-          <h4 >Command ©</h4>
+          <h3 >Command ©</h3>
           <p ><em >PHB</em> 223</p>
         </li>
 
         <li >
-          <h4 >Compelled Duel ©</h4>
+          <h3 >Compelled Duel ©</h3>
           <p ><em >PHB</em> 224</p>
         </li>
 
         <li >
-          <h4 >Cure Wounds</h4>
+          <h3 >Cure Wounds</h3>
           <p ><em >PHB</em> 230</p>
         </li>
 
         <li >
-          <h4 >Detect Evil & Good ©</h4>
+          <h3 >Detect Evil & Good ©</h3>
           <p ><em >PHB</em> 231</p>
         </li>
 
         <li >
-          <h4 >Detect Magic © ®</h4>
+          <h3 >Detect Magic © ®</h3>
           <p ><em >PHB</em> 231</p>
         </li>
 
         <li >
-          <h4 >Detect Poison & Disease © ®</h4>
+          <h3 >Detect Poison & Disease © ®</h3>
           <p ><em >PHB</em> 231</p>
         </li>
 
         <li >
-          <h4 >Divine Favor ©</h4>
+          <h3 >Divine Favor ©</h3>
           <p ><em >PHB</em> 234</p>
         </li>
 
         <li >
-          <h4 >Heroism ©</h4>
+          <h3 >Heroism ©</h3>
           <p ><em >PHB</em> 250</p>
         </li>
 
         <li >
-          <h4 >Hunter's Mark © (Oath)</h4>
+          <h3 >Hunter's Mark © (Oath)</h3>
           <p ><em >PHB</em> 251</p>
         </li>
 
         <li >
-          <h4 >Protection from Evil & Good ©</h4>
+          <h3 >Protection from Evil & Good ©</h3>
           <p ><em >PHB</em> 270</p>
         </li>
 
         <li >
-          <h4 >Purify Food & Drink ®</h4>
+          <h3 >Purify Food & Drink ®</h3>
           <p ><em >PHB</em> 270</p>
         </li>
 
         <li >
-          <h4 >Searing Smite ©</h4>
+          <h3 >Searing Smite ©</h3>
           <p ><em >PHB</em> 274</p>
         </li>
 
         <li >
-          <h4 >Shield of Faith ©</h4>
+          <h3 >Shield of Faith ©</h3>
           <p ><em >PHB</em> 275</p>
         </li>
 
         <li >
-          <h4 >Thunderous Smite ©</h4>
+          <h3 >Thunderous Smite ©</h3>
           <p ><em >PHB</em> 282</p>
         </li>
 
         <li >
-          <h4 >Wrathful Smite ©</h4>
+          <h3 >Wrathful Smite ©</h3>
           <p ><em >PHB</em> 289</p>
         </li>
       </ul></article>
