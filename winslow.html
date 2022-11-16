@@ -32,6 +32,16 @@ body {
   color: #fff;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 88%;
+  padding: 12% 6% 6% 6%;
+  font-size: calc(0.2rem + 2.5vmin);
+  background: #00000080;
+  z-index: -1;
+}
+
 h1,
 h2,
 h3,
@@ -65,18 +75,12 @@ header {
   z-index: 1;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 88%;
-  padding: 3% 6%;
-  font-size: calc(0.2rem + 2.5vmin);
-  background: #00000080;
-  z-index: -1;
+input {
+  margin: 0;
 }
 
 main {
-  margin-bottom: 8%;
+  margin-bottom: 16%;
   background: #10161A;
 }
 
@@ -166,18 +170,68 @@ ul.summary-scores {
 .article-spells-scores li {
   border: 4px double #ffffff16;
 }
-
 /* /end Score Grids */
+
+/* || Dropdown Navigation */
+
+header:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 80%;
+  font-family: sans-serif;
+  background-color: #000000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 6% 8% 6% 8%;
+  font-size: calc(0.64rem + 2.5vmin);
+} .dropdown-content a:hover {
+  background-color: #ffffff16;
+}
+
+.dropdown-content li {
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0
+}
+/* /end Dropdown Navigation */
+
+/* || Limited Use Inputs */
+
+input.checkbox {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 3%;
+}
+
+input.stepper {
+  width: 3rem;
+  height: 2rem;
+  margin-right: 3%;
+}
+
+.limited-use {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6%;
+}
+/* /end Limited Use Inputs */
+
+.action-description {
+  margin-bottom: 3%;
+  opacity: 80%;
+}
 
 .list-bonus-actions li, .list-reactions li, .list-other li {
   padding: 0 3% 3% 3%;
   border-left: 4px solid #ffffff16;
 }
 
-.list-all-attacks p {
-  margin-bottom: 3%;
-  opacity: 80%;
-}
 .score-bottom p {
   margin: 2%;
 }
@@ -224,8 +278,8 @@ ul.summary-scores {
   background: #202A32;
 }
 #summary input {
-  width: 44px;
-  height: 44px;
+  width: 3rem;
+  height: 3rem;
   margin: 8%;
 }
 .accordion-copy {
@@ -261,44 +315,13 @@ ul.summary-scores {
   align-items: center;
 }
 
-/* || Dropdown Navigation */
-
-header:hover .dropdown-content {
-  display: block;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  width: 80%;
-  font-family: sans-serif;
-  background-color: #000000;
-}
-.dropdown-content a {
-  display: block;
-  padding: 6% 8% 6% 8%;
-  font-size: calc(0.64rem + 2.5vmin);
-} .dropdown-content a:hover {
-  background-color: #ffffff16;
-}
-.dropdown-content li {
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0
-}
-
-/* /end Dropdown Navigation */
-
 .header-info {
   display: flex;
   justify-content: space-between;
   width: 88%;
   padding: 3% 6%;
 }
-.limited-use {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8%;
-}
+
 .list-all-attacks {
   padding-top: 16%;
 }
@@ -379,43 +402,52 @@ header:hover .dropdown-content {
 } .spell-card-header h4 {
   opacity: 100%;
 }
-.stepper {
-  width: 3rem;
-}
+
 @media screen and (min-width: 480px) {
+
   .abilities-scores li {
     width: 30%;
     margin-bottom: 4%;
   }
+
   .summary-scores li {
     width: 30%;
     margin-bottom: 4%;
   }
 }
+
 @media screen and (min-width: 960px) {
+
   #abilities {
     padding-top: 16%;
   }
+
   #actions {
     padding-top: 16%;
   }
+
   #skills {
     padding-top: 16%;
   }
+
   #spells {
     padding-top: 16%;
   }
+
   #stats {
     display: flex;
     justify-content: space-between;
     padding-top: 16%;
   }
+
   #summary {
     padding-top: 16%;
   }
+
   #summary li, #abilities li {
     width: 15%
   }
+
   .article-saves,
   .section-stats-group {
     width: 46%;
@@ -925,18 +957,18 @@ need to revisit #actions li width: auto
       <ul class="list-weapon-attacks">
 
         <li >
-          <h3 >Javelin</h3>
-          <p >Melee Weapon, 30 ft (120), HIT/DC +5, 1d6+3 Piercing, Simple, Thrown</p>
+          <h3 >⚔️ Javelin</h3>
+          <p >Melee Weapon, 30 feet (120), HIT/DC +5, <strong >1d6+3</strong> Piercing, Simple, Thrown</p>
         </li>
 
         <li >
-          <h3 >Longsword</h3>
-          <p >Melee Weapon, 5 ft, HIT/DC +5, 1d8+3 (1d10+3) Slashing, Martial, Versatile</p>
+          <h3 >⚔️ Longsword</h3>
+          <p >Melee Weapon, 5 feet, HIT/DC +5, <strong >1d8+3</strong> (<strong >1d10+3</strong>) Slashing, Martial, Versatile</p>
         </li>
 
         <li >
-          <h3 >Unarmed Strike</h3>
-          <p >Melee Attack, 5 ft, HIT/DC +5, 4 Bludgeoning</p>
+          <h3 >✊🏽 Unarmed Strike</h3>
+          <p >Melee Attack, 5 feet, HIT/DC +5, 4 Bludgeoning</p>
         </li>
       </ul>
 
@@ -946,16 +978,18 @@ need to revisit #actions li width: auto
           <h3 >Channel Divinity</h3>
           <div class="limited-use" >
             <input class="checkbox" type="checkbox" name="checkbox" value="off" >
-            Per Short Rest
+            <p >Per Short Rest</p>
           </div>
-          <p >Paladin feature. Your oath allows you to channel divine energy to fuel magical effects. When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again. Some Channel Divinity effects require saving throws (DC 12). <span style="opacity: 40%" ><em >PHB</em> 88</span></p>
-          <p ><em >Abjure Enemy</em></p>
-          <p ><em >Vow of Enmity</em></p>
+          <p class="action-description" >Paladin feature. Your oath allows you to channel divine energy to fuel magical effects. Each Channel Divinity option provided by your oath explains how to use it.
+            <br>When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.
+            <br>Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC. <span style="opacity: 40%" ><em >PHB</em> 85</span></p>
         </li>
 
         <li >
           <h3 >Abjure Enemy</h3>
-          <p >Paladin feature. You present your holy symbol and speak a prayer of denunciation. One creature within 60 ft that you can see makes a DC 12 WIS save, unless it is immune to being frightened. Fiends and undead have disadvantage on this save. <span style="opacity: 40%" ><em >PHB</em> 88</span></p>
+          <p class="action-description" >Paladin feature. As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet that you can see. That creature must make a WIS save, unless it is immune to being frightened. Fiends and undead have disadvantage on this save.
+            <br>On a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature's speed is 0, and it can't benefit from any bonus to its speed.
+            <br>On a successful save, the creature's speed is halved for 1 minute or until the creature takes any damage. <span style="opacity: 40%" ><em >PHB</em> 88</span></p>
         </li>
 
         <li >
@@ -964,22 +998,28 @@ need to revisit #actions li width: auto
             <input class="checkbox" type="checkbox" name="checkbox" value="off" >
             <input class="checkbox" type="checkbox" name="checkbox" value="off" >
             <input class="checkbox" type="checkbox" name="checkbox" value="off" >
-            Per Long Rest
+            <p >Per Long Rest</p>
           </div>
-          <p >Paladin feature. As an action, you can detect good and evil. Until the end of your next turn, you can sense anything affected by the hallow spell or know the location of any celestial, fiend, undead within 60 ft. that is not behind total cover. You can use this feature 3 times per long rest. <span style="opacity: 40%" ><em >PHB</em> 84</span></p>
+          <p class="action-description" >Paladin feature. The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover
+            You know the type (celestial, fiend, or undead) of any being whose presence you sense, but but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the <em >hallow</em> spell.
+            <br>You can use this feature a number of times equal to <strong >1 + your CHA modifier</strong>. When you finish a long rest, you regain all expended uses. <span style="opacity: 40%" ><em >PHB</em> 84</span></p>
         </li>
 
         <li >
           <h3 >Lay on Hands Pool</h3>
           <div class="limited-use" >
             <input class="stepper" type="number" name="stepper" value="20" min="0" max="20" >
+            <p >Hit Points</p>
           </div>
-          <p >Paladin feature. You have a pool of healing power that can restore HP per long rest. As an action, you can touch a creature to restore any number of HP remaining in the pool, or 5 HP to either cure a disease or neutralize a poison affecting the creature. <span style="opacity: 40%" ><em >PHB</em> 84</span></p>
+          <p class="action-description" >Paladin feature. You have a pool of healing power that replenishes when you take a long rest.
+            <br>As an action, you can touch a creature and draw power from the pool to restore a number of HP to that creature, up to the maximum amount remaining in your pool.
+            <br>Alternatively, you can expend 5 HP from your pool of healing to cure the target of one disease or neutralize one poison affecting it.
+            <br>You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one. <span style="opacity: 40%" ><em >PHB</em> 84</span></p>
         </li>
 
         <li >
           <h3 >Unarmed Strike</h3>
-          <p >You can punch, kick, head-butt, or use a similar forceful blow and deal bludgeoning damage equal to 1 + STR modifier</p>
+          <p class="action-description" >You can punch, kick, head-butt, or use a similar forceful blow and deal bludgeoning damage equal to <strong >1 + STR modifier</strong>.</p>
         </li>
 
         <li >
@@ -990,17 +1030,17 @@ need to revisit #actions li width: auto
 
             <li >
               <h4 >Actions in Combat</h4>
-              <p >Two-Weapon Fighting</p>
+              <p class="action-description" >Two-Weapon Fighting</p>
             </li>
 
             <li >
               <h4 >Spells</h4>
-              <p >Hunter's Mark © <span style="opacity: 40%;" >(1st)</span></p>
+              <p class="action-description" >Hunter's Mark © <span style="opacity: 40%;" >(1st)</span></p>
             </li>
 
             <li >
               <h4 >Vow of Enmity</h4>
-              <p >Paladin feature. You utter a vow of enmity against a creature you can see within 10 ft of you. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hp or falls unconscious. <span style="opacity: 40%" ><em >PHB</em> 88</span></p>
+              <p class="action-description" >Paladin feature. As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hp or falls unconscious. <span style="opacity: 40%" ><em >PHB</em> 88</span></p>
             </li>
           </ul>
         </li>
@@ -1013,17 +1053,18 @@ need to revisit #actions li width: auto
 
             <li >
               <h4 >Actions in Combat</h4>
-              <p >Opportunity Attack</p>
+              <p class="action-description" >Opportunity Attack</p>
             </li>
 
             <li >
               <h4 >Protection</h4>
-              <p >Paladin feature. While wielding a shield and a creature you can see attacks a target other than you within 5 ft., you can use your reaction to impose disadvantage on the attack roll. <span style="opacity: 40%" ><em >PHB</em> 84</span></p>
+              <p class="action-description" >Paladin feature. When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll.
+                <br>You must be wielding a shield. <span style="opacity: 40%" ><em >PHB</em> 84</span></p>
             </li>
 
             <li >
               <h4 >Sentinel Attack</h4>
-              <p >Feat. When a creature within 5 ft. of you makes an attack against a target other than you (and that target doesn't have this feat), you can use your reaction to make a melee weapon attack against the attacking creature. <span style="opacity: 40%" ><em >PHB</em> 170</span></p>
+              <p class="action-description" >Feat. When a creature within 5 feet of you makes an attack against a target other than you (and that target doesn't have this feat), you can use your reaction to make a melee weapon attack against the attacking creature. <span style="opacity: 40%" ><em >PHB</em> 170</span></p>
             </li>
           </ul>
         </li>
@@ -1036,12 +1077,12 @@ need to revisit #actions li width: auto
 
             <li >
               <h4 >Actions in Combat</h4>
-              <p >Interact with an Object</p>
+              <p class="action-description" >Interact with an Object</p>
             </li>
 
             <li >
               <h4 >Divine Smite (Special)</h4>
-              <p >Paladin feature. When you hit with a melee weapon attack, you can expend one spell slot to deal 2d8 extra radiant damage to the target plus 1d8 for each spell level higher than 1st (max 5d8) and plus 1d8 against undead or fiends. <span style="opacity: 40%" ><em >PHB</em> 85</span></p>
+              <p class="action-description" >Paladin feature. When you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is <strong >2d8</strong> for a 1st-level spell slot, plus <strong >1d8</strong> for each spell level higher than 1st, to a maximum of <strong >5d8</strong>. The damage increases by <strong >1d8</strong> if the target is an undead or a fiend, to a maximum of <strong >6d8</strong>. <span style="opacity: 40%" ><em >PHB</em> 85</span></p>
             </li>
           </ul>
         </li>
@@ -1055,7 +1096,7 @@ need to revisit #actions li width: auto
       <details >
         <summary style="font-size:1.2rem; font-family:sans-serif; font-weight:bold;">Preparing Spells</summary>
         <p class="accordion-copy" ><em >Choose a number of paladin spells equal to your <strong>CHA modifier + half your paladin level</strong>, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.
-        <br><span style="opacity:40%" >PHB 84</span></em></p>
+          <br><span style="opacity:40%" >PHB 84</span></em></p>
       </details>
 
       <article class="article-spells-scores" >
@@ -1095,7 +1136,7 @@ need to revisit #actions li width: auto
           <input class="checkbox" type="checkbox" name="checkbox" value="off" >
           <input class="checkbox" type="checkbox" name="checkbox" value="off" >
           <input class="checkbox" type="checkbox" name="checkbox" value="off" >
-          Per Long Rest
+          <p >Per Long Rest</p>
         </div>
 
         <ul class="list-spell-cards" >
@@ -1286,7 +1327,7 @@ need to revisit #actions li width: auto
 
   <footer >
     <a class="attribution" href="https://github.com/carsonhalstead/carsonhalstead.com" target="_blank" >
-    D&D with ♥ by Carson Halstead © <script >document.write(new Date().getFullYear())</script>☻</a>
+    D&D with ♥ by Carson Halstead © <script >document.write(new Date().getFullYear())</script> ☻</a>
   </footer>
 </body>
 </html>
