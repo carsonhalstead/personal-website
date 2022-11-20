@@ -103,6 +103,17 @@ ul {
   list-style: none;
 }
 
+/* || Header */
+
+.level {
+  font-size: calc(0.24rem + 2.5vmin);
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  opacity: 40%;
+}
+
+/* /end Header */
+
 /* || Score Grids
 1 x 3, 3 x 2, 2 x 3, 1 x 6 flexbox layouts for scores */
 
@@ -110,7 +121,6 @@ ul {
 
 ul.abilities-scores,
 ul.saves-scores,
-ul.senses-scores,
 ul.spellcasting-scores,
 ul.summary-scores {
   display: flex;
@@ -118,9 +128,9 @@ ul.summary-scores {
   flex-wrap: wrap;
 }
 
-.abilities-scores li {
-  width: 44%;
-  margin-bottom: 8%;
+.abilities-scores li, .saves-scores li, .spellcasting-scores li, .summary-scores li {
+  width: 100%;
+  margin-bottom: 4%;
   padding: 2% 0 2% 0;
 }
 
@@ -129,46 +139,36 @@ ul.summary-scores {
   margin-bottom: 6%;
 }
 
-.article-saves li {
-  width: 42%;
-  margin-bottom: 3%;
-  padding: 2%;
-}
-
-.article-spells-scores li, .senses-scores li {
-  width: 30%;
-  padding: 2% 0 2% 0;
-}
-
-.summary-scores li {
-  width: 44%;
-  margin-bottom: 8%;
-  padding: 2% 0 2% 0;
-
-}
-
 /* || SKIN */
 
 #abilities li {
-  background: #202A32;
-  border: 4px double #10161A;
+  background: radial-gradient(ellipse at bottom, #10161A, #202A32);
+  border: 12px double #10161A;
 }
 
-#summary li {
-  border: 4px double #ffffff16;
+#summary li, .spellcasting-scores li {
+  /* what if there was a gradient instead of flat dark
+  background: #10161A; */
+  background: radial-gradient(ellipse at top, #202A32, #10161A);
+  border: 12px double #202A32;
 }
 
 .list-pros-etc li, .list-weapon-attacks li {
-  border: 4px double #ffffff16;
+  border: 12px double #ffffff16;
 }
 
-.article-saves li, .article-senses li {
+.saves-scores li {
   background: #202A32;
-  border: 4px double #10161A;
+  border: 12px double #10161A;
 }
 
-.article-spells-scores li {
-  border: 4px double #ffffff16;
+.score-bottom-number {
+  padding: 4% 16%;
+  font-family: sans-serif;
+  font-weight: bolder;
+  letter-spacing: normal;
+  background: #ffffff16;
+  border-radius: 1rem;
 }
 /* /end Score Grids */
 
@@ -220,6 +220,14 @@ input.stepper {
   align-items: center;
   margin-bottom: 6%;
 }
+
+.spells-slots {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 24% 0 4% 0;
+  background: #202A32;
+}
 /* /end Limited Use Inputs */
 
 .action-description {
@@ -252,7 +260,7 @@ input.stepper {
   padding: 32% 6% 6% 6%;
   background: #202A32;
 }
-#skills li {
+#skills li, .senses-scores li {
   padding: 6% 0 4% 0;
   border-style: none none solid none;
   border-color: #ffffff16;
@@ -295,12 +303,6 @@ input.stepper {
 .article-senses {
   padding-top: 16%;
 }
-.article-spells-first {
-  padding-top: 16%;
-}
-.article-spells-scores {
-  padding-top: 16%;
-}
 .attribution {
   padding-left: 2%;
   border-left: thick double;
@@ -327,25 +329,84 @@ input.stepper {
 }
 .list-all-attacks li {
   margin-bottom: 16%;
-  padding: 0 3% 0 3%;
 }
 .list-bonus-actions li, .list-reactions li, .list-other li {
   margin-bottom: 8%;
 }
+
+/* || Spell Cards */
+
+/* -- STRUCTURE */
+
 .list-spell-cards input {
-  width: 44px;
-  height: 44px;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: 0;
 }
+
 .list-spell-cards li {
   width: auto;
   margin-bottom: 6%;
-  padding: 3%;
-  background: #10161A;
-  border: 8px ridge #ffffff40;
-  border-radius: 12px;
 } .list-spell-cards li:last-child {
   margin-right: 0;
 }
+
+.spell-card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6% 4%;
+  font-family: sans-serif;
+}
+
+.spell-card-details p {
+  padding: 4%;
+  background: #ffffff16;
+  /* trying the filled capsule instead of thick stroke
+  maybe opportunity to sync with .score-bottom-number?
+  border: 8px solid #ffffff16; */
+  border-radius: 1rem;
+}
+
+.spell-card-details p:last-child {
+  padding: 0;
+}
+
+.spell-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4%;
+}
+
+.spell-card-header h4 {
+  margin: 0;
+}
+
+/* -- SKIN */
+
+.list-spell-cards li {
+  background: #10161A;
+  border: 8px ridge #ffffff40;
+  border-radius: 1rem;
+}
+
+.spell-card-details p:last-child {
+  font-family: serif;
+  background: none;
+  border: none;
+}
+
+.spell-card-header {
+  background: #ffffff16;
+}
+
+.spell-card-header h4 {
+  opacity: 100%;
+}
+
+/* /end Spell Cards */
+
 .list-weapon-attacks {
   padding-top: 8%;
 }
@@ -372,14 +433,7 @@ input.stepper {
   text-transform: capitalize;
   letter-spacing: normal;
 }
-.score-bottom-number {
-  padding: 3% 8% 2% 8%;
-  font-family: sans-serif;
-  font-weight: bolder;
-  letter-spacing: normal;
-  border: 4px solid #ffffff16;
-  border-radius: 1rem;
-}
+
 .score-value-dice {
   font-family: sans-serif;
   font-weight: normal;
@@ -395,24 +449,29 @@ input.stepper {
   justify-content: space-between;
   margin-left: 6%;
 }
-.spell-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} .spell-card-header h4 {
-  opacity: 100%;
-}
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 360px) {
 
-  .abilities-scores li {
-    width: 30%;
-    margin-bottom: 4%;
+  .abilities-scores li, .saves-scores li, .summary-scores li {
+    width: 42%;
   }
 
-  .summary-scores li {
-    width: 30%;
-    margin-bottom: 4%;
+  .spellcasting-scores li {
+    width: 25%;
+  }
+}
+/* this brkpt isn't really necessary now but maybe something else will come up
+@media screen and (min-width: 480px) {
+
+  .spellcasting-scores li {
+    width: 26%;
+  }
+} */
+
+@media screen and (min-width: 768px) {
+
+  .abilities-scores li, .saves-scores li, .summary-scores li {
+    width: 29%;
   }
 }
 
@@ -445,14 +504,14 @@ input.stepper {
   }
 
   #summary li, #abilities li {
-    width: 15%
+    width: 13%
   }
 
   .article-saves,
   .section-stats-group {
     width: 46%;
   }
-  .article-saves li {
+  .saves-scores li {
     width: auto;
   }
   .article-saves p {
@@ -494,11 +553,11 @@ need to revisit #actions li width: auto
 
       <div >
         <h1 ><a href="#top" >Winslow von Bank</a></h1>
-        <h2 >Human Paladin 4</h2>
+        <p class="level" >Human Paladin 4</p>
       </div>
 
       <div class="container-score" >
-        <p class="score-header" style="opacity: 40%" >hp</p>
+        <p class="score-header" style="opacity: 40%;" >max hp</p>
         <p class="score-value score-value-number" >36</p>
       </div>
     </div>
@@ -528,46 +587,46 @@ need to revisit #actions li width: auto
 
         <li >
           <div class="container-score" >
-            <p class="score-header" style="opacity: 40%" >proficiency</p>
+            <p class="score-header" style="opacity: 40%;" >proficiency</p>
             <p class="score-value score-value-number" >+2</p>
-            <p class="score-bottom" style="opacity: 40%" >bonus</p>
+            <p class="score-bottom" style="opacity: 40%;" >bonus</p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" style="opacity: 40%" >walking</p>
+            <p class="score-header" style="opacity: 40%;" >walking</p>
             <p class="score-value score-value-number" >30</p>
-            <p class="score-bottom" style="opacity: 40%" >speed</p>
+            <p class="score-bottom" style="opacity: 40%;" >speed</p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" style="opacity: 40%" >initiative</p>
+            <p class="score-header" style="opacity: 40%;" >initiative</p>
             <p class="score-value score-value-number" >+0</p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" style="opacity: 40%" >armor</p>
+            <p class="score-header" style="opacity: 40%;" >armor</p>
             <p class="score-value score-value-number" >18</p>
-            <p class="score-bottom" style="opacity: 40%" >class</p>
+            <p class="score-bottom" style="opacity: 40%;" >class</p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" style="opacity: 40%" >hit</p>
+            <p class="score-header" style="opacity: 40%;" >hit</p>
             <p class="score-value score-value-dice" >3d10</p>
-            <p class="score-bottom" style="opacity: 40%" >dice</p>
+            <p class="score-bottom" style="opacity: 40%;" >dice</p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" style="opacity: 40%" >inspiration</p>
+            <p class="score-header" style="opacity: 40%;" >inspiration</p>
             <input type="checkbox" name="checkbox" value="off" >
           </div>
         </li>
@@ -582,49 +641,49 @@ need to revisit #actions li width: auto
 
         <li >
           <div class="container-score" >
-            <p class="score-header" ><span style="opacity: 40%" >STR </span>💪</p>
+            <p class="score-header" ><span style="opacity: 40%;" >STR </span>💪</p>
             <p class="score-value score-value-number" >+3</p>
-            <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >16</span></p>
+            <p class="score-bottom score-bottom-number" ><span style="opacity:80%;" >16</span></p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" ><span style="opacity: 40%" >DEX </span>⚡️</p>
+            <p class="score-header" ><span style="opacity: 40%;" >DEX </span>⚡️</p>
             <p class="score-value score-value-number" >+0</p>
-            <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >10</span></p>
+            <p class="score-bottom score-bottom-number" ><span style="opacity:80%;" >10</span></p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" ><span style="opacity: 40%" >CON </span>❤️</p>
+            <p class="score-header" ><span style="opacity: 40%;" >CON </span>❤️</p>
             <p class="score-value score-value-number" >+2</p>
-            <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >14</span></p>
+            <p class="score-bottom score-bottom-number" ><span style="opacity:80%;" >14</span></p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" ><span style="opacity: 40%" >INT </span>💡</p>
+            <p class="score-header" ><span style="opacity: 40%;" >INT </span>💡</p>
             <p class="score-value score-value-number" >+0</p>
-            <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >11</span></p>
+            <p class="score-bottom score-bottom-number" ><span style="opacity:80%;" >11</span></p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" ><span style="opacity: 40%" >WIS </span>👁</p>
+            <p class="score-header" ><span style="opacity: 40%;" >WIS </span>👁</p>
             <p class="score-value score-value-number" >+1</p>
-            <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >12</span></p>
+            <p class="score-bottom score-bottom-number" ><span style="opacity:80%;" >12</span></p>
           </div>
         </li>
 
         <li >
           <div class="container-score" >
-            <p class="score-header" ><span style="opacity: 40%" >CHA </span>✨</p>
+            <p class="score-header" ><span style="opacity: 40%;" >CHA </span>✨</p>
             <p class="score-value score-value-number" >+2</p>
-            <p class="score-bottom score-bottom-number" ><span style="opacity:40%;" >15</span></p>
+            <p class="score-bottom score-bottom-number" ><span style="opacity:80%;" >15</span></p>
           </div>
         </li>
       </ul>
@@ -641,28 +700,28 @@ need to revisit #actions li width: auto
           <li >
             <div class="score-row" >
               <p class="score-value score-value-number" >+3</p>
-              <p class="score-header" ><span style="opacity: 40%" >STR </span>💪</p>
+              <p class="score-header" ><span style="opacity: 40%;" >STR </span>💪</p>
             </div>
           </li>
 
           <li >
             <div class="score-row" >
               <p class="score-value score-value-number" >+0</p>
-              <p class="score-header" ><span style="opacity: 40%" >DEX </span>⚡️</p>
+              <p class="score-header" ><span style="opacity: 40%;" >DEX </span>⚡️</p>
             </div>
           </li>
 
           <li >
             <div class="score-row" >
               <p class="score-value score-value-number" >+2</p>
-              <p class="score-header" ><span style="opacity: 40%" >CON </span>❤️</p>
+              <p class="score-header" ><span style="opacity: 40%;" >CON </span>❤️</p>
             </div>
           </li>
 
           <li >
             <div class="score-row" >
               <p class="score-value score-value-number" >+0</p>
-              <p class="score-header" ><span style="opacity: 40%" >INT </span>💡</p>
+              <p class="score-header" ><span style="opacity: 40%;" >INT </span>💡</p>
             </div>
           </li>
 
@@ -670,7 +729,7 @@ need to revisit #actions li width: auto
             <div >
               <div class="score-row" >
                 <p class="score-value score-value-number" >+3</p>
-                <p class="score-header" ><span style="opacity: 40%" >WIS </span>👁</p>
+                <p class="score-header" ><span style="opacity: 40%;" >WIS </span>👁</p>
               </div>
               <p class="score-bottom score-bottom-em" ><span style="color:mediumspringgreen;" >proficiency</span></p>
             </div>
@@ -680,7 +739,7 @@ need to revisit #actions li width: auto
             <div >
               <div class="score-row" >
                 <p class="score-value score-value-number" >+4</p>
-                <p class="score-header" ><span style="opacity: 40%" >CHA </span>✨</p>
+                <p class="score-header" ><span style="opacity: 40%;" >CHA </span>✨</p>
               </div>
               <p class="score-bottom score-bottom-em" ><span style="color:mediumspringgreen;" >proficiency</span></p>
             </div>
@@ -697,26 +756,32 @@ need to revisit #actions li width: auto
           <ul class="senses-scores" >
 
             <li >
-              <div class="container-score" >
-                <p class="score-header" ><span style="opacity: 40%" >WIS </span>👁</p>
-                <p class="score-value score-value-number" >11</p>
-                <p class="score-bottom score-bottom-em" >perception</p>
+              <div class="score-row" >
+                <p class="score-value-bonus score-value-number" >11</p>
+                <div class="skill-bonus" >
+                  <p class="skill-name" >Perception</p>
+                  <p class="score-header" ><span style="opacity: 40%;" >WIS </span>👁</p>
+                </div>
               </div>
             </li>
 
             <li >
-              <div class="container-score" >
-                <p class="score-header" ><span style="opacity: 40%" >INT </span>💡</p>
-                <p class="score-value score-value-number" >10</p>
-                <p class="score-bottom score-bottom-em" >investigation</p>
+              <div class="score-row" >
+                <p class="score-value-bonus score-value-number" >10</p>
+                <div class="skill-bonus" >
+                  <p class="skill-name" >Investigation</p>
+                  <p class="score-header" ><span style="opacity: 40%;" >INT </span>💡</p>
+                </div>
               </div>
             </li>
 
             <li >
-              <div class="container-score" >
-                <p class="score-header" ><span style="opacity: 40%" >WIS </span>👁</p>
-                <p class="score-value score-value-number" >13</p>
-                <p class="score-bottom score-bottom-em" >insight</p>
+              <div class="score-row" >
+                <p class="score-value-bonus score-value-number" >13</p>
+                <div class="skill-bonus" >
+                  <p class="skill-name" >Insight</p>
+                  <p class="score-header" ><span style="opacity: 40%;" >WIS </span>👁</p>
+                </div>
               </div>
             </li>
           </ul>
@@ -740,7 +805,7 @@ need to revisit #actions li width: auto
 
             <li >
               <h3 >Immunities</h3>
-              <p >Disease <span style="opacity: 40%" >(Divine Health)</span></p>
+              <p >Disease <span style="opacity: 40%;" >(Divine Health)</span></p>
             </li>
 
             <li >
@@ -768,7 +833,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+0</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Acrobatics</p>
-              <p class="score-header" ><span style="opacity: 40%" >DEX </span>⚡️</p>
+              <p class="score-header" ><span style="opacity: 40%;" >DEX </span>⚡️</p>
             </div>
           </div>
         </li>
@@ -778,7 +843,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+1</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Animal Handling</p>
-              <p class="score-header" ><span style="opacity: 40%" >WIS </span>👁</p>
+              <p class="score-header" ><span style="opacity: 40%;" >WIS </span>👁</p>
             </div>
           </div>
         </li>
@@ -788,7 +853,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+0</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Arcana</p>
-              <p class="score-header" ><span style="opacity: 40%" >INT </span>💡</p>
+              <p class="score-header" ><span style="opacity: 40%;" >INT </span>💡</p>
             </div>
           </div>
         </li>
@@ -798,7 +863,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+3</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Athletics</p>
-              <p class="score-header" ><span style="opacity: 40%" >STR </span>💪</p>
+              <p class="score-header" ><span style="opacity: 40%;" >STR </span>💪</p>
             </div>
           </div>
         </li>
@@ -808,7 +873,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+2</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Deception</p>
-              <p class="score-header" ><span style="opacity: 40%" >CHA </span>✨</p>
+              <p class="score-header" ><span style="opacity: 40%;" >CHA </span>✨</p>
             </div>
           </div>
         </li>
@@ -818,7 +883,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+0</p>
             <div class="skill-bonus" >
               <p class="skill-name" >History</p>
-              <p class="score-header" ><span style="opacity: 40%" >INT </span>💡</p>
+              <p class="score-header" ><span style="opacity: 40%;" >INT </span>💡</p>
             </div>
           </div>
         </li>
@@ -828,7 +893,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+3</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Insight <span style="font-size: calc(0.24rem + 2.5vmin);font-style: italic;text-transform: capitalize;color: mediumspringgreen;" >proficiency</span></p>
-              <p class="score-header" ><span style="opacity: 40%" >WIS </span>👁</p>
+              <p class="score-header" ><span style="opacity: 40%;" >WIS </span>👁</p>
             </div>
           </div>
         </li>
@@ -838,7 +903,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+2</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Intimidation</p>
-              <p class="score-header" ><span style="opacity: 40%" >CHA </span>✨</p>
+              <p class="score-header" ><span style="opacity: 40%;" >CHA </span>✨</p>
             </div>
           </div>
         </li>
@@ -848,7 +913,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+0</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Investigation</p>
-              <p class="score-header" ><span style="opacity: 40%" >INT </span>💡</p>
+              <p class="score-header" ><span style="opacity: 40%;" >INT </span>💡</p>
             </div>
           </div>
         </li>
@@ -858,7 +923,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+3</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Medicine <span style="font-size: calc(0.24rem + 2.5vmin);font-style: italic;text-transform: capitalize;color: mediumspringgreen;" >proficiency</span></p>
-              <p class="score-header" ><span style="opacity: 40%" >WIS </span>👁</p>
+              <p class="score-header" ><span style="opacity: 40%;" >WIS </span>👁</p>
             </div>
           </div>
         </li>
@@ -868,7 +933,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+0</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Nature</p>
-              <p class="score-header" ><span style="opacity: 40%" >INT </span>💡</p>
+              <p class="score-header" ><span style="opacity: 40%;" >INT </span>💡</p>
             </div>
           </div>
         </li>
@@ -878,7 +943,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+1</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Perception</p>
-              <p class="score-header" ><span style="opacity: 40%" >WIS </span>👁</p>
+              <p class="score-header" ><span style="opacity: 40%;" >WIS </span>👁</p>
             </div>
           </div>
         </li>
@@ -888,7 +953,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+2</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Performance</p>
-              <p class="score-header" ><span style="opacity: 40%" >CHA </span>✨</p>
+              <p class="score-header" ><span style="opacity: 40%;" >CHA </span>✨</p>
             </div>
           </div>
         </li>
@@ -898,7 +963,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+4</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Persuasion <span style="font-size: calc(0.24rem + 2.5vmin);font-style: italic;text-transform: capitalize;color: mediumspringgreen;" >proficiency</span></p>
-              <p class="score-header" ><span style="opacity: 40%" >CHA </span>✨</p>
+              <p class="score-header" ><span style="opacity: 40%;" >CHA </span>✨</p>
             </div>
           </div>
         </li>
@@ -908,7 +973,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+2</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Religion <span style="font-size: calc(0.24rem + 2.5vmin);font-style: italic;text-transform: capitalize;color: mediumspringgreen;" >proficiency</span></p>
-              <p class="score-header" ><span style="opacity: 40%" >INT </span>💡</p>
+              <p class="score-header" ><span style="opacity: 40%;" >INT </span>💡</p>
             </div>
           </div>
         </li>
@@ -918,7 +983,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+0</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Sleight of Hand</p>
-              <p class="score-header" ><span style="opacity: 40%" >DEX </span>⚡️</p>
+              <p class="score-header" ><span style="opacity: 40%;" >DEX </span>⚡️</p>
             </div>
           </div>
         </li>
@@ -928,7 +993,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+0</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Stealth <span style="font-size: calc(0.24rem + 2.5vmin);font-style: italic;text-transform: capitalize;color: lightcoral;" >disadvantage</span></p>
-              <p class="score-header" ><span style="opacity: 40%" >DEX </span>⚡️</p>
+              <p class="score-header" ><span style="opacity: 40%;" >DEX </span>⚡️</p>
             </div>
           </div>
         </li>
@@ -938,7 +1003,7 @@ need to revisit #actions li width: auto
             <p class="score-value-bonus score-value-number" >+1</p>
             <div class="skill-bonus" >
               <p class="skill-name" >Survival</p>
-              <p class="score-header" ><span style="opacity: 40%" >WIS </span>👁</p>
+              <p class="score-header" ><span style="opacity: 40%;" >WIS </span>👁</p>
             </div>
           </div>
         </li>
@@ -982,14 +1047,14 @@ need to revisit #actions li width: auto
           </div>
           <p class="action-description" >Paladin feature. Your oath allows you to channel divine energy to fuel magical effects. Each Channel Divinity option provided by your oath explains how to use it.
             <br>When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.
-            <br>Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC. <span style="opacity: 40%" ><em >PHB</em> 85</span></p>
+            <br>Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC. <span style="opacity: 40%;" ><em >PHB</em> 85</span></p>
         </li>
 
         <li >
           <h3 >Abjure Enemy</h3>
           <p class="action-description" >Paladin feature. As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet that you can see. That creature must make a WIS save, unless it is immune to being frightened. Fiends and undead have disadvantage on this save.
             <br>On a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature's speed is 0, and it can't benefit from any bonus to its speed.
-            <br>On a successful save, the creature's speed is halved for 1 minute or until the creature takes any damage. <span style="opacity: 40%" ><em >PHB</em> 88</span></p>
+            <br>On a successful save, the creature's speed is halved for 1 minute or until the creature takes any damage. <span style="opacity: 40%;" ><em >PHB</em> 88</span></p>
         </li>
 
         <li >
@@ -1002,7 +1067,7 @@ need to revisit #actions li width: auto
           </div>
           <p class="action-description" >Paladin feature. The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover
             You know the type (celestial, fiend, or undead) of any being whose presence you sense, but but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the <em >hallow</em> spell.
-            <br>You can use this feature a number of times equal to <strong >1 + your CHA modifier</strong>. When you finish a long rest, you regain all expended uses. <span style="opacity: 40%" ><em >PHB</em> 84</span></p>
+            <br>You can use this feature a number of times equal to <strong >1 + your CHA modifier</strong>. When you finish a long rest, you regain all expended uses. <span style="opacity: 40%;" ><em >PHB</em> 84</span></p>
         </li>
 
         <li >
@@ -1014,7 +1079,7 @@ need to revisit #actions li width: auto
           <p class="action-description" >Paladin feature. You have a pool of healing power that replenishes when you take a long rest.
             <br>As an action, you can touch a creature and draw power from the pool to restore a number of HP to that creature, up to the maximum amount remaining in your pool.
             <br>Alternatively, you can expend 5 HP from your pool of healing to cure the target of one disease or neutralize one poison affecting it.
-            <br>You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one. <span style="opacity: 40%" ><em >PHB</em> 84</span></p>
+            <br>You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one. <span style="opacity: 40%;" ><em >PHB</em> 84</span></p>
         </li>
 
         <li >
@@ -1040,7 +1105,7 @@ need to revisit #actions li width: auto
 
             <li >
               <h4 >Vow of Enmity</h4>
-              <p class="action-description" >Paladin feature. As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hp or falls unconscious. <span style="opacity: 40%" ><em >PHB</em> 88</span></p>
+              <p class="action-description" >Paladin feature. As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hp or falls unconscious. <span style="opacity: 40%;" ><em >PHB</em> 88</span></p>
             </li>
           </ul>
         </li>
@@ -1053,18 +1118,18 @@ need to revisit #actions li width: auto
 
             <li >
               <h4 >Actions in Combat</h4>
-              <p class="action-description" >Opportunity Attack</p>
+              <p class="action-description" >Opportunity Attack. Creature's speed becomes 0 for the rest of the turn. <span style="opacity: 40%;" >(Sentinel)</span></p>
             </li>
 
             <li >
               <h4 >Protection</h4>
               <p class="action-description" >Paladin feature. When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll.
-                <br>You must be wielding a shield. <span style="opacity: 40%" ><em >PHB</em> 84</span></p>
+                <br>You must be wielding a shield. <span style="opacity: 40%;" ><em >PHB</em> 84</span></p>
             </li>
 
             <li >
               <h4 >Sentinel Attack</h4>
-              <p class="action-description" >Feat. When a creature within 5 feet of you makes an attack against a target other than you (and that target doesn't have this feat), you can use your reaction to make a melee weapon attack against the attacking creature. <span style="opacity: 40%" ><em >PHB</em> 170</span></p>
+              <p class="action-description" >Feat. When a creature within 5 feet of you makes an attack against a target other than you (and that target doesn't have this feat), you can use your reaction to make a melee weapon attack against the attacking creature. <span style="opacity: 40%;" ><em >PHB</em> 170</span></p>
             </li>
           </ul>
         </li>
@@ -1082,7 +1147,7 @@ need to revisit #actions li width: auto
 
             <li >
               <h4 >Divine Smite (Special)</h4>
-              <p class="action-description" >Paladin feature. When you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is <strong >2d8</strong> for a 1st-level spell slot, plus <strong >1d8</strong> for each spell level higher than 1st, to a maximum of <strong >5d8</strong>. The damage increases by <strong >1d8</strong> if the target is an undead or a fiend, to a maximum of <strong >6d8</strong>. <span style="opacity: 40%" ><em >PHB</em> 85</span></p>
+              <p class="action-description" >Paladin feature. When you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is <strong >2d8</strong> for a 1st-level spell slot, plus <strong >1d8</strong> for each spell level higher than 1st, to a maximum of <strong >5d8</strong>. The damage increases by <strong >1d8</strong> if the target is an undead or a fiend, to a maximum of <strong >6d8</strong>. <span style="opacity: 40%;" ><em >PHB</em> 85</span></p>
             </li>
           </ul>
         </li>
@@ -1096,7 +1161,7 @@ need to revisit #actions li width: auto
       <details >
         <summary style="font-size:1.2rem; font-family:sans-serif; font-weight:bold;">Preparing Spells</summary>
         <p class="accordion-copy" ><em >Choose a number of paladin spells equal to your <strong>CHA modifier + half your paladin level</strong>, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.
-          <br><span style="opacity:40%" >PHB 84</span></em></p>
+          <br><span style="opacity:40%;" >PHB 84</span></em></p>
       </details>
 
       <article class="article-spells-scores" >
@@ -1105,30 +1170,30 @@ need to revisit #actions li width: auto
 
           <li >
             <div class="container-score" >
-              <p class="score-header" style="opacity: 40%" >modifier</p>
+              <p class="score-header" style="opacity: 40%;" >modifier</p>
               <p class="score-value score-value-number" >+2</p>
             </div>
           </li>
 
           <li >
             <div class="container-score" >
-              <p class="score-header" style="opacity: 40%" >spell</p>
+              <p class="score-header" style="opacity: 40%;" >spell</p>
               <p class="score-value score-value-number" >+4</p>
-              <p class="score-bottom" style="opacity: 40%" >attack</p>
+              <p class="score-bottom" style="opacity: 40%;" >attack</p>
             </div>
           </li>
 
           <li >
             <div class="container-score" >
-              <p class="score-header" style="opacity: 40%" >save</p>
+              <p class="score-header" style="opacity: 40%;" >save</p>
               <p class="score-value score-value-number" >12</p>
-              <p class="score-bottom" style="opacity: 40%" >dc</p>
+              <p class="score-bottom" style="opacity: 40%;" >dc</p>
             </div>
           </li>
         </ul>
       </article>
 
-      <article class="article-spells-first" >
+      <article class="spells-slots" >
 
         <h3 >1st Level</h3>
 
@@ -1138,6 +1203,9 @@ need to revisit #actions li width: auto
           <input class="checkbox" type="checkbox" name="checkbox" value="off" >
           <p >Per Long Rest</p>
         </div>
+      </article>
+
+      <article class="article-spells-first" >
 
         <ul class="list-spell-cards" >
 
@@ -1145,9 +1213,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Bane © (Oath)</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 216</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" checked >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 30 ft</p>
+              <p ><em >PHB</em> 216</p>
             </div>
           </li>
 
@@ -1155,9 +1227,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Bless ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 219</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 30 ft</p>
+              <p ><em >PHB</em> 219</p>
             </div>
           </li>
 
@@ -1165,9 +1241,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Ceremony ®</h4>
-                <p style="opacity: 40%" ><em >XGE</em> 151</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1 hr</p>
+              <p >🧭 Touch</p>
+              <p ><em >XGE</em> 151</p>
             </div>
           </li>
 
@@ -1175,9 +1255,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Command ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 223</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 60 ft</p>
+              <p ><em >PHB</em> 223</p>
             </div>
           </li>
 
@@ -1185,9 +1269,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Compelled Duel ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 224</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1BA</p>
+              <p >🧭 30 ft</p>
+              <p ><em >PHB</em> 224</p>
             </div>
           </li>
 
@@ -1195,9 +1283,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Cure Wounds</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 230</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 Touch</p>
+              <p ><em >PHB</em> 230</p>
             </div>
           </li>
 
@@ -1205,9 +1297,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Detect Evil & Good ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 231</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 Self</p>
+              <p ><em >PHB</em> 231</p>
             </div>
           </li>
 
@@ -1215,9 +1311,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Detect Magic © ®</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 231</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 Self</p>
+              <p ><em >PHB</em> 231</p>
             </div>
           </li>
 
@@ -1225,9 +1325,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Detect Poison & Disease © ®</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 231</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 Self</p>
+              <p ><em >PHB</em> 231</p>
             </div>
           </li>
 
@@ -1235,9 +1339,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Divine Favor ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 234</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1BA</p>
+              <p >🧭 Self</p>
+              <p ><em >PHB</em> 234</p>
             </div>
           </li>
 
@@ -1245,9 +1353,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Heroism ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 250</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 Touch</p>
+              <p ><em >PHB</em> 250</p>
             </div>
           </li>
 
@@ -1255,9 +1367,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Hunter's Mark © (Oath)</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 251</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" checked >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1BA</p>
+              <p >🧭 90 ft</p>
+              <p ><em >PHB</em> 251</p>
             </div>
           </li>
 
@@ -1265,9 +1381,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Protection from Evil & Good ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 270</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 Touch</p>
+              <p ><em >PHB</em> 270</p>
             </div>
           </li>
 
@@ -1275,9 +1395,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Purify Food & Drink ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 270</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1A</p>
+              <p >🧭 10 ft</p>
+              <p ><em >PHB</em> 270</p>
             </div>
           </li>
 
@@ -1285,9 +1409,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Searing Smite ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 274</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1BA</p>
+              <p >🧭 Self</p>
+              <p ><em >PHB</em> 274</p>
             </div>
           </li>
 
@@ -1295,9 +1423,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Shield of Faith ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 275</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1BA</p>
+              <p >🧭 60 ft</p>
+              <p ><em >PHB</em> 275</p>
             </div>
           </li>
 
@@ -1305,9 +1437,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Thunderous Smite ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 282</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1BA</p>
+              <p >🧭 Self</p>
+              <p ><em >PHB</em> 282</p>
             </div>
           </li>
 
@@ -1315,9 +1451,13 @@ need to revisit #actions li width: auto
             <div class="spell-card-header" >
               <div >
                 <h4 >Wrathful Smite ©</h4>
-                <p style="opacity: 40%" ><em >PHB</em> 289</p>
               </div>
               <input class="checkbox" type="checkbox" name="checkbox" >
+            </div>
+            <div class="spell-card-details" >
+              <p >⏳ 1BA</p>
+              <p >🧭 Self</p>
+              <p ><em >PHB</em> 289</p>
             </div>
           </li>
         </ul>
