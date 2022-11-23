@@ -109,8 +109,7 @@ ul {
 #summary {
     padding: 8% 6% 16% 6%;
 }
-
-/* -- STYLE */
+/* -- PRESENTATION */
 #skills {
   background: #202A32;
 }
@@ -130,17 +129,17 @@ ul {
 .header-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 88%;
     padding: 3% 6%;
 }
 
 .headshot {
-    width: 48px;
-    height: 48px;
-    border-radius: 2rem;
+    width: 16%;
+    height: 16%;
+    border-radius: 50%;
 }
-
-/* -- STYLE */
+/* -- PRESENTATION */
 .level {
   font-size: calc(0.24rem + 2.5vmin);
   text-transform: uppercase;
@@ -148,6 +147,43 @@ ul {
   opacity: 40%;
 }
 /* /end Header */
+
+/* || Dropdown Navigation */
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 80%;
+  font-family: sans-serif;
+  background-color: #000000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 6% 8% 6% 8%;
+  font-size: calc(0.64rem + 2.5vmin);
+} .dropdown-content a:hover {
+  background-color: #ffffff16;
+}
+
+.dropdown-content li {
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at top, #202A3280, #000);
+}
+
+.menu-btn {
+  width: 3rem;
+  height: 3rem;
+  background: white;
+}
+/* /end Dropdown Navigation */
 
 /* || Healthbar */
 
@@ -159,11 +195,11 @@ ul {
 .max-hp {
     text-align: right;
 }
-
-/* -- STYLE */
+/* -- PRESENTATION */
 .healthbar {
     font-family: sans-serif;
-    font-weight: lighter;
+    font-weight: light;
+    letter-spacing: .16rem;
     /* alternate desaturated color variation for color positive
     background: mediumspringgreen; */
     background: mediumspringgreen;
@@ -216,8 +252,7 @@ ul.summary-scores {
 .article-saves {
   padding-top: 16%;
 }
-
-/* -- STYLE */
+/* -- PRESENTATION */
 .abilities-scores li {
   background: radial-gradient(ellipse at bottom, #10161A, #202A32);
   border: 12px double #10161A;
@@ -265,35 +300,6 @@ ul.summary-scores {
 }
 /* /end Score Grids */
 
-/* || Dropdown Navigation */
-
-header:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  width: 80%;
-  font-family: sans-serif;
-  background-color: #000000;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 6% 8% 6% 8%;
-  font-size: calc(0.64rem + 2.5vmin);
-} .dropdown-content a:hover {
-  background-color: #ffffff16;
-}
-
-.dropdown-content li {
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0
-}
-/* /end Dropdown Navigation */
-
 /* || Limited Use Inputs */
 
 /* -- STRUCTURE */
@@ -321,7 +327,7 @@ input.stepper {
   top: 6%; /* this keeps sticky from getting covered by header */
   padding-top: 16%; /* this also counts for the space bw scores and spells first */
 }
-/* -- SKIN */
+/* -- PRESENTATION */
 .spells-slots {
   background: #202A32;
   opacity: 96%;
@@ -330,6 +336,7 @@ input.stepper {
 
 /* || Abilities Column Layout */
 
+/* -- STRUCTURE */
 .saves-scores .score-header { /* this really isn't related but kinda placeholder (i need to reorganize) */
   margin-right: 2%;
 }
@@ -404,6 +411,7 @@ input.stepper {
 
 /* || Attacks List */
 
+/* -- STRUCTURE */
 .list-all-attacks {
   padding-top: 16%;
 }
@@ -429,7 +437,7 @@ input.stepper {
 } .pro-tag span {
   display: none;
 }
-/* -- SKIN */
+/* -- PRESENTATION */
 .pro-tag {
   font-family: sans-serif;
   font-weight: bolder;
@@ -443,7 +451,6 @@ input.stepper {
 /* || Spell Cards */
 
 /* -- STRUCTURE */
-
 ul.list-spell-cards {
   margin-top: 8%;
 }
@@ -492,9 +499,7 @@ ul.list-spell-cards {
 .spell-card-header h4 {
   margin: 0;
 }
-
-/* -- SKIN */
-
+/* -- PRESENTATION */
 .list-spell-cards li {
   background: #10161A;
   border: 8px ridge #ffffff40;
@@ -610,11 +615,20 @@ ul.list-spell-cards {
   } .pro-tag span {
     display: inline;
   }
-  /* -- SKIN */
+  /* -- PRESENTATION */
   .pro-tag {
     border-radius: 0 1rem 1rem 1rem;
   }
   /* /end Proficiency Tag */
+
+  /* || Headshot */
+
+  /* --STRUCTURE */
+  .headshot {
+    width: 8%;
+  }
+  /* /end Headshot */
+
   .saves-scores li {
     width: auto;
     margin-bottom: 2%;
@@ -640,11 +654,9 @@ ul.list-spell-cards {
     font-size: calc(0.2rem + 2vmin);
   }
 }
-/*
-WIP to restrict the line width of descriptions
-need to revisit #actions li width: auto
+
 @media screen and (min-width: 1080px) {
-  .list-all-attacks li {
-    width: 80%;
+  .abilities-scores li, .summary-scores li {
+    width: 14%;
   }
-} */
+}
