@@ -1,0 +1,719 @@
+/* meyer reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   license: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* html5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} /* end meyer reset */
+
+/* clearfix */
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix {
+	display: inline-block;
+} html[xmlns] .clearfix {
+	display: block;
+} * html .clearfix {
+	height: 1%;
+} /* end clearfix */
+
+/* button reset */
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+} /* end button reset */
+
+/* prefers reduced motion
+   comment out when testing transitions
+   or disable on macOS: system preferences > accessibility > display > reduce motion */
+   /*
+@media (prefers-reduced-motion: reduce) {
+	* {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+	}
+} /* /end prefers reduced motion */
+
+/* global */
+
+*:focus {
+	outline: 2px solid #fff;
+	outline-offset: 4px;
+	box-shadow: 0 0 0 4px #5500FF;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+	text-underline-offset: 4px;
+}
+body {
+	font-family: 'IBM Plex Mono', monospace;
+	color: #f3eff9;
+	background: #141218;
+	max-width: 560px;
+	margin: 0 0.5rem;
+}
+del {
+	text-decoration: line-through;
+} /* end global */
+
+/* typography */
+
+@font-face {
+	font-family: 'Base Expanded';
+	src: url('../fonts/BaseExpanded.ttf');
+}
+h1 {
+	font-size: 2rem; /* 16px * 2 = 32px */
+	line-height: 1.1;
+	margin: 2rem 0 2rem 0;
+	font-family: 'Base Expanded', monospace;
+	text-transform: uppercase;
+	letter-spacing: 0.125rem;
+}
+h2 {
+	font-size: 1.25rem; /* 16px * 1.25 = 20px */
+	font-weight: normal;
+	line-height: 1.6;
+	color: #fff;
+} #about h2, #contact h2, .work-nav h2 {
+	margin-bottom: 1rem;
+}
+h3 {
+	margin-bottom: 1.5rem;
+	font-size: 1rem; /* 16px * 1 = 16px */
+	font-family: 'Base Expanded', monospace;
+	text-transform: uppercase;
+	letter-spacing: 0.25rem;
+	color: #ffffff80;
+}
+p {
+	line-height: 1.5;
+	color: #AAA9AC;
+}
+.peace {
+	font-size: 4rem; /* 16px * 4 = 64px */
+} /* end typography */
+
+/* navigation overlay */
+
+.nav-overlay {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+	background-color: #000000;
+    color: #fff;
+    z-index: 9999;
+}
+.nav-overlay[aria-hidden="false"] {
+    display: flex;
+}
+.nav-overlay ul {
+	display: flex;
+	flex-direction: column;
+	gap: 3.5rem;
+	position: absolute;
+	bottom: 6rem;
+	right: 0;
+	margin-right: 1rem;
+}
+.nav-overlay li {
+	text-align: right;
+}
+.nav-overlay a {
+	padding: 1rem;
+	font-size: 2rem; /* 16px * 2 = 32px */
+	background: #5500FF;
+	border-radius: 2rem;
+}
+.menu-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 3rem;
+	height: 3rem;
+	margin: 1rem;
+	color: #ffffff80;
+	background-color: #26252A99;
+	backdrop-filter: blur(8px) saturate(48%);
+	-webkit-backdrop-filter: blur(8px) saturate(48%);
+	border-radius: 0.5rem 0 0.5rem 0.5rem;
+	border: 1px solid #ffffff16;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 16px -4px;
+	transition: transform 0.4s ease, opacity 0.4s ease;
+} .menu-button:hover {
+	color: #fff;
+	transform: scale(1.05);
+}
+.menu-button.hidden {
+    transform: translateY(100%);
+    opacity: 0;
+	pointer-events: none;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+} /* end navigation overlay */
+
+/* about */
+
+.banner {
+	display: none;
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	padding: 0.5rem 1rem;
+	border-radius: 1rem 0 1rem 1rem;
+	background-color: #5500FF;
+	color: #fff;
+}
+
+#about {
+	max-width: 560px;
+	padding: 24% 0 16% 0;
+	margin: 0 auto;
+}
+#about a {
+	text-decoration: underline;
+} #about a:hover {
+	text-decoration-style: wavy;
+	color: #fff;
+}
+.brief h3 {
+	margin-bottom: 1rem;
+}
+.brief p {
+	margin-bottom: 3rem;
+} .brief p:last-child {
+	margin-bottom: 0;
+}
+.callout {
+	padding: 1rem;
+	margin-top: 2rem;
+	background-color: #ffffff08;
+	border-radius: 1rem 0 1rem 1rem;
+	outline: 1px dashed #ee4f2f;
+} .callout span {
+	color: #ee4f2f;
+}
+.colophon p {
+	margin-bottom: 1rem;
+}
+.intro p {
+	margin-bottom: 1rem;
+} /* /end about */
+
+/* work */
+
+#work {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-bottom: 16%;
+}
+#case {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-bottom: 4rem;
+}
+#case a {
+	text-decoration: underline;
+} #case a:hover {
+	text-decoration-style: wavy;
+	color: #fff;
+}
+#case ul {
+	line-height: 1.5;
+}
+.case-module img {
+	width: 100%;
+	margin-bottom: 2rem;
+	border-radius: 1rem;
+}
+.case-module p {
+	margin-bottom: 2rem;
+}
+.module-row {
+	display: flex;
+	gap: 2rem;
+}
+.work-card {
+	padding: 1rem;
+	border-radius: 1rem;
+	background: linear-gradient(270deg,#ffffff08 0%, #ffffff00 80%);
+	background: -webkit-linear-gradient(270deg,#ffffff08 0%, #ffffff00 80%);
+	background: -moz-linear-gradient(270deg,#ffffff08 0%, #ffffff00 80%);
+} .work-card:hover {
+	background: #ffffff08;
+}
+.work-card img {
+	width: 40px;
+	border-radius: 0.5rem;
+	outline: 1px solid #ffffff16;
+}
+.work-card-content {
+	width: 100%;
+	color: #fff;
+}
+.work-card-title {
+	margin: 1rem 0;
+}
+.work-card-description {
+	margin-bottom: 1rem;
+}
+.preview-fade {
+	display: block;
+	mask-image: linear-gradient(to bottom, #fff, transparent);
+	margin-top: 1rem;
+}
+.wip-tag {
+	display: inline;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+	border: 1px solid #ee4f2f;
+	color: #ee4f2f;
+}
+/* commenting out legacy work-list-item & hover styling
+.work-list-item h3 {
+	border-bottom: 2px dotted #ffffff16;
+} .work-list-item h3:hover {
+		background: linear-gradient(transparent, transparent 8%, #ffffff08 56%);
+		border-bottom: 2px solid #ee4f2f;
+}*/
+/* end work */
+
+/* case */
+
+details {
+	margin-top: 4rem;
+}
+details p {
+	margin-top: 1rem;
+}
+.body-link {
+	text-decoration: underline;
+} .body-link:hover {
+	text-decoration-style: wavy;
+}
+summary {
+	padding: 1.5rem;
+	font-size: 1.5rem; /* 16px * 1.5 = 24px */
+	color: #141218;
+	border: 2px solid #fff;
+	border-radius: 4rem;
+	background: #ffffff80;
+} summary:hover {
+	background: #fff;
+	cursor: pointer;
+} summary:active {
+	background: #00000016;
+}
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+.embed-container iframe, .embed-container object, .embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.multiply {
+/* for imgs with a black foreground and white background to appear transparent */
+	mix-blend-mode: multiply;
+}
+.invert {
+/* for imgs with a white foreground and black background to appear transparent */
+	mix-blend-mode: screen;
+}
+.work-nav {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	margin-bottom: 16%;
+	border-radius: 1rem 0 1rem 1rem;
+	border: solid 2px #ffffff16;
+}
+.work-list-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 2rem 1rem 1rem;
+	text-decoration: none;
+	border-radius: 0.5rem;
+	background: linear-gradient(270deg,#ffffff08 0%, #ffffff00 80%);
+	background: -webkit-linear-gradient(270deg,#ffffff08 0%, #ffffff00 80%);
+	background: -moz-linear-gradient(270deg,#ffffff08 0%, #ffffff00 80%);
+} .work-list-item:hover {
+	background: #ffffff08;
+} .work-list-item img {
+	width: 40px;
+	border-radius: 0.5rem;
+	outline: 1px solid #ffffff16;
+}
+.work-list-item-label {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.work-list-item-arrow {
+	font-size: 1.5rem;
+} /* /end case */
+
+/* footer */
+
+footer {
+	height: 80vh;
+	color: #AAA9AC;
+}
+footer a {
+	text-decoration: underline;
+}
+footer a:hover {
+	color: #fff;
+	text-decoration-style: wavy;
+}
+.bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 2rem;
+	margin-top: 4rem;
+}
+.bottom-container {
+	display: flex;
+	gap: 2rem;
+}
+.copyright a {
+	text-decoration: underline;
+} .copyright a:hover {
+	color: #fff;
+	text-decoration-style: wavy;
+}
+.email-card {
+	padding: 1rem;
+	border-radius: 1rem 0 1rem 1rem;
+	color: #141218;
+	background-color: #ee4f2f;
+} .email-card p {
+	color: #141218;
+}
+.email-display {
+	margin: 2rem 0 4rem;
+	font-size: 1.25rem;
+	word-break: break-all;
+}
+.email-card-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.primary-button {
+	width: 100%;
+	height: 3.5rem;
+	background: #ffffff80;
+	border-radius: 4rem;
+	border: 2px solid #fff;
+} .primary-button:hover {
+	background: #fff;
+} .primary-button:active {
+	background: #00000016;
+}
+.secondary-button {
+	width: 100%;
+	height: 3.5rem;
+	color: #141218;
+	border: 2px solid #fff;
+	border-radius: 4rem;
+	text-decoration: none;
+} .secondary-button:hover {
+	background: #ffffff80;
+} .secondary-button:active {
+	background: #00000016;
+}
+.top-link {
+	color: #AAA9AC;
+	text-decoration: underline;
+} .top-link:hover {
+	color: #fff;
+	text-decoration-style: wavy;
+}
+.logo {
+	margin-top: 2rem;
+} /* /end footer */
+
+/* toast */
+
+.toast {
+	visibility: hidden;
+	position: fixed;
+	bottom: 30px;
+	left: 50%;
+	min-width: 160px;
+	padding: 0.5rem 1rem;
+	border-radius: 1rem 0 1rem 1rem;
+	background-color: #5500FF;
+	color: #fff;
+	text-align: center;
+	transform: translateX(-50%);
+	z-index: 9999;
+	opacity: 0;
+	transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.toast.show {
+	visibility: visible;
+	opacity: 1;
+} /* /end toast */
+
+/* media queries */
+
+@media screen and (min-width: 480px) {
+
+	.email-display {
+		font-size: clamp(100%, 1rem + 1.4vw, 32px);
+	}
+	.email-card p {
+		font-size: clamp(100%, 1rem + 2vw, 24px);
+	}
+	.email-card-actions {
+		flex-direction: row;
+		gap: 4%;
+	} .email-card-actions div {
+		flex: 1;
+	}
+} /* /end breakpoint 480px */
+
+@media screen and (min-width: 608px) {
+
+	body {
+		margin: 0 auto;
+	}
+	h1 {
+		font-size: 3rem; /* 16px * 3 = 48px */
+	}
+	/* it doesn't look good when the work-list-item is variable width
+	.work-nav {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+} /* /end breakpoint 560px */
+
+@media screen and (min-width: 959px) {
+
+	.menu-button {
+		display: none;
+	}
+	.nav-overlay {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: auto;
+		background: transparent;
+	}
+	.nav-overlay ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		gap: 1rem;
+		position: fixed;
+		top: 0;
+		right: auto;
+		bottom: auto;
+		margin: 1rem 0 0 0;
+		padding: 1rem;
+		background-color: #26252A99;
+		-webkit-backdrop-filter: blur(8px) saturate(48%);
+		backdrop-filter: blur(8px) saturate(48%);
+		border-radius: 1rem 0 1rem 1rem;
+		outline: 1px solid #ffffff16;
+		box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 16px -4px;
+	}
+	.nav-overlay a {
+		padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+		font-size: 1.5rem; /* 16px * 1.5 = 24px */
+		background: none;
+	}
+	.nav-overlay a:hover {
+		background: #ffffff16;
+	}
+	.nav-overlay a:focus {
+		background: #00000016;
+	}
+} /* /end breakpoint 959px */
+/* out of service
+@media screen and (min-width: 1080px) {
+} /end breakpoint 1080px */
+
+@media screen and (min-width: 1280px) {
+	.banner {
+		display: block;
+	}
+}
+/* commenting out for now to debug cases later hehe
+	body {
+		display: grid;
+		gap: 4rem;
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-rows: 80px;
+		max-width: none;
+		margin: 0 1rem;
+	}
+	h1 {
+		font-size: 4rem; /* 16px * 4 = 64px */
+/*	}
+	h2 {
+		display: none;
+	}
+	.nav-overlay {
+		position: relative;
+		grid-column-start: span 2;
+		align-items: center;
+	}
+	.nav-overlay ul {
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	.menu-button { /* so that the overlay menu isn't available… but we lose the logo atm */
+/*		display: none;
+	}
+	#about {
+		position: sticky;
+		top: 0;
+		max-width: none;
+		height: 50%;
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 4;
+		padding: 0;
+	}
+	#work {
+		grid-column-start: 3;
+		grid-column-end: 5;
+		grid-row-start: 2;
+		height: fit-content;
+	}
+	#case {
+		grid-column: 1 / 5;
+		height: fit-content;
+	}
+	.case-module {
+		display: grid;
+		gap: 4rem;
+		grid-template-columns: repeat(4, 1fr);
+		width: 100%;
+		grid-column-start: 3;
+		grid-column-end: 5;
+	}
+	.case-module p {
+		grid-column: 1 / 3;
+		position: sticky;
+		top: 25vh;
+		align-self: start;
+	}
+	.case-module img {
+		grid-column: 3 / 5;
+		width: 100%;
+	}
+	#work img {
+		display: none;
+	}
+/* reveal cover on hover … want to adjust this to stick to cursor position
+	#work li.work-list-item:hover img {
+		display: block;
+		position: fixed;
+		width: 16vw;
+		height: auto;
+		top: 0;
+		right: 0;
+	} */
+/*	footer {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 4;
+		height: fit-content;
+	}
+	.bottom {
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+	.social span {
+		display: none;
+	}
+	.email-card {
+		height: auto;
+	}
+	.email-display {
+		margin-bottom: 2rem;
+	}
+	.top-link {
+		display: none;
+	}
+} */ /* /end breakpoint 1280px */

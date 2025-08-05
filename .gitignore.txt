@@ -1,0 +1,40 @@
+# macOS system files
+.DS_Store
+.Trashes
+.Spotlight-V100
+.TemporaryItems
+.DocumentRevisions-V100
+.fseventsd
+.VolumeIcon.icns
+.AppleDouble
+.LSOverride
+._*
+
+# Files related to macOS permissions
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Node.js (if you use npm for build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Output folder for static site generators
+dist/
+_build/
+_site/
+
+# VS Code settings (optional)
+.vscode/
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~
+
+# Ignore sensitive or local config
+.env
+.env.*
