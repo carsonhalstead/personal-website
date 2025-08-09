@@ -613,7 +613,8 @@ footer a:hover {
 		display: block;
 	}
 }
-/* commenting out for now to debug cases later hehe
+/* commenting 1280px out for now to debug cases later hehe */
+	/*
 	body {
 		display: grid;
 		gap: 4rem;
@@ -623,8 +624,8 @@ footer a:hover {
 		margin: 0 1rem;
 	}
 	h1 {
-		font-size: 4rem; /* 16px * 4 = 64px */
-/*	}
+		font-size: 4rem;
+	}
 	h2 {
 		display: none;
 	}
@@ -639,9 +640,11 @@ footer a:hover {
 		top: 50%;
 		-ms-transform: translateY(-50%);
 		transform: translateY(-50%);
-	}
-	.menu-button { /* so that the overlay menu isn't available… but we lose the logo atm */
-/*		display: none;
+	} */
+	/* so that the overlay menu isn't available but we lose the logo atm */
+	/*
+	.menu-button {
+		display: none;
 	}
 	#about {
 		position: sticky;
@@ -684,8 +687,9 @@ footer a:hover {
 	}
 	#work img {
 		display: none;
-	}
-/* reveal cover on hover … want to adjust this to stick to cursor position
+	} */
+	/* this is reveal cover on hover want to adjust this to stick to cursor position */
+	/*
 	#work li.work-list-item:hover img {
 		display: block;
 		position: fixed;
@@ -693,8 +697,8 @@ footer a:hover {
 		height: auto;
 		top: 0;
 		right: 0;
-	} */
-/*	footer {
+	}
+	footer {
 		grid-column-start: 1;
 		grid-column-end: 3;
 		grid-row-start: 4;
@@ -715,5 +719,4 @@ footer a:hover {
 	}
 	.top-link {
 		display: none;
-	}
-} */ /* /end breakpoint 1280px */
+	} */

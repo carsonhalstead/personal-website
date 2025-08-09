@@ -1,3 +1,4 @@
+
 // navigation menu overlay
 const menuToggle = document.getElementById('menu-toggle');
 const mainNav = document.getElementById('main-nav');
