@@ -345,6 +345,9 @@ p {
 
 details {
 	margin-top: 4rem;
+	padding: 1rem;
+	background: #ffffff08;
+	border-radius: 1rem;
 }
 details p {
 	margin-top: 1rem;
@@ -355,14 +358,11 @@ details p {
 	text-decoration-style: wavy;
 }
 summary {
-	padding: 1.5rem;
+	padding: 1rem;
 	font-size: 1.5rem; /* 16px * 1.5 = 24px */
-	color: #141218;
-	border: 2px solid #fff;
-	border-radius: 4rem;
-	background: #ffffff80;
+	border-radius: .5rem;
 } summary:hover {
-	background: #fff;
+	background: #ffffff08;
 	cursor: pointer;
 } summary:active {
 	background: #00000016;
@@ -559,8 +559,8 @@ footer a:hover {
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-	}
-} /* /end breakpoint 560px */
+	} */
+} /* /end breakpoint 608px */
 
 @media screen and (min-width: 959px) {
 
