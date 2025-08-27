@@ -78,7 +78,6 @@ button {
 /* prefers reduced motion
    comment out when testing transitions
    or disable on macOS: system preferences > accessibility > display > reduce motion */
-   /*
 @media (prefers-reduced-motion: reduce) {
 	* {
     transition-duration: 0.01ms !important;
@@ -530,7 +529,7 @@ footer a:hover {
 
 /* media queries */
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 30rem) {
 
 	.email-display {
 		font-size: clamp(100%, 1rem + 1.4vw, 32px);
@@ -544,9 +543,9 @@ footer a:hover {
 	} .email-card-actions div {
 		flex: 1;
 	}
-} /* /end breakpoint 480px */
+} /* /end breakpoint 30rem or 480px */
 
-@media screen and (min-width: 608px) {
+@media screen and (min-width: 38rem) {
 
 	body {
 		margin: 0 auto;
@@ -560,9 +559,9 @@ footer a:hover {
 		align-items: center;
 		justify-content: space-between;
 	} */
-} /* /end breakpoint 608px */
+} /* /end breakpoint 38rem or 608px */
 
-@media screen and (min-width: 959px) {
+@media screen and (min-width: 60rem) {
 
 	.menu-button {
 		display: none;
@@ -603,17 +602,14 @@ footer a:hover {
 	.nav-overlay a:focus {
 		background: #00000016;
 	}
-} /* /end breakpoint 959px */
-/* out of service
-@media screen and (min-width: 1080px) {
-} /end breakpoint 1080px */
+} /* /end breakpoint 60rem or 960px */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 80rem) {
 	.banner {
 		display: block;
 	}
 }
-/* commenting 1280px out for now to debug cases later hehe */
+/* commenting 80rem or 1280px out for now to debug cases later hehe */
 	/*
 	body {
 		display: grid;
