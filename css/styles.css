@@ -129,7 +129,7 @@ h2 {
 	font-weight: normal;
 	line-height: 1.6;
 	color: #fff;
-} #about h2, #contact h2, .work-nav h2 {
+} #about h2, #contact h2 {
 	margin-bottom: 1rem;
 }
 h3 {
@@ -330,15 +330,7 @@ p {
 	border-radius: 0.25rem;
 	border: 1px solid #ee4f2f;
 	color: #ee4f2f;
-}
-/* commenting out legacy work-list-item & hover styling
-.work-list-item h3 {
-	border-bottom: 2px dotted #ffffff16;
-} .work-list-item h3:hover {
-		background: linear-gradient(transparent, transparent 8%, #ffffff08 56%);
-		border-bottom: 2px solid #ee4f2f;
-}*/
-/* end work */
+} /* end work */
 
 /* case */
 
@@ -387,45 +379,12 @@ summary {
 .invert {
 /* for imgs with a white foreground and black background to appear transparent */
 	mix-blend-mode: screen;
-}
-.work-nav {
-	display: flex;
-	flex-direction: column;
-	padding: 1rem;
-	margin-bottom: 16%;
-	border-radius: 1rem 0 1rem 1rem;
-	border: solid 2px #ffffff16;
-}
-.work-list-item {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 1rem 2rem 1rem 1rem;
-	text-decoration: none;
-	border-radius: 0.5rem;
-	background: linear-gradient(270deg,#ffffff08 0%, #ffffff00 80%);
-	background: -webkit-linear-gradient(270deg,#ffffff08 0%, #ffffff00 80%);
-	background: -moz-linear-gradient(270deg,#ffffff08 0%, #ffffff00 80%);
-} .work-list-item:hover {
-	background: #ffffff08;
-} .work-list-item img {
-	width: 40px;
-	border-radius: 0.5rem;
-	outline: 1px solid #ffffff16;
-}
-.work-list-item-label {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-}
-.work-list-item-arrow {
-	font-size: 1.5rem;
 } /* /end case */
 
 /* footer */
 
 footer {
-	height: 80vh;
+	height: 88vh;
 	color: #AAA9AC;
 }
 footer a {
@@ -553,12 +512,6 @@ footer a:hover {
 	h1 {
 		font-size: 3rem; /* 16px * 3 = 48px */
 	}
-	/* it doesn't look good when the work-list-item is variable width
-	.work-nav {
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-	} */
 } /* /end breakpoint 38rem or 608px */
 
 @media screen and (min-width: 60rem) {
@@ -686,14 +639,6 @@ footer a:hover {
 	} */
 	/* this is reveal cover on hover want to adjust this to stick to cursor position */
 	/*
-	#work li.work-list-item:hover img {
-		display: block;
-		position: fixed;
-		width: 16vw;
-		height: auto;
-		top: 0;
-		right: 0;
-	}
 	footer {
 		grid-column-start: 1;
 		grid-column-end: 3;
